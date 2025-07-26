@@ -9,6 +9,48 @@ import {
   routesNotAllowedByLoggedInUsers,
 } from './routes';
 
+// Define disabled routes for Shopify Theme Detector
+const DISABLED_ROUTES = [
+  '/pricing',
+  // '/blog', // Blog enabled for SEO purposes
+  '/docs',
+  '/changelog',
+  '/cookie',
+  '/auth/login',
+  '/auth/register',
+  '/auth/error',
+  '/auth/forgot-password',
+  '/auth/reset-password',
+  '/dashboard',
+  '/admin/users',
+  '/settings/profile',
+  '/settings/billing',
+  '/settings/security',
+  '/settings/notifications',
+  '/ai/text',
+  '/ai/image',
+  '/ai/video',
+  '/ai/audio',
+  '/magicui',
+  '/blocks/hero-section',
+  '/blocks/logo-cloud',
+  '/blocks/features',
+  '/blocks/integrations',
+  '/blocks/content',
+  '/blocks/stats',
+  '/blocks/team',
+  '/blocks/testimonials',
+  '/blocks/call-to-action',
+  '/blocks/footer',
+  '/blocks/pricing',
+  '/blocks/comparator',
+  '/blocks/faqs',
+  '/blocks/login',
+  '/blocks/sign-up',
+  '/blocks/forgot-password',
+  '/blocks/contact',
+];
+
 const intlMiddleware = createMiddleware(routing);
 
 /**
@@ -44,6 +86,16 @@ export default async function middleware(req: NextRequest) {
     nextUrl.pathname,
     LOCALES
   );
+
+  // Check if the route is disabled for Shopify Theme Detector
+  const isDisabledRoute = DISABLED_ROUTES.some((route) =>
+    pathnameWithoutLocale.startsWith(route)
+  );
+
+  if (isDisabledRoute) {
+    console.log('<< middleware end, disabled route, returning 404');
+    return NextResponse.rewrite(new URL('/404', nextUrl));
+  }
 
   // If the route can not be accessed by logged in users, redirect if the user is logged in
   if (isLoggedIn) {

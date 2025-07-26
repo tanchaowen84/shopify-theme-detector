@@ -13,19 +13,14 @@ type Href = Parameters<typeof getLocalePathname>[0]['href'];
  * 根据功能开关动态生成静态路由列表
  */
 function getEnabledStaticRoutes(): string[] {
+  // Simplified routes for Shopify Theme Detector
   const baseRoutes = [
     '/',
-    '/pricing',
-    '/blog',
+    '/blog', // Enabled for SEO purposes
     '/about',
     '/contact',
-    '/waitlist',
-    '/changelog',
     '/privacy',
     '/terms',
-    '/cookie',
-    '/auth/login',
-    '/auth/register',
   ];
 
   // 条件性添加页面路由

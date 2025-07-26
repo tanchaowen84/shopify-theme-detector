@@ -27,11 +27,12 @@ export function getFooterLinks(): NestedMenuItem[] {
           href: Routes.Features,
           external: false,
         },
-        {
-          title: t('product.items.pricing'),
-          href: Routes.Pricing,
-          external: false,
-        },
+        // Pricing disabled for Shopify Theme Detector
+        // {
+        //   title: t('product.items.pricing'),
+        //   href: Routes.Pricing,
+        //   external: false,
+        // },
         {
           title: t('product.items.faq'),
           href: Routes.FAQ,
@@ -42,6 +43,7 @@ export function getFooterLinks(): NestedMenuItem[] {
     {
       title: t('resources.title'),
       items: [
+        // Blog enabled for SEO purposes
         {
           title: t('resources.items.blog'),
           href: Routes.Blog,
@@ -56,11 +58,12 @@ export function getFooterLinks(): NestedMenuItem[] {
               },
             ]
           : []),
-        {
-          title: t('resources.items.changelog'),
-          href: Routes.Changelog,
-          external: false,
-        },
+        // Changelog disabled for Shopify Theme Detector
+        // {
+        //   title: t('resources.items.changelog'),
+        //   href: Routes.Changelog,
+        //   external: false,
+        // },
       ],
     },
     {

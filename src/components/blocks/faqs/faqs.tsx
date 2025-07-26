@@ -7,74 +7,59 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import type { IconName } from 'lucide-react/dynamic';
-import { useLocale, useTranslations } from 'next-intl';
 
 type FAQItem = {
   id: string;
-  icon: IconName;
   question: string;
   answer: string;
 };
 
 export default function FaqSection() {
-  const locale = useLocale();
-  const t = useTranslations('HomePage.faqs');
-
   const faqItems: FAQItem[] = [
     {
       id: 'item-1',
-      icon: 'calendar-clock',
-      question: t('items.item-1.question'),
-      answer: t('items.item-1.answer'),
+      question: 'How does the Shopify theme detector work?',
+      answer: 'Our detector analyzes the HTML structure, JavaScript, and CSS of any Shopify store to identify theme-specific patterns and metadata. It cross-references this information with our comprehensive database of official Shopify themes to provide accurate identification.',
     },
     {
       id: 'item-2',
-      icon: 'wallet',
-      question: t('items.item-2.question'),
-      answer: t('items.item-2.answer'),
+      question: 'Is this tool completely free to use?',
+      answer: 'Yes! Our Shopify theme detector is 100% free with no hidden costs, registration requirements, or usage limits. You can detect unlimited themes without any restrictions.',
     },
     {
       id: 'item-3',
-      icon: 'refresh-cw',
-      question: t('items.item-3.question'),
-      answer: t('items.item-3.answer'),
+      question: 'How accurate is the theme detection?',
+      answer: 'Our detection algorithm has a 99.9% accuracy rate for official Shopify themes. For custom themes, we can still identify if a store is using Shopify and provide relevant information about the store structure.',
     },
     {
       id: 'item-4',
-      icon: 'hand-coins',
-      question: t('items.item-4.question'),
-      answer: t('items.item-4.answer'),
+      question: 'What types of Shopify stores can I analyze?',
+      answer: 'You can analyze any Shopify store, including those with custom domains (like store.com) and myshopify.com subdomains. Our tool works with stores from all countries and markets.',
     },
     {
       id: 'item-5',
-      icon: 'mail',
-      question: t('items.item-5.question'),
-      answer: t('items.item-5.answer'),
+      question: 'What information do I get about the detected theme?',
+      answer: 'You\'ll receive the theme name, whether it\'s an official or custom theme, theme store ID (if applicable), direct links to the Shopify theme store, and pricing information for official themes.',
     },
     {
       id: 'item-6',
-      icon: 'network',
-      question: t('items.item-6.question'),
-      answer: t('items.item-6.answer'),
+      question: 'Can you detect custom or modified themes?',
+      answer: 'While we excel at identifying official Shopify themes, we can also detect when a store uses a custom theme or heavily modified official theme. In these cases, we\'ll indicate it as a "Custom Theme" and provide what information is available.',
     },
     {
       id: 'item-7',
-      icon: 'lightbulb',
-      question: t('items.item-7.question'),
-      answer: t('items.item-7.answer'),
+      question: 'Why does detection sometimes fail?',
+      answer: 'Detection may fail if the website is not a Shopify store, if the store has heavy customizations that obscure theme identifiers, or if the store is password-protected or has restricted access.',
     },
     {
       id: 'item-8',
-      icon: 'users',
-      question: t('items.item-8.question'),
-      answer: t('items.item-8.answer'),
+      question: 'Do you store or track the URLs I analyze?',
+      answer: 'No, we don\'t store or track any URLs you analyze. Each detection is processed in real-time and no data is saved on our servers, ensuring your privacy and the privacy of the stores you analyze.',
     },
     {
       id: 'item-9',
-      icon: 'upload',
-      question: t('items.item-9.question'),
-      answer: t('items.item-9.answer'),
+      question: 'Can I use this for competitive research?',
+      answer: 'Absolutely! Many e-commerce professionals use our tool for competitive analysis, market research, and to discover successful theme choices in their industry. It\'s a valuable tool for understanding market trends.',
     },
   ];
 
@@ -82,9 +67,9 @@ export default function FaqSection() {
     <section id="faqs" className="px-4 py-16">
       <div className="mx-auto max-w-4xl">
         <HeaderSection
-          title={t('title')}
+          title="Frequently Asked Questions"
           titleAs="h2"
-          subtitle={t('subtitle')}
+          subtitle="Everything you need to know about our Shopify theme detector"
           subtitleAs="p"
         />
 

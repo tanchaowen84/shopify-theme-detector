@@ -9,13 +9,12 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import {
-  ChartBarIncreasingIcon,
-  Database,
-  Fingerprint,
-  IdCard,
+  Search,
+  Zap,
+  Shield,
+  ExternalLink,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -24,52 +23,80 @@ import { useState } from 'react';
  * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-12.json
  */
 export default function FeaturesSection() {
-  const t = useTranslations('HomePage.features');
   type ImageKey = 'item-1' | 'item-2' | 'item-3' | 'item-4';
   const [activeItem, setActiveItem] = useState<ImageKey>('item-1');
 
   const images = {
     'item-1': {
-      image: 'https://cdn.flowchartai.org/static/blocks/feature1.png',
-      darkImage: 'https://cdn.flowchartai.org/static/blocks/feature1.png',
-      alt: 'Product Feature One',
+      image: '/images/features/instant-detection.png',
+      darkImage: '/images/features/instant-detection-dark.png',
+      alt: 'Instant Theme Detection',
     },
     'item-2': {
-      image: 'https://cdn.flowchartai.org/static/blocks/feature2.png',
-      darkImage: 'https://cdn.flowchartai.org/static/blocks/feature2.png',
-      alt: 'Product Feature Two',
+      image: '/images/features/accurate-results.png',
+      darkImage: '/images/features/accurate-results-dark.png',
+      alt: 'Accurate Theme Identification',
     },
     'item-3': {
-      image: 'https://cdn.flowchartai.org/static/blocks/feature3.png',
-      darkImage: 'https://cdn.flowchartai.org/static/blocks/feature3.png',
-      alt: 'Product Feature Three',
+      image: '/images/features/official-themes.png',
+      darkImage: '/images/features/official-themes-dark.png',
+      alt: 'Official Theme Database',
     },
     'item-4': {
-      image: 'https://cdn.flowchartai.org/static/blocks/feature4.png',
-      darkImage: 'https://cdn.flowchartai.org/static/blocks/feature4.png',
-      alt: 'Product Feature Four',
+      image: '/images/features/free-unlimited.png',
+      darkImage: '/images/features/free-unlimited-dark.png',
+      alt: 'Free Unlimited Usage',
     },
   };
+
+  const features = [
+    {
+      id: 'item-1',
+      icon: Search,
+      title: 'Instant Detection',
+      description: 'Get immediate results by simply entering any Shopify store URL. Our advanced detection algorithm analyzes the store and identifies the theme within seconds.',
+    },
+    {
+      id: 'item-2',
+      icon: Zap,
+      title: 'Accurate Identification',
+      description: 'Powered by comprehensive theme database and smart parsing technology, we provide highly accurate theme identification with detailed information.',
+    },
+    {
+      id: 'item-3',
+      icon: Shield,
+      title: 'Official Theme Database',
+      description: 'Access to complete Shopify official theme database with direct links to theme store, pricing information, and theme specifications.',
+    },
+    {
+      id: 'item-4',
+      icon: ExternalLink,
+      title: 'Free & Unlimited',
+      description: 'Completely free to use with no registration required. Detect unlimited Shopify themes without any restrictions or hidden costs.',
+    },
+  ];
 
   return (
     <section id="features" className="px-4 py-16">
       <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]" />
       <div className="mx-auto max-w-6xl space-y-8 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
         <HeaderSection
-          title={t('title')}
-          subtitle={t('subtitle')}
+          title="Powerful Features"
+          subtitle="Why Choose Our Shopify Theme Detector"
           subtitleAs="h2"
-          description={t('description')}
+          description="Discover the advanced capabilities that make our theme detection tool the most reliable and comprehensive solution for identifying Shopify themes."
           descriptionAs="p"
         />
 
         <div className="grid gap-12 sm:px-12 lg:grid-cols-12 lg:gap-24 lg:px-0">
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div className="lg:pr-0 text-left">
-              <h3 className="text-3xl font-semibold lg:text-4xl text-gradient_indigo-purple leading-normal py-1">
-                {t('title')}
+              <h3 className="text-3xl font-semibold lg:text-4xl leading-normal py-1" style={{ color: '#008060' }}>
+                Advanced Detection Technology
               </h3>
-              <p className="mt-4 text-muted-foreground">{t('description')}</p>
+              <p className="mt-4 text-muted-foreground">
+                Our cutting-edge detection system combines multiple analysis techniques to provide the most accurate and comprehensive theme identification available.
+              </p>
             </div>
             <Accordion
               type="single"
@@ -77,50 +104,22 @@ export default function FeaturesSection() {
               onValueChange={(value) => setActiveItem(value as ImageKey)}
               className="w-full"
             >
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <Database className="size-4" />
-                    {t('items.item-1.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-1.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <Fingerprint className="size-4" />
-                    {t('items.item-2.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-2.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <IdCard className="size-4" />
-                    {t('items.item-3.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-3.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <ChartBarIncreasingIcon className="size-4" />
-                    {t('items.item-4.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-4.description')}
-                </AccordionContent>
-              </AccordionItem>
+              {features.map((feature) => {
+                const IconComponent = feature.icon;
+                return (
+                  <AccordionItem key={feature.id} value={feature.id}>
+                    <AccordionTrigger>
+                      <div className="flex items-center gap-2 text-base">
+                        <IconComponent className="size-4" style={{ color: '#008060' }} />
+                        {feature.title}
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {feature.description}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
             </Accordion>
           </div>
 
@@ -133,29 +132,33 @@ export default function FeaturesSection() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 6, scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="size-full overflow-hidden rounded-2xl border bg-white dark:bg-zinc-900 shadow-md flex items-center justify-center"
+                  className="size-full overflow-hidden rounded-2xl border bg-gradient-to-br from-[#008060]/5 to-[#004C3F]/5 dark:from-[#008060]/10 dark:to-[#004C3F]/10 shadow-md flex items-center justify-center"
                 >
-                  <Image
-                    src={images[activeItem].image}
-                    className="max-w-full max-h-full object-contain dark:hidden"
-                    alt={images[activeItem].alt}
-                    width={1207}
-                    height={929}
-                  />
-                  <Image
-                    src={images[activeItem].darkImage}
-                    className="max-w-full max-h-full object-contain dark:block hidden"
-                    alt={images[activeItem].alt}
-                    width={1207}
-                    height={929}
-                  />
+                  <div className="text-center p-8">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#008060]/10 flex items-center justify-center">
+                      {(() => {
+                        const feature = features.find(f => f.id === activeItem);
+                        if (feature) {
+                          const IconComponent = feature.icon;
+                          return <IconComponent className="w-12 h-12" style={{ color: '#008060' }} />;
+                        }
+                        return null;
+                      })()}
+                    </div>
+                    <h4 className="text-xl font-semibold mb-2" style={{ color: '#008060' }}>
+                      {features.find(f => f.id === activeItem)?.title}
+                    </h4>
+                    <p className="text-muted-foreground text-sm">
+                      {features.find(f => f.id === activeItem)?.description}
+                    </p>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
             <BorderBeam
               duration={6}
               size={200}
-              className="from-transparent via-violet-700 to-transparent dark:via-white/50"
+              className="from-transparent via-[#008060] to-transparent dark:via-[#008060]/50"
             />
           </div>
         </div>

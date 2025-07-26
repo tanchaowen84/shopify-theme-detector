@@ -220,12 +220,12 @@ export default function BillingCard() {
           )}
         </CardContent>
         <CardFooter className="mt-2 px-6 py-4 flex justify-end items-center bg-background rounded-none">
-          {/* user is on free plan, show upgrade plan button */}
-          {isFreePlan && (
+          {/* user is on free plan, show upgrade plan button - Disabled for Shopify Theme Detector */}
+          {/* {isFreePlan && (
             <Button variant="default" className="cursor-pointer" asChild>
               <LocaleLink href={Routes.Pricing}>{t('upgradePlan')}</LocaleLink>
             </Button>
-          )}
+          )} */}
 
           {/* user is lifetime member, show manage billing button */}
           {isLifetimeMember && currentUser && (

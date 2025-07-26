@@ -1,31 +1,57 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
-import { LocaleLink } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
+import { Search, ExternalLink } from 'lucide-react';
 
 export default function CallToActionSection() {
-  const t = useTranslations('HomePage.calltoaction');
+  const scrollToHero = () => {
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section id="call-to-action" className="px-4 py-24 bg-background">
+    <section id="call-to-action" className="px-4 py-24 bg-gradient-to-br from-[#008060]/5 to-[#004C3F]/5">
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-            {t('title')}
+          <h2 className="text-balance text-4xl font-semibold lg:text-5xl" style={{ color: '#008060' }}>
+            Ready to Discover Any Shopify Theme?
           </h2>
-          <p className="mt-4 text-muted-foreground">{t('description')}</p>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Start detecting Shopify themes instantly. No registration required, completely free forever.
+          </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg">
-              <LocaleLink href="/canvas">
-                <span>{t('primaryButton')}</span>
-              </LocaleLink>
+            <Button
+              size="lg"
+              className="gap-2 text-white hover:bg-[#004C3F]"
+              style={{ backgroundColor: '#008060' }}
+              onClick={scrollToHero}
+            >
+              <Search className="w-5 h-5" />
+              <span>Start Detecting Now</span>
             </Button>
 
-            <Button asChild size="lg" variant="outline">
-              <LocaleLink href="/">
-                <span>{t('secondaryButton')}</span>
-              </LocaleLink>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="gap-2 border-[#008060] text-[#008060] hover:bg-[#008060]/10"
+            >
+              <a
+                href="https://themes.shopify.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="w-5 h-5" />
+                <span>Browse Shopify Themes</span>
+              </a>
             </Button>
+          </div>
+
+          <div className="mt-8 text-sm text-muted-foreground">
+            <p>✓ 100% Free Forever  ✓ No Registration Required  ✓ Instant Results</p>
           </div>
         </div>
       </div>

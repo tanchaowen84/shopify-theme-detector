@@ -53,11 +53,12 @@ export function getNavbarLinks(): NestedMenuItem[] {
       href: Routes.Features,
       external: false,
     },
-    {
-      title: t('pricing.title'),
-      href: Routes.Pricing,
-      external: false,
-    },
+    // Pricing disabled for Shopify Theme Detector, Blog enabled for SEO
+    // {
+    //   title: t('pricing.title'),
+    //   href: Routes.Pricing,
+    //   external: false,
+    // },
     {
       title: t('blog.title'),
       href: Routes.Blog,
@@ -108,6 +109,7 @@ export function getNavbarLinks(): NestedMenuItem[] {
     //     },
     //   ],
     // },
+    // Simplified Pages menu for Shopify Theme Detector
     {
       title: t('pages.title'),
       items: [
@@ -123,20 +125,6 @@ export function getNavbarLinks(): NestedMenuItem[] {
           description: t('pages.items.contact.description'),
           icon: <MailIcon className="size-4 shrink-0" />,
           href: Routes.Contact,
-          external: false,
-        },
-        {
-          title: t('pages.items.changelog.title'),
-          description: t('pages.items.changelog.description'),
-          icon: <ListChecksIcon className="size-4 shrink-0" />,
-          href: Routes.Changelog,
-          external: false,
-        },
-        {
-          title: t('pages.items.cookiePolicy.title'),
-          description: t('pages.items.cookiePolicy.description'),
-          icon: <CookieIcon className="size-4 shrink-0" />,
-          href: Routes.CookiePolicy,
           external: false,
         },
         {
