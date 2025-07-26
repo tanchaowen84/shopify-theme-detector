@@ -170,7 +170,7 @@ export default function HeroSection() {
                     <div className="flex flex-wrap justify-center gap-2">
                       {[
                         'store.sho.com',
-                        'shopstereogum.com',
+                        'shop.stereogum.com',
                         'shop.in-n-out.com',
                         'shop.singletracks.com',
                         'shop.spacex.com'
