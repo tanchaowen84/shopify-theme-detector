@@ -5,9 +5,9 @@
     "description": "Free Shopify theme detector tool. Enter any Shopify store URL to instantly identify the theme name, type, and get direct links to official themes in the Shopify store."
   },
   "Common": {
-    "login": "Log in",
+    "login": "Log in to Theme Detector",
     "logout": "Log out",
-    "signUp": "Sign up",
+    "signUp": "Sign up for Theme Detection",
     "language": "Switch language",
     "mode": {
       "label": "Toggle mode",
@@ -23,17 +23,17 @@
       "amber": "Amber",
       "neutral": "Neutral"
     },
-    "copy": "Copy",
+    "copy": "Copy theme info",
     "saving": "Saving...",
     "save": "Save",
-    "loading": "Loading...",
+    "loading": "Detecting theme...",
     "cancel": "Cancel",
     "logoutFailed": "Failed to log out"
   },
   "PricingPage": {
-    "title": "Pricing",
-    "description": "Choose the plan that works best for you",
-    "subtitle": "Choose the plan that works best for you",
+    "title": "Shopify Theme Detector Pricing",
+    "description": "Choose the best plan for your Shopify theme detection needs",
+    "subtitle": "Choose the best plan for your Shopify theme detection needs",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "PricingCard": {
@@ -43,11 +43,11 @@
       "popular": "Popular",
       "currentPlan": "Current Plan",
       "yourCurrentPlan": "Your Current Plan",
-      "getStartedForFree": "Get Started For Free",
-      "getLifetimeAccess": "Get Lifetime Access",
-      "getStarted": "Get Started",
+      "getStartedForFree": "Start Detecting Themes Free",
+      "getLifetimeAccess": "Get Lifetime Theme Detection",
+      "getStarted": "Start Theme Detection",
       "notAvailable": "Not Available",
-      "daysTrial": "{days}-day free trial"
+      "daysTrial": "{days}-day free theme detection trial"
     },
     "CheckoutButton": {
       "loading": "Loading...",
@@ -56,61 +56,61 @@
   },
   "PricePlans": {
     "free": {
-      "name": "Free",
-      "description": "Start detecting Shopify themes — for free, forever.",
+      "name": "Free Theme Detection",
+      "description": "Start detecting Shopify themes — unlimited and free, forever.",
       "features": {
-        "feature-1": "1 AI request per day",
-        "feature-2": "AI-assisted generation and editing",
-        "feature-3": "Unlimited diagram storage",
-        "feature-4": "Text and image input supported",
+        "feature-1": "Unlimited theme detections",
+        "feature-2": "Official Shopify theme database access",
+        "feature-3": "Instant theme identification",
+        "feature-4": "Direct theme store links",
         "feature-5": "Community support"
       },
       "limits": {
-        "limit-1": "1 AI request per day",
-        "limit-2": "No technical support",
-        "limit-3": "Standard processing speed"
+        "limit-1": "Basic theme information only",
+        "limit-2": "No detection history",
+        "limit-3": "Standard detection speed"
       }
     },
     "hobby": {
-      "name": "Hobby",
-      "description": "Great for individuals who need more AI requests and light technical assistance.",
+      "name": "Hobby Detector",
+      "description": "Perfect for individuals who need enhanced theme detection features.",
       "features": {
-        "feature-1": "500 AI requests per month",
-        "feature-2": "Full access to AI agent for generation and editing",
-        "feature-3": "Unlimited diagram storage",
-        "feature-4": "Text and image input supported",
-        "feature-5": "Email support (24–48h response, max 7 days)",
-        "feature-6": "All generated content belongs to the user"
+        "feature-1": "Unlimited theme detections",
+        "feature-2": "Advanced theme analysis",
+        "feature-3": "Detection history storage",
+        "feature-4": "Batch URL processing",
+        "feature-5": "Email support (24–48h response)",
+        "feature-6": "Export detection results"
       },
       "limits": {
-        "limit-1": "No priority support",
+        "limit-1": "No priority detection",
         "limit-2": "Standard processing speed"
       }
     },
     "professional": {
-      "name": "Professional",
-      "description": "Perfect for power users and professionals who want faster response and priority support.",
+      "name": "Professional Detector",
+      "description": "Advanced Shopify theme detection for professionals and agencies.",
       "features": {
-        "feature-1": "1000 AI requests per month",
-        "feature-2": "Priority AI processing",
-        "feature-3": "Unlimited diagram storage",
-        "feature-4": "Real-time AI-assisted editing",
-        "feature-5": "Email & technical support (under 24h, max 48h)",
-        "feature-6": "Text and image input supported",
-        "feature-7": "All generated content belongs to the user"
+        "feature-1": "Unlimited priority detections",
+        "feature-2": "Advanced theme analytics",
+        "feature-3": "Bulk theme detection API",
+        "feature-4": "Custom theme database",
+        "feature-5": "Priority support (under 24h)",
+        "feature-6": "White-label detection reports",
+        "feature-7": "Team collaboration features"
       },
       "limits": {
-        "limit-1": "For advanced or customized service needs, please contact our team directly",
-        "limit-2": "Does not include API access or enterprise features"
+        "limit-1": "For enterprise needs, contact our team",
+        "limit-2": "Advanced features require setup"
       }
     },
     "pro": {
-      "name": "Pro",
-      "description": "Advanced features for professional users and teams.",
+      "name": "Pro Theme Detector",
+      "description": "Ultimate Shopify theme detection for power users and teams.",
       "features": {
-        "feature-1": "Unlimited AI requests",
+        "feature-1": "Unlimited instant detections",
         "feature-2": "Priority processing and support",
-        "feature-3": "Advanced collaboration tools",
+        "feature-3": "Advanced theme analytics",
         "feature-4": "Custom integrations",
         "feature-5": "Enterprise-grade security"
       },
@@ -120,16 +120,16 @@
       }
     },
     "lifetime": {
-      "name": "Lifetime",
-      "description": "One-time payment for lifetime access to all premium features.",
+      "name": "Lifetime Theme Detector",
+      "description": "One-time payment for lifetime access to all Shopify theme detection features.",
       "features": {
-        "feature-1": "Lifetime access to all features",
-        "feature-2": "Unlimited AI requests forever",
+        "feature-1": "Lifetime theme detection access",
+        "feature-2": "Unlimited detections forever",
         "feature-3": "Priority support for life",
-        "feature-4": "All future updates included",
-        "feature-5": "Advanced collaboration tools",
-        "feature-6": "Custom integrations",
-        "feature-7": "Enterprise-grade security"
+        "feature-4": "All future detection updates",
+        "feature-5": "Advanced analytics tools",
+        "feature-6": "API access included",
+        "feature-7": "Enterprise-grade features"
       }
     }
   },
@@ -144,31 +144,31 @@
     "backToHome": "Back to home"
   },
   "AboutPage": {
-    "title": "About",
-    "description": "This is MkSaaS, an AI SaaS template built with modern technologies, helping you build your SaaS faster and better.",
-    "authorName": "MkSaaS",
-    "authorBio": "AI SaaS Boilerplate",
-    "introduction": "👋 Hi there! This is MkSaaS, an AI SaaS template built with modern technologies, helping you build your SaaS faster and better. If you have any questions, welcome to contact me.",
-    "talkWithMe": "Talk with me",
-    "followMe": "Follow me on X"
+    "title": "About Shopify Theme Detector",
+    "description": "Learn about our free Shopify theme detector tool that helps identify any Shopify store's theme instantly and accurately.",
+    "authorName": "Shopify Theme Detector Team",
+    "authorBio": "Shopify Theme Detection Specialists",
+    "introduction": "👋 Welcome to Shopify Theme Detector! We've built the most accurate and comprehensive tool for identifying Shopify themes. Our advanced detection algorithm helps e-commerce professionals, developers, and researchers discover which themes power successful Shopify stores. If you have any questions about theme detection, feel free to contact us.",
+    "talkWithMe": "Contact our team",
+    "followMe": "Follow us for theme updates"
   },
   "ChangelogPage": {
-    "title": "Changelog",
-    "description": "Stay up to date with the latest changes in our product",
-    "subtitle": "Stay up to date with the latest changes in our product"
+    "title": "Shopify Theme Detector Updates",
+    "description": "Stay up to date with the latest improvements to our Shopify theme detection tool",
+    "subtitle": "Latest updates to our Shopify theme detection capabilities"
   },
   "ContactPage": {
-    "title": "Contact",
-    "description": "We'll help you find the right plan for your business",
-    "subtitle": "We'll help you find the right plan for your business",
+    "title": "Contact Shopify Theme Detector Team",
+    "description": "Get help with Shopify theme detection or share feedback about our tool",
+    "subtitle": "Need help with Shopify theme detection? We're here to assist you",
     "form": {
-      "title": "Contact Us",
-      "description": "If you have any questions or feedback, please reach out to our team",
+      "title": "Contact Our Theme Detection Team",
+      "description": "Have questions about Shopify theme detection or need help identifying a specific theme? Reach out to our experts",
       "name": "Name",
       "email": "Email",
-      "message": "Message",
-      "submit": "Submit",
-      "submitting": "Submitting...",
+      "message": "Message about theme detection",
+      "submit": "Send Message",
+      "submitting": "Sending...",
       "success": "Message sent successfully",
       "fail": "Failed to send message",
       "nameMinLength": "Name must be at least 3 characters",
@@ -179,26 +179,26 @@
     }
   },
   "Newsletter": {
-    "title": "Newsletter",
-    "subtitle": "Join the community",
-    "description": "Subscribe to our newsletter for the latest news and updates",
+    "title": "Shopify Theme Detection Updates",
+    "subtitle": "Join the theme detection community",
+    "description": "Subscribe for the latest Shopify theme detection updates, new features, and theme trend insights",
     "form": {
       "email": "Email",
-      "subscribe": "Subscribe",
+      "subscribe": "Subscribe to Updates",
       "subscribing": "Subscribing...",
-      "success": "Subscribed successfully",
+      "success": "Subscribed to theme detection updates",
       "fail": "Failed to subscribe",
       "emailValidation": "Please enter a valid email address"
     }
   },
   "AuthPage": {
     "login": {
-      "title": "Login",
-      "welcomeBack": "Welcome back",
+      "title": "Login to Theme Detector",
+      "welcomeBack": "Welcome back to Shopify Theme Detector",
       "email": "Email",
       "password": "Password",
-      "signIn": "Sign In",
-      "signUpHint": "Don't have an account? Sign up",
+      "signIn": "Sign In to Detector",
+      "signUpHint": "New to theme detection? Sign up",
       "forgotPassword": "Forgot Password?",
       "signInWithGoogle": "Sign In with Google",
       "signInWithGitHub": "Sign In with GitHub",
@@ -209,13 +209,13 @@
       "passwordRequired": "Please enter your password"
     },
     "register": {
-      "title": "Register",
-      "createAccount": "Create an account",
+      "title": "Join Theme Detector",
+      "createAccount": "Create your theme detection account",
       "name": "Name",
       "email": "Email",
       "password": "Password",
-      "signUp": "Sign Up",
-      "signInHint": "Already have an account? Sign in",
+      "signUp": "Start Detecting Themes",
+      "signInHint": "Already detecting themes? Sign in",
       "checkEmail": "Please check your email inbox",
       "showPassword": "Show password",
       "hidePassword": "Hide password",
@@ -224,7 +224,7 @@
       "passwordRequired": "Please enter your password"
     },
     "forgotPassword": {
-      "title": "Forgot Password",
+      "title": "Reset Theme Detector Password",
       "email": "Email",
       "send": "Send reset link",
       "backToLogin": "Back to login",
@@ -232,10 +232,10 @@
       "emailRequired": "Please enter your email"
     },
     "resetPassword": {
-      "title": "Reset Password",
+      "title": "Reset Your Password",
       "password": "Password",
       "reset": "Reset password",
-      "backToLogin": "Back to login",
+      "backToLogin": "Back to theme detector",
       "showPassword": "Show password",
       "hidePassword": "Hide password",
       "minLength": "Password must be at least 8 characters"
@@ -243,7 +243,7 @@
     "error": {
       "title": "Oops! Something went wrong!",
       "tryAgain": "Please try again.",
-      "backToLogin": "Back to login",
+      "backToLogin": "Back to theme detector",
       "checkEmail": "Please check your email inbox"
     },
     "common": {
@@ -254,91 +254,91 @@
     }
   },
   "BlogPage": {
-    "title": "Blog",
-    "description": "Latest news and updates from our team",
-    "subtitle": "Latest news and updates from our team",
+    "title": "Shopify Theme Detection Blog",
+    "description": "Latest insights, tips, and updates about Shopify theme detection and e-commerce trends",
+    "subtitle": "Shopify theme insights and detection tips",
     "author": "Author",
     "categories": "Categories",
     "tableOfContents": "Table of Contents",
     "readTime": "{minutes} min read",
     "all": "All",
-    "noPostsFound": "No posts found",
-    "allPosts": "All Posts",
-    "morePosts": "More Posts"
+    "noPostsFound": "No theme detection posts found",
+    "allPosts": "All Theme Posts",
+    "morePosts": "More Theme Insights"
   },
   "DocsPage": {
     "toc": "Table of Contents",
-    "search": "Search docs",
+    "search": "Search theme detection docs",
     "lastUpdate": "Last updated on",
     "searchNoResult": "No results",
     "previousPage": "Previous",
     "nextPage": "Next",
     "chooseLanguage": "Select language",
-    "title": "MkSaaS Docs",
-    "homepage": "Homepage",
-    "blog": "Blog"
+    "title": "Shopify Theme Detector Docs",
+    "homepage": "Theme Detector Home",
+    "blog": "Theme Detection Blog"
   },
   "Marketing": {
     "navbar": {
       "features": {
-        "title": "Features"
+        "title": "Detection Features"
       },
       "pricing": {
-        "title": "Pricing"
+        "title": "Theme Detector Pricing"
       },
       "blog": {
-        "title": "Blog"
+        "title": "Theme Insights"
       },
       "docs": {
-        "title": "Docs"
+        "title": "Detection Guide"
       },
       "pages": {
-        "title": "Pages",
+        "title": "Resources",
         "items": {
           "about": {
-            "title": "About",
-            "description": "Learn more about our company and mission"
+            "title": "About Theme Detector",
+            "description": "Learn about our Shopify theme detection mission"
           },
           "contact": {
-            "title": "Contact",
-            "description": "Get in touch with our team"
+            "title": "Contact Theme Experts",
+            "description": "Get help with Shopify theme detection"
           },
           "changelog": {
-            "title": "Changelog",
-            "description": "See what's new in our latest updates"
+            "title": "Detection Updates",
+            "description": "Latest improvements to theme detection"
           },
           "cookiePolicy": {
             "title": "Cookie Policy",
-            "description": "Learn about our cookie usage and privacy"
+            "description": "How we use cookies for theme detection"
           },
           "privacyPolicy": {
             "title": "Privacy Policy",
-            "description": "Read our privacy policy and data protection"
+            "description": "Your privacy in theme detection matters"
           },
           "termsOfService": {
             "title": "Terms of Service",
-            "description": "Review our terms and conditions"
+            "description": "Terms for using our theme detector"
           }
         }
       },
       "ai": {
-        "title": "AI Tools",
+        "title": "Detection Tools",
         "items": {
           "text": {
-            "title": "AI Text",
-            "description": "Show how to use AI to write stunning text"
+            "title": "Theme Analysis",
+            "description": "Advanced Shopify theme analysis tools"
           },
           "image": {
-            "title": "AI Image",
-            "description": "Show how to use AI to generate beautiful images"
+            "title": "Visual Detection",
+            "description": "Detect themes through visual analysis"
           },
           "video": {
-            "title": "AI Video",
-            "description": "Show how to use AI to generate amazing videos"
+            "title": "Video Tutorials",
+            "description": "Learn theme detection techniques"
           },
           "audio": {
-            "title": "AI Audio",
-            "description": "Show how to use AI to generate wonderful audio"
+            "title": "Audio Guides",
+            "description": "Listen to theme detection tips"
           }
         }
       }
@@ -346,26 +346,26 @@
     "footer": {
       "tagline": "Detect Shopify themes instantly - fast, accurate, and completely free",
       "product": {
-        "title": "Product",
+        "title": "Theme Detector",
         "items": {
-          "features": "Features",
-          "pricing": "Pricing",
-          "faq": "FAQ"
+          "features": "Detection Features",
+          "pricing": "Detector Pricing",
+          "faq": "Theme Detection FAQ"
         }
       },
       "resources": {
-        "title": "Resources",
+        "title": "Detection Resources",
         "items": {
-          "blog": "Blog",
-          "docs": "Documentation",
-          "changelog": "Changelog"
+          "blog": "Theme Insights",
+          "docs": "Detection Guide",
+          "changelog": "Detector Updates"
         }
       },
       "company": {
         "title": "Company",
         "items": {
-          "about": "About",
-          "contact": "Contact"
+          "about": "About Theme Detector",
+          "contact": "Contact Theme Experts"
         }
       },
       "legal": {
@@ -378,88 +378,88 @@
       }
     },
     "avatar": {
-      "dashboard": "Dashboard",
-      "billing": "Billing",
-      "settings": "Settings"
+      "dashboard": "Theme Dashboard",
+      "billing": "Detector Billing",
+      "settings": "Detection Settings"
     }
   },
   "Dashboard": {
     "dashboard": {
-      "title": "Dashboard"
+      "title": "Theme Detection Dashboard"
     },
     "admin": {
-      "title": "Admin",
+      "title": "Theme Detector Admin",
       "users": {
-        "title": "Users",
-        "fakeData": "Note: Faked data for demonstration, some features are disabled",
-        "error": "Failed to get users",
-        "search": "Search users...",
+        "title": "Theme Detector Users",
+        "fakeData": "Note: Demo data for theme detection users",
+        "error": "Failed to get theme detector users",
+        "search": "Search theme detector users...",
         "columns": {
           "columns": "Columns",
           "name": "Name",
           "email": "Email",
           "role": "Role",
-          "createdAt": "Created At",
+          "createdAt": "Joined Theme Detector",
           "customerId": "Customer ID",
-          "status": "Status",
+          "status": "Detection Status",
           "banReason": "Ban Reason",
           "banExpires": "Ban Expires"
         },
-        "noResults": "No results",
+        "noResults": "No theme detector users found",
         "firstPage": "First Page",
         "lastPage": "Last Page",
         "nextPage": "Next Page",
         "previousPage": "Previous Page",
-        "rowsPerPage": "Rows per page",
+        "rowsPerPage": "Users per page",
         "page": "Page",
-        "loading": "Loading...",
-        "admin": "Admin",
-        "user": "User",
+        "loading": "Loading theme detector users...",
+        "admin": "Theme Admin",
+        "user": "Theme User",
         "email": {
           "verified": "Email Verified",
           "unverified": "Email Unverified"
         },
         "emailCopied": "Email copied to clipboard",
-        "banned": "Banned",
-        "active": "Active",
+        "banned": "Banned from theme detection",
+        "active": "Active theme detector",
         "joined": "Joined",
         "updated": "Updated",
         "ban": {
           "reason": "Ban Reason",
-          "reasonPlaceholder": "Enter the reason for banning this user",
-          "defaultReason": "Spamming",
+          "reasonPlaceholder": "Reason for banning from theme detection",
+          "defaultReason": "Misuse of theme detector",
           "never": "Never",
           "expires": "Ban Expires",
           "selectDate": "Select Date",
-          "button": "Ban User",
-          "success": "User has been banned",
+          "button": "Ban from Theme Detection",
+          "success": "User banned from theme detection",
           "error": "Failed to ban user"
         },
         "unban": {
-          "button": "Unban User",
-          "success": "User has been unbanned",
-          "error": "Failed to unban user"
+          "button": "Restore Theme Detection Access",
+          "success": "Theme detection access restored",
+          "error": "Failed to restore access"
         },
         "close": "Close"
       }
     },
     "settings": {
-      "title": "Settings",
+      "title": "Theme Detector Settings",
       "profile": {
-        "title": "Profile",
-        "description": "Manage your account information",
+        "title": "Theme Detector Profile",
+        "description": "Manage your theme detection account information",
         "avatar": {
           "title": "Avatar",
-          "description": "Click upload button to upload a custom one",
-          "recommendation": "An avatar is optional but strongly recommended",
+          "description": "Upload your theme detector profile picture",
+          "recommendation": "A profile picture helps identify you in the theme detection community",
           "uploading": "Uploading...",
           "uploadAvatar": "Upload Avatar",
           "success": "Avatar updated successfully",
           "fail": "Failed to update avatar"
         },
         "name": {
-          "title": "Name",
-          "description": "Please enter your display name",
+          "title": "Display Name",
+          "description": "Your name in the theme detection community",
           "placeholder": "Enter your name",
           "minLength": "Please use 3 characters at minimum",
           "maxLength": "Please use 30 characters at maximum",
@@ -471,14 +471,14 @@
         }
       },
       "billing": {
-        "title": "Billing",
-        "description": "Manage your subscription and billing details",
+        "title": "Theme Detector Billing",
+        "description": "Manage your theme detection subscription and billing",
         "status": {
-          "active": "Active",
-          "trial": "Trial",
-          "canceled": "Canceled",
-          "free": "Free",
-          "lifetime": "Lifetime"
+          "active": "Active Theme Detection",
+          "trial": "Theme Detection Trial",
+          "canceled": "Detection Canceled",
+          "free": "Free Theme Detection",
+          "lifetime": "Lifetime Theme Detection"
         },
         "interval": {
           "month": "month",
@@ -486,53 +486,53 @@
           "oneTime": "one-time"
         },
         "currentPlan": {
-          "title": "Current Plan",
-          "description": "Your current plan details",
-          "noPlan": "You have no active plan"
+          "title": "Current Detection Plan",
+          "description": "Your current theme detection plan details",
+          "noPlan": "You have no active detection plan"
         },
         "CustomerPortalButton": {
           "loading": "Loading...",
-          "createCustomerPortalFailed": "Failed to open Stripe customer portal"
+          "createCustomerPortalFailed": "Failed to open billing portal"
         },
-        "price": "Price:",
-        "nextBillingDate": "Next billing date:",
-        "trialEnds": "Trial ends:",
-        "serviceEnds": "Service ends:",
-        "freePlanMessage": "You are currently on the free plan with limited features",
-        "lifetimeMessage": "You have lifetime access to all premium features",
-        "manageSubscription": "Manage Subscription and Billing",
-        "manageBilling": "Manage Billing",
-        "upgradePlan": "Upgrade Plan",
+        "price": "Detection plan price:",
+        "nextBillingDate": "Next detection billing:",
+        "trialEnds": "Detection trial ends:",
+        "serviceEnds": "Detection service ends:",
+        "freePlanMessage": "You're on the free theme detection plan with unlimited basic detections",
+        "lifetimeMessage": "You have lifetime access to all theme detection features",
+        "manageSubscription": "Manage Detection Subscription",
+        "manageBilling": "Manage Detection Billing",
+        "upgradePlan": "Upgrade Detection Plan",
         "retry": "Retry",
-        "errorMessage": "Failed to get data"
+        "errorMessage": "Failed to get detection plan data"
       },
       "notification": {
-        "title": "Notification",
-        "description": "Manage your notification preferences",
+        "title": "Theme Detection Notifications",
+        "description": "Manage your theme detection notification preferences",
         "newsletter": {
-          "title": "Newsletter Subscription",
-          "description": "Manage your newsletter subscription preferences",
-          "label": "Subscribe to newsletter",
-          "hint": "You can change your subscription preferences at any time",
-          "emailRequired": "Email is required to subscribe to the newsletter",
-          "subscribeSuccess": "Successfully subscribed to the newsletter",
-          "subscribeFail": "Failed to subscribe to the newsletter",
-          "unsubscribeSuccess": "Successfully unsubscribed from the newsletter",
-          "unsubscribeFail": "Failed to unsubscribe from the newsletter",
-          "error": "An error occurred while updating your subscription"
+          "title": "Theme Detection Updates",
+          "description": "Get notified about new theme detection features and insights",
+          "label": "Subscribe to theme detection updates",
+          "hint": "Stay updated with the latest Shopify theme trends and detection improvements",
+          "emailRequired": "Email is required for theme detection updates",
+          "subscribeSuccess": "Successfully subscribed to theme detection updates",
+          "subscribeFail": "Failed to subscribe to theme updates",
+          "unsubscribeSuccess": "Successfully unsubscribed from theme updates",
+          "unsubscribeFail": "Failed to unsubscribe from theme updates",
+          "error": "Error updating theme detection subscription"
         }
       },
       "security": {
-        "title": "Security",
-        "description": "Manage your security settings",
+        "title": "Account Security",
+        "description": "Secure your theme detection account",
         "updatePassword": {
           "title": "Change Password",
-          "description": "Enter your current password and a new password",
+          "description": "Update your theme detector account password",
           "currentPassword": "Current Password",
           "currentRequired": "Current password is required",
           "newPassword": "New Password",
           "newMinLength": "Password must be at least 8 characters",
-          "hint": "Please use at least 8 characters for password",
+          "hint": "Use a strong password to protect your theme detection account",
           "showPassword": "Show password",
           "hidePassword": "Hide password",
           "success": "Password updated successfully",
@@ -542,142 +542,142 @@
         },
         "resetPassword": {
           "title": "Reset Password",
-          "description": "Reset password to enable email login",
-          "info": "Resetting your password will allow you to sign in using your email and password in addition to your social login methods. You will receive an email with instructions to reset your password",
+          "description": "Reset your theme detector account password",
+          "info": "Resetting your password will allow you to sign in using email and password in addition to social login methods. You'll receive an email with reset instructions",
           "button": "Reset Password"
         },
         "deleteAccount": {
-          "title": "Delete Account",
-          "description": "Permanently remove your account and all of its contents",
-          "warning": "This action is not reversible, so please continue with caution",
+          "title": "Delete Theme Detector Account",
+          "description": "Permanently remove your theme detection account and all data",
+          "warning": "This will delete all your theme detection history and cannot be undone",
           "button": "Delete Account",
-          "confirmTitle": "Delete Account",
-          "confirmDescription": "Are you sure you want to delete your account? This action cannot be undone.",
+          "confirmTitle": "Delete Theme Detector Account",
+          "confirmDescription": "Are you sure you want to delete your theme detection account? All detection history will be lost.",
           "confirm": "Delete",
           "cancel": "Cancel",
           "deleting": "Deleting...",
-          "success": "Account deleted successfully",
+          "success": "Theme detector account deleted",
           "fail": "Failed to delete account"
         }
       }
     },
     "upgrade": {
-      "title": "Upgrade",
-      "description": "Upgrade to Pro to access all features",
-      "button": "Upgrade"
+      "title": "Upgrade Theme Detection",
+      "description": "Upgrade to Pro for advanced theme detection features",
+      "button": "Upgrade Detection Plan"
     }
   },
   "Mail": {
     "common": {
-      "team": "{name} Team",
-      "copyright": "©️ {year} All Rights Reserved."
+      "team": "Shopify Theme Detector Team",
+      "copyright": "©️ {year} Shopify Theme Detector. All Rights Reserved."
     },
     "verifyEmail": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to verify your email address.",
-      "confirmEmail": "Confirm email",
-      "subject": "Verify your email"
+      "title": "Welcome to Shopify Theme Detector, {name}!",
+      "body": "Please click the link below to verify your email and start detecting Shopify themes.",
+      "confirmEmail": "Verify Email & Start Detecting",
+      "subject": "Verify your Shopify Theme Detector account"
     },
     "forgotPassword": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to reset your password.",
-      "resetPassword": "Reset password",
-      "subject": "Reset your password"
+      "title": "Reset your Theme Detector password, {name}.",
+      "body": "Click the link below to reset your Shopify Theme Detector account password.",
+      "resetPassword": "Reset Theme Detector Password",
+      "subject": "Reset your Theme Detector password"
     },
     "subscribeNewsletter": {
-      "body": "Thank you for subscribing to the newsletter. We will keep you updated with the latest news and updates.",
-      "subject": "Thanks for subscribing"
+      "body": "Thank you for subscribing to Shopify Theme Detector updates! We'll keep you informed about new detection features, theme trends, and e-commerce insights.",
+      "subject": "Welcome to Theme Detection Updates"
     },
     "contactMessage": {
       "name": "Name: {name}",
       "email": "Email: {email}",
-      "message": "Message: {message}",
-      "subject": "Contact Message from Website"
+      "message": "Theme Detection Message: {message}",
+      "subject": "Theme Detection Support Request"
     }
   },
   "HomePage": {
-    "title": "MkSaaS",
-    "description": "Make AI SaaS in days, simply and effortlessly",
+    "title": "Shopify Theme Detector",
+    "description": "Instantly identify any Shopify store's theme - free, fast, and accurate theme detection tool",
     "hero": {
       "title": "Shopify Theme Detector",
       "description": "Instantly identify any Shopify store's theme. Enter a URL and discover the theme name, type, and get direct links to official themes in the Shopify store.",
-      "introduction": "Introducing Shopify Theme Detector",
-      "primary": "Start Detecting",
-      "secondary": "See Demo"
+      "introduction": "The Ultimate Shopify Theme Detector",
+      "primary": "Start Detecting Themes",
+      "secondary": "See Theme Detection Demo"
     },
     "logocloud": {
-      "title": "Your favorite companies are our partners"
+      "title": "Trusted by e-commerce professionals worldwide for Shopify theme detection"
     },
     "useCases": {
-      "title": "Use Cases",
-      "subtitle": "Who Benefits from Shopify Theme Detection",
-      "description": "Whether you're building your first store or managing multiple e-commerce projects, our theme detector provides valuable insights for every stage of your journey.",
-      "tryNow": "Start Detecting Themes",
+      "title": "Shopify Theme Detection Use Cases",
+      "subtitle": "Who Benefits from Our Shopify Theme Detector",
+      "description": "Whether you're building your first Shopify store or managing multiple e-commerce projects, our theme detector provides valuable insights for every stage of your journey.",
+      "tryNow": "Start Detecting Shopify Themes",
       "items": {
         "item-1": {
           "title": "E-commerce Entrepreneurs",
-          "description": "Discover successful competitors' themes to replicate winning designs and boost your store's conversion rates. Analyze market leaders to understand what themes drive sales."
+          "description": "Use our Shopify theme detector to discover successful competitors' themes and replicate winning designs. Analyze market leaders to understand which Shopify themes drive the highest conversion rates."
         },
         "item-2": {
           "title": "Design & Marketing Teams",
-          "description": "Quickly identify if a website uses Shopify and which theme powers it for competitive analysis and client research. Save time on manual investigation."
+          "description": "Quickly identify if a website uses Shopify and which theme powers it using our advanced theme detector. Perfect for competitive analysis and client research without manual investigation."
         },
         "item-3": {
-          "title": "Theme & Plugin Developers",
-          "description": "Track popular theme adoption trends across different industries to guide your development roadmap. Understand market demand and competition."
+          "title": "Shopify Theme & Plugin Developers",
+          "description": "Track popular Shopify theme adoption trends across different industries with our detector. Understand market demand and competition to guide your theme development roadmap."
         },
         "item-4": {
-          "title": "Market Researchers",
-          "description": "Analyze e-commerce trends by identifying which themes are most popular in specific niches or markets. Gather competitive intelligence efficiently."
+          "title": "E-commerce Market Researchers",
+          "description": "Analyze Shopify theme trends by identifying which themes are most popular in specific niches. Our theme detector helps gather competitive intelligence efficiently across markets."
         },
         "item-5": {
           "title": "SEO & Conversion Specialists",
-          "description": "Research high-performing stores to understand which themes contribute to better user experience and conversions. Optimize your strategy based on proven winners."
+          "description": "Research high-performing Shopify stores to understand which themes contribute to better user experience and conversions. Use our theme detector to optimize your strategy based on proven winners."
         },
         "item-6": {
           "title": "Dropshipping & Affiliate Marketers",
-          "description": "Find proven theme choices from successful stores to accelerate your own store setup and optimization. Copy what works in your niche."
+          "description": "Find proven Shopify theme choices from successful stores using our detector to accelerate your own store setup and optimization. Copy what works in your niche with confidence."
         }
       }
     },
     "demo": {
-      "title": "See Theme Detection in Action",
-      "subtitle": "From URL to Theme in Seconds",
-      "description": "Watch how our detector analyzes any Shopify store URL and instantly identifies the theme — no technical skills or manual effort needed.",
-      "tryItNow": "Try Detection Now",
+      "title": "See Shopify Theme Detection in Action",
+      "subtitle": "From Shopify Store URL to Theme in Seconds",
+      "description": "Watch how our Shopify theme detector analyzes any store URL and instantly identifies the theme — no technical skills or manual effort needed.",
+      "tryItNow": "Try Shopify Theme Detection Now",
       "features": {
         "feature-1": {
-          "title": "Simple URL Input",
-          "description": "Simply enter any Shopify store URL — no technical knowledge or special tools required"
+          "title": "Simple Shopify URL Input",
+          "description": "Simply enter any Shopify store URL into our theme detector — no technical knowledge or special tools required"
         },
         "feature-2": {
-          "title": "Instant Detection",
-          "description": "Our system automatically analyzes the store and identifies the theme in seconds"
+          "title": "Instant Shopify Theme Detection",
+          "description": "Our advanced system automatically analyzes the Shopify store and identifies the theme in seconds"
         },
         "feature-3": {
-          "title": "Detailed Results",
-          "description": "Get comprehensive theme information including name, type, and direct store links"
+          "title": "Detailed Shopify Theme Results",
+          "description": "Get comprehensive Shopify theme information including name, type, official/custom status, and direct theme store links"
         }
       }
     },
     "howItWorks": {
-      "title": "Simple & Fast",
-      "subtitle": "How It Works",
-      "description": "Get detailed Shopify theme information in just three simple steps. Our advanced detection technology makes theme identification effortless and accurate.",
+      "title": "Simple & Fast Shopify Theme Detection",
+      "subtitle": "How Our Theme Detector Works",
+      "description": "Get detailed Shopify theme information in just three simple steps. Our advanced theme detection technology makes Shopify theme identification effortless and accurate.",
       "steps": {
         "step-1": {
-          "title": "Enter Store URL",
-          "description": "Simply paste any Shopify store URL into our detection tool. Works with both custom domains and myshopify.com URLs.",
+          "title": "Enter Shopify Store URL",
+          "description": "Simply paste any Shopify store URL into our theme detection tool. Works with both custom domains and myshopify.com URLs.",
           "details": [
-            "Supports custom domains (e.g., store.com)",
+            "Supports custom Shopify domains (e.g., store.com)",
             "Works with myshopify.com subdomains",
-            "Automatic URL validation and formatting",
-            "No registration or signup required"
+            "Automatic Shopify URL validation and formatting",
+            "No registration required for theme detection"
           ]
         },
         "step-2": {
-          "title": "Automatic Analysis",
-          "description": "Our advanced detection algorithm analyzes the store's HTML structure, JavaScript, and CSS to identify the theme.",
+          "title": "Advanced Shopify Theme Analysis",
+          "description": "Our advanced Shopify theme detection algorithm analyzes the store's HTML structure, JavaScript, and CSS to identify the exact theme.",
           "details": [
             "Automatically generates accurate diagrams with FlowChart AI’s layout engine",
             "Optimized visual structure for readability and presentation",
@@ -697,9 +697,9 @@
       "getStarted": "Start Detecting Themes"
     },
     "aiCapabilities": {
-      "title": "Detection Technology",
-      "subtitle": "Advanced Shopify Theme Detection",
-      "description": "Our cutting-edge detection system combines multiple analysis techniques to provide the most accurate and comprehensive theme identification available in the market.",
+      "title": "Shopify Theme Detection Technology",
+      "subtitle": "Advanced Shopify Theme Detection Capabilities",
+      "description": "Our cutting-edge Shopify theme detection system combines multiple analysis techniques to provide the most accurate and comprehensive theme identification available in the market.",
       "capability-1": "Comprehensive Database – Access to complete Shopify official theme database with real-time updates",
       "capability-2": "Lightning Fast Detection – Advanced parsing algorithms deliver results in seconds, not minutes",
       "capability-3": "Reliable & Accurate – Multiple detection methods ensure high accuracy and consistent results",
@@ -979,9 +979,9 @@
     },
     "calltoaction": {
       "title": "Ready to Discover Any Shopify Theme?",
-      "description": "Start detecting Shopify themes instantly. No registration required, completely free forever.",
-      "primaryButton": "Start Detecting Now",
-      "secondaryButton": "Browse Shopify Themes"
+      "description": "Start detecting Shopify themes instantly with our free theme detector. No registration required, completely free forever.",
+      "primaryButton": "Start Shopify Theme Detection",
+      "secondaryButton": "Browse Official Shopify Themes"
     }
   },
   "AITextPage": {
@@ -1005,8 +1005,8 @@
     "content": "Working in progress"
   },
   "CanvasPage": {
-    "title": "Theme Detector",
-    "description": "Detect Shopify themes instantly - analyze any store URL to identify themes and get detailed information",
-    "subtitle": "Shopify Theme Detection Tool"
+    "title": "Shopify Theme Detector",
+    "description": "Detect Shopify themes instantly - analyze any Shopify store URL to identify themes and get detailed theme information",
+    "subtitle": "Free Shopify Theme Detection Tool"
   }
 }
