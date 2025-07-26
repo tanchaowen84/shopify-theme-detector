@@ -3,24 +3,19 @@
 import { Ripple } from '@/components/magicui/ripple';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useCurrentUser } from '@/hooks/use-current-user';
 import { cn } from '@/lib/utils';
-import { Send } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { Search, ExternalLink, CheckCircle, AlertCircle } from 'lucide-react';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'sonner';
+import type { ThemeDetectionResult } from '@/app/api/detect/route';
 
 export default function HeroSection() {
-  const t = useTranslations('HomePage.hero');
-  const router = useRouter();
-  const currentUser = useCurrentUser();
 
-  // State for the input
+  // State for the input and detection result
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const [result, setResult] = useState<ThemeDetectionResult | null>(null);
 
   // 使用useCallback稳定函数引用
   const handleInputChange = useCallback(
@@ -44,9 +39,9 @@ export default function HeroSection() {
       // 基础样式
       'w-full h-16 text-lg px-6 pr-16 rounded-2xl border-2',
       'transition-all duration-300 ease-in-out',
-      // 聚焦状态
-      isFocused && 'border-primary shadow-lg shadow-primary/20 scale-[1.02]',
-      !isFocused && 'border-border hover:border-primary/50',
+      // Shopify 配色聚焦状态
+      isFocused && 'border-[#008060] shadow-lg shadow-[#008060]/20 scale-[1.02]',
+      !isFocused && 'border-border hover:border-[#008060]/50',
       // 加载状态
       isLoading && 'opacity-50 cursor-not-allowed'
     );
@@ -58,9 +53,9 @@ export default function HeroSection() {
       'absolute right-2 top-1/2 -translate-y-1/2',
       'h-12 w-12 rounded-full',
       'transition-all duration-300 ease-in-out',
-      // 状态样式
+      // Shopify 配色方案
       input.trim() && !isLoading
-        ? 'bg-primary hover:bg-primary/90 scale-100'
+        ? 'bg-[#008060] hover:bg-[#004C3F] text-white scale-100'
         : 'bg-muted-foreground/20 scale-90'
     );
   }, [input, isLoading]);
@@ -68,7 +63,7 @@ export default function HeroSection() {
   const iconClassName = useMemo(() => {
     return cn(
       'h-5 w-5 transition-transform duration-300',
-      isLoading ? 'animate-pulse' : 'group-hover:translate-x-0.5'
+      isLoading ? 'animate-spin' : 'group-hover:scale-110'
     );
   }, [isLoading]);
 
@@ -77,53 +72,43 @@ export default function HeroSection() {
       e.preventDefault();
 
       if (!input.trim()) {
-        toast.error('Please enter a description for your flowchart');
-        return;
-      }
-
-      if (input.trim().length < 5) {
-        toast.error('Please provide a more detailed description');
+        toast.error('Please enter a Shopify store URL');
         return;
       }
 
       setIsLoading(true);
+      setResult(null);
 
       try {
-        if (currentUser) {
-          // Logged in user - pre-create flowchart
-          const response = await fetch('/api/flowcharts', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({}), // Empty body for pre-creation
-          });
+        const response = await fetch('/api/detect', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ url: input.trim() }),
+        });
 
-          if (!response.ok) {
-            throw new Error('Failed to create flowchart');
-          }
+        const data: ThemeDetectionResult = await response.json();
 
-          const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to detect theme');
+        }
 
-          // Store the input for auto-generation
-          localStorage.setItem('flowchart_auto_input', input.trim());
-          localStorage.setItem('flowchart_auto_generate', 'true');
+        setResult(data);
 
-          router.push(`/canvas/${data.id}`);
+        if (data.isShopify) {
+          toast.success('Theme detected successfully!');
         } else {
-          // Guest user - go to canvas directly
-          localStorage.setItem('flowchart_auto_input', input.trim());
-          localStorage.setItem('flowchart_auto_generate', 'true');
-
-          router.push('/canvas');
+          toast.error(data.error || 'Not a Shopify store');
         }
       } catch (error) {
-        console.error('Error creating flowchart:', error);
-        toast.error('Failed to create new flowchart');
+        console.error('Error detecting theme:', error);
+        toast.error(error instanceof Error ? error.message : 'Failed to detect theme');
+      } finally {
         setIsLoading(false);
       }
     },
-    [input, currentUser, router]
+    [input]
   );
 
   return (
@@ -146,13 +131,13 @@ export default function HeroSection() {
 
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 {/* title */}
-                <h1 className="mt-8 text-balance text-5xl font-bricolage-grotesque lg:mt-16 xl:text-[5rem]">
-                  {t('title')}
+                <h1 className="mt-8 text-balance text-5xl font-bricolage-grotesque lg:mt-16 xl:text-[5rem] text-[#008060]">
+                  Shopify Theme Detector
                 </h1>
 
                 {/* description */}
                 <p className="mx-auto mt-8 max-w-4xl text-balance text-lg text-muted-foreground">
-                  {t('description')}
+                  Instantly identify any Shopify store's theme. Enter a URL and discover the theme name, type, and get direct links to official themes in the Shopify store.
                 </p>
 
                 {/* input form */}
@@ -164,7 +149,7 @@ export default function HeroSection() {
                         onChange={handleInputChange}
                         onFocus={handleFocus}
                         onBlur={handleBlur}
-                        placeholder="Describe the flowchart you want to create..."
+                        placeholder="Enter Shopify store URL (e.g., example.myshopify.com)"
                         className={inputClassName}
                         disabled={isLoading}
                       />
@@ -174,7 +159,7 @@ export default function HeroSection() {
                         disabled={isLoading || !input.trim()}
                         className={buttonClassName}
                       >
-                        <Send className={iconClassName} />
+                        <Search className={iconClassName} />
                       </Button>
                     </div>
                   </form>
@@ -182,24 +167,103 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* images */}
-            <div>
-              <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                <div
-                  aria-hidden
-                  className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
-                />
-                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                  <Image
-                    className="z-2 border-border/25 relative rounded-2xl border"
-                    src="https://cdn.flowchartai.org/static/blocks/demo.png"
-                    alt="FlowChart AI Demo"
-                    width={2796}
-                    height={2008}
-                  />
+            {/* Detection Result */}
+            {result && (
+              <div className="mt-8 sm:mt-12">
+                <div className="mx-auto max-w-4xl">
+                  <div className="bg-background relative overflow-hidden rounded-2xl border p-6 shadow-lg">
+                    {result.isShopify ? (
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3">
+                          <CheckCircle className="h-6 w-6 text-[#008060]" />
+                          <h3 className="text-xl font-semibold text-foreground">
+                            Shopify Store Detected
+                          </h3>
+                        </div>
+
+                        <div className="grid gap-4 sm:grid-cols-2">
+                          <div className="space-y-2">
+                            <p className="text-sm font-medium text-muted-foreground">
+                              Theme Name
+                            </p>
+                            <p className="text-lg font-semibold text-foreground">
+                              {result.themeName}
+                            </p>
+                          </div>
+
+                          <div className="space-y-2">
+                            <p className="text-sm font-medium text-muted-foreground">
+                              Theme Type
+                            </p>
+                            <div className="flex items-center gap-2">
+                              <span className={cn(
+                                "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
+                                result.isOfficialTheme
+                                  ? "bg-[#008060]/10 text-[#008060]"
+                                  : "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
+                              )}>
+                                {result.isOfficialTheme ? 'Official Theme' : 'Custom Theme'}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {result.themeStoreUrl && (
+                          <div className="pt-4 border-t">
+                            <a
+                              href={result.themeStoreUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-[#008060] hover:text-[#004C3F] transition-colors"
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                              View in Shopify Theme Store
+                            </a>
+                          </div>
+                        )}
+
+                        <div className="pt-4 border-t">
+                          <Button
+                            onClick={() => {
+                              setResult(null);
+                              setInput('');
+                            }}
+                            variant="outline"
+                            className="w-full sm:w-auto"
+                          >
+                            Try Another URL
+                          </Button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3">
+                          <AlertCircle className="h-6 w-6 text-destructive" />
+                          <h3 className="text-xl font-semibold text-foreground">
+                            Not a Shopify Store
+                          </h3>
+                        </div>
+
+                        <p className="text-muted-foreground">
+                          {result.error || 'This website does not appear to be a Shopify store.'}
+                        </p>
+
+                        <Button
+                          onClick={() => {
+                            setResult(null);
+                            setInput('');
+                          }}
+                          variant="outline"
+                          className="w-full sm:w-auto"
+                        >
+                          Try Another URL
+                        </Button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
       </main>

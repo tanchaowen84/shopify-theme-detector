@@ -1,0 +1,304 @@
+# Shopify 主题检测器 - MVP 开发文档
+
+## 项目概述
+
+### 项目目标
+将现有的 MkSaaS 模板改造成一个**免费、即时使用的 Shopify 主题检测工具**，帮助用户识别 Shopify 商店使用的主题。
+
+### 目标用户
+- **独立卖家/代发商**: 寻找竞品使用的主题来复刻布局和转化策略
+- **设计/代运营团队**: 快速判断网站是否为 Shopify 及其使用的主题
+- **主题/插件开发者**: 追踪热门主题在不同行业的采用趋势
+
+### 核心价值主张
+- **完全免费**: 无需注册、无需付费、无使用限制
+- **即时结果**: 输入 URL → 立即获得主题信息
+- **准确检测**: 可靠识别 Shopify 主题和商店验证
+
+## MVP 功能范围
+
+### ✅ 包含功能
+1. **URL 输入界面**: 简洁的 Shopify 商店 URL 输入框
+2. **主题检测**: 识别主题名称和类型（官方主题 vs 自定义主题）
+3. **商店验证**: 确认目标网站是否为 Shopify 商店
+4. **主题信息**: 显示主题名称、官方主题商店链接（如适用）
+5. **错误处理**: 对无效 URL、非 Shopify 网站、检测失败的清晰提示
+
+### ❌ 排除功能（未来版本）
+- 用户账户和认证系统
+- 检测历史和保存结果
+- 批量/批处理 URL 检测
+- 第三方 API 访问
+- 高级分析和趋势追踪
+- 任何形式的数据库存储
+
+## 技术架构
+
+### 简化技术栈
+```
+前端: Next.js 15 + React 19 + TypeScript + Tailwind CSS
+后端: Next.js API Routes (serverless)
+样式: Shopify Polaris 风格设计系统 + 现有模板样式
+部署: Vercel (推荐)
+```
+
+### 隐藏的页面和功能
+- (marketing) 组内的其他页面（pricing, blog 等）
+- (protected) 页面组（dashboard, settings 等）
+- 认证相关页面 (auth/*)
+- 文档页面 (docs/*)
+- 通过配置或路由重定向隐藏
+- 保留 (marketing)/(home) 作为唯一可访问页面
+
+### 核心架构（基于现有 Marketing 结构）
+```
+src/app/[locale]/
+├── (marketing)/
+│   ├── (home)/page.tsx          # 改造为检测器主页
+│   ├── layout.tsx               # 保留现有布局（Navbar + Footer）
+│   ├── pricing/                 # 隐藏或移除
+│   ├── blog/                    # 隐藏或移除
+│   └── ...                      # 其他页面隐藏
+├── api/
+│   └── detect/route.ts          # 新增：主题检测 API
+└── layout.tsx                   # 保留全局布局
+
+新增组件:
+src/components/
+├── detector/
+│   ├── detector-form.tsx        # URL 输入表单
+│   └── detection-result.tsx     # 结果显示
+└── blocks/
+    └── hero/hero.tsx            # 改造现有 Hero 为检测器
+```
+
+## 检测算法
+
+### 步骤 1: URL 验证
+```typescript
+// 验证和规范化输入 URL
+function validateShopifyUrl(url: string): string | null {
+  // 如果缺少协议则添加
+  // 验证域名格式
+  // 检查常见的 Shopify 模式
+}
+```
+
+### 步骤 2: Shopify 商店检测
+```typescript
+// 检查网站是否为 Shopify 商店
+function isShopifyStore(html: string): boolean {
+  // 查找: window.Shopify, Shopify.theme
+  // 检查: cdn.shopify.com 资源
+  // 验证: Shopify 特定的 meta 标签
+}
+```
+
+### 步骤 3: 主题信息提取
+```typescript
+// 从 HTML 中提取主题数据
+function extractThemeInfo(html: string): ThemeInfo {
+  // 解析: Shopify.theme = { name, theme_store_id }
+  // 备用方案: 搜索 theme_store_id 模式
+  // 映射: theme_store_id 到官方主题名称
+}
+```
+
+### 步骤 4: 结果处理
+```typescript
+interface ThemeDetectionResult {
+  isShopify: boolean;
+  themeName: string | null;
+  themeStoreId: number | null;
+  isOfficialTheme: boolean;
+  themeStoreUrl?: string;
+  customTheme?: boolean;  // 新增：标识自定义主题
+  error?: string;
+}
+```
+
+## UI/UX 设计规范
+
+### Shopify 设计语言
+基于 Shopify Polaris 设计系统:
+
+**配色方案:**
+- 主色: `#008060` (Shopify 绿)
+- 辅助色: `#004C3F` (深绿)
+- 成功色: `#00A651` (成功绿)
+- 错误色: `#D72C0D` (关键红)
+- 警告色: `#FFC453` (警告黄)
+- 背景色: `#FAFBFB` (浅灰)
+- 表面色: `#FFFFFF` (白色)
+- 主要文本: `#202223` (深灰)
+- 次要文本: `#6D7175` (中灰)
+
+**字体设计:**
+- 字体族: Inter (Shopify 首选字体)
+- 标题: 600 字重
+- 正文: 400 字重
+- 代码: 等宽字体用于技术细节
+
+### 主页布局结构（保留大部分内容用于 SEO）
+```
+┌─────────────────────────────────────┐
+│           Navbar (现有)             │
+│    Logo + "Shopify Theme Detector"  │
+│         (隐藏其他导航链接)           │
+├─────────────────────────────────────┤
+│                                     │
+│         Hero Section (改造)         │
+│    ┌─────────────────────────────┐   │
+│    │  Enter Shopify Store URL    │   │
+│    │  [输入框]       [Detect]     │   │
+│    └─────────────────────────────┘   │
+│                                     │
+│         结果展示区域                 │
+│    (检测后显示，英文内容)            │
+│                                     │
+│    ✅ UseCasesSection (保留)        │
+│    ✅ FeaturesSection (保留)        │
+│    ✅ HowItWorksSection (保留)      │
+│    ✅ AiCapabilitiesSection (保留)  │
+│    ✅ ComparisonSection (保留)      │
+│    ✅ FaqSection (保留)             │
+│    ✅ CallToActionSection (保留)    │
+│                                     │
+│    ❌ DemoSection (移除)            │
+│    ❌ PricingSection (移除)         │
+├─────────────────────────────────────┤
+│           Footer (现有)             │
+│    调整链接和版权信息                │
+└─────────────────────────────────────┘
+```
+
+**内容策略:**
+- **保留丰富内容**: 大部分 Section 保留，提供详细的产品说明
+- **SEO 优化**: 通过 Features, UseCases, FAQ 等内容提升搜索排名
+- **用户教育**: HowItWorks 和 Comparison 帮助用户理解产品价值
+- **只移除**: Demo（演示）和 Pricing（定价）两个不相关的 Section
+
+### 组件规范
+
+**检测表单:**
+- 大而突出的 URL 输入框
+- Shopify 绿色 "Detect Theme" 按钮（英文）
+- 简单加载状态
+- 基础输入验证
+
+**结果显示:**
+- Theme name（英文显示）
+- Store validation status（英文）
+- Official theme badge（如适用，英文）
+- Theme store link（英文）
+- "Try Another URL" 操作（英文）
+
+**错误处理:**
+- 简单错误消息（英文）
+- **检测失败时显示 "Custom Theme"**
+- 非 Shopify 站点提示 "Not a Shopify store"
+
+## 开发计划
+
+### 第一阶段: 主页改造 (第1周)
+1. **隐藏不需要的页面**
+   - 通过配置隐藏 pricing, blog 等页面的导航入口
+   - 设置路由重定向，将其他页面重定向到主页
+   - 保留现有的 (marketing)/layout.tsx 结构
+   - 调整 Navbar 和 Footer 内容
+
+2. **改造主页内容**
+   - 修改 `(marketing)/(home)/page.tsx`
+   - 改造 HeroSection 为检测器表单
+   - 移除 DemoSection 和 PricingSection
+   - 保留其他 Section 用于 SEO 和用户教育
+   - 更新所有 Section 的文案为 Shopify 主题检测相关内容
+   - 应用 Shopify 配色主题，文案使用英文
+
+### 第二阶段: 检测功能开发 (第2周)
+1. **检测 API**
+   - 创建 `/api/detect` 端点
+   - 实现 HTML 获取和解析逻辑
+   - 创建主题映射表
+
+2. **内容更新**
+   - 更新 FeaturesSection 内容为主题检测功能特点
+   - 更新 UseCasesSection 为主题检测使用场景
+   - 更新 HowItWorksSection 为检测流程说明
+   - 更新 FaqSection 为主题检测相关 FAQ
+   - 更新 ComparisonSection 为与其他工具的对比
+
+### 第三阶段: 界面优化和内容完善 (第3周)
+1. **用户体验优化**
+   - 完善检测器界面交互
+   - 优化加载状态和动画
+   - 改进结果展示样式
+
+2. **内容和 SEO 优化**
+   - 完善所有 Section 的文案内容
+   - 添加相关关键词优化搜索排名
+   - 确保内容对搜索引擎友好
+   - 移动端适配和响应式优化
+
+### 第四阶段: 测试上线 (第4周)
+1. **功能测试**
+   - 测试几个知名 Shopify 商店
+   - 验证基本检测功能
+   - 简单性能检查
+
+2. **快速部署**
+   - Vercel 部署
+   - 域名配置
+   - 基础 SEO 设置
+
+## 部署策略
+
+### 生产环境
+- **平台**: Vercel (推荐用于 Next.js)
+- **域名**: 自定义域名 + SSL
+- **CDN**: 全球边缘网络确保快速响应
+- **监控**: 基础正常运行时间和性能监控
+- **成本**: 仅域名成本，其他完全免费
+
+## 主题映射表
+
+### 官方主题映射
+需要维护一个 `theme_store_id` 到主题名称的映射表：
+
+```typescript
+// src/lib/shopify-detector/theme-mapping.ts
+export const OFFICIAL_THEMES = {
+  // 免费主题
+  828: 'Dawn',
+  796: 'Craft',
+  887: 'Sense',
+  // 付费主题
+  730: 'Impulse',
+  578: 'Brooklyn',
+  // ... 更多主题映射
+} as const;
+```
+
+### 检测失败处理
+- 无法识别的主题 ID → 显示为 "Custom Theme"
+- 无 theme_store_id → 显示为 "Custom Theme"
+- 解析失败 → 显示为 "Custom Theme"
+
+## 未来增强功能 (Post-MVP)
+
+### 潜在功能
+1. **批量处理**: 多 URL 检测
+2. **API 访问**: 开发者友好的 API 端点
+3. **主题分析**: 热门主题追踪
+4. **浏览器扩展**: 一键检测
+5. **移动应用**: 原生移动体验
+
+### 技术改进
+1. **缓存**: 基于 Redis 的结果缓存
+2. **数据库**: 存储热门主题和统计
+3. **机器学习**: 改进检测算法
+4. **实时更新**: 实时主题变化监控
+
+---
+
+*本文档作为 Shopify 主题检测器 MVP 开发的主要参考。所有团队成员应参考本文档了解项目范围、技术规范和开发指南。*
