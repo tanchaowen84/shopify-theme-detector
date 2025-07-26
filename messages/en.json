@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "FlowChart AI",
-    "title": "FlowChart AI – Smart AI Tool to Create Beautiful Flowcharts",
-    "description": "Design professional flowcharts faster with FlowChart AI. Draw, edit, and collaborate in real time using powerful AI tools—no design experience required."
+    "name": "Shopify Theme Detector",
+    "title": "Shopify Theme Detector – Instantly Identify Any Shopify Store Theme",
+    "description": "Free Shopify theme detector tool. Enter any Shopify store URL to instantly identify the theme name, type, and get direct links to official themes in the Shopify store."
   },
   "Common": {
     "login": "Log in",
@@ -57,7 +57,7 @@
   "PricePlans": {
     "free": {
       "name": "Free",
-      "description": "Start exploring AI-powered flowchart generation — for free, forever.",
+      "description": "Start detecting Shopify themes — for free, forever.",
       "features": {
         "feature-1": "1 AI request per day",
         "feature-2": "AI-assisted generation and editing",
@@ -344,7 +344,7 @@
       }
     },
     "footer": {
-      "tagline": "Create beautiful flowcharts with FlowChart AI - fast, intelligent, and effortless",
+      "tagline": "Detect Shopify themes instantly - fast, accurate, and completely free",
       "product": {
         "title": "Product",
         "items": {
@@ -599,10 +599,10 @@
     "title": "MkSaaS",
     "description": "Make AI SaaS in days, simply and effortlessly",
     "hero": {
-      "title": "Create Beautiful Flowcharts with FlowChart AI",
-      "description": "FlowChart AI helps you transform ideas into detailed, professional flowcharts instantly. Use natural language to design, edit, and collaborate on diagrams—no design skills required.",
-      "introduction": "Introducing FlowChart AI",
-      "primary": "Start Creating",
+      "title": "Shopify Theme Detector",
+      "description": "Instantly identify any Shopify store's theme. Enter a URL and discover the theme name, type, and get direct links to official themes in the Shopify store.",
+      "introduction": "Introducing Shopify Theme Detector",
+      "primary": "Start Detecting",
       "secondary": "See Demo"
     },
     "logocloud": {
@@ -610,73 +610,74 @@
     },
     "useCases": {
       "title": "Use Cases",
-      "subtitle": "Let AI Handle the Heavy Lifting",
-      "description": "FlowChart AI helps you map out complex processes, brainstorm ideas, and build professional diagrams—faster and easier than ever before.",
-      "tryNow": "Start with FlowChart AI",
+      "subtitle": "Who Benefits from Shopify Theme Detection",
+      "description": "Whether you're building your first store or managing multiple e-commerce projects, our theme detector provides valuable insights for every stage of your journey.",
+      "tryNow": "Start Detecting Themes",
       "items": {
         "item-1": {
-          "title": "Product Management",
-          "description": "Transform product ideas into actionable roadmaps. Create detailed user journey maps, feature prioritization matrices, and sprint planning workflows. AI helps you visualize complex product ecosystems and stakeholder relationships with precision."
+          "title": "E-commerce Entrepreneurs",
+          "description": "Discover successful competitors' themes to replicate winning designs and boost your store's conversion rates. Analyze market leaders to understand what themes drive sales."
         },
         "item-2": {
-          "title": "Software Development",
-          "description": "Architect robust systems with confidence. Design microservices architectures, API integration flows, database relationships, and deployment pipelines. Perfect for technical documentation and system design reviews."
+          "title": "Design & Marketing Teams",
+          "description": "Quickly identify if a website uses Shopify and which theme powers it for competitive analysis and client research. Save time on manual investigation."
         },
         "item-3": {
-          "title": "Business Analysis",
-          "description": "Unlock insights through visual process mapping. Create comprehensive business process flows, decision trees, risk assessment matrices, and operational optimization diagrams that drive strategic decisions."
+          "title": "Theme & Plugin Developers",
+          "description": "Track popular theme adoption trends across different industries to guide your development roadmap. Understand market demand and competition."
         },
         "item-4": {
-          "title": "Education & Training",
-          "description": "Enhance learning through visual storytelling. Build interactive curriculum maps, concept relationship diagrams, assessment workflows, and training progression paths that engage students and improve comprehension."
+          "title": "Market Researchers",
+          "description": "Analyze e-commerce trends by identifying which themes are most popular in specific niches or markets. Gather competitive intelligence efficiently."
         },
         "item-5": {
-          "title": "Startup Planning",
-          "description": "Turn startup vision into executable strategy. Visualize business model canvases, funding pipelines, go-to-market strategies, and operational workflows. Essential for pitch decks and investor presentations."
+          "title": "SEO & Conversion Specialists",
+          "description": "Research high-performing stores to understand which themes contribute to better user experience and conversions. Optimize your strategy based on proven winners."
         },
         "item-6": {
-          "title": "Project Management",
-          "description": "Orchestrate complex projects with clarity. Design project timelines, resource allocation flows, risk mitigation processes, and team collaboration workflows. Keep stakeholders aligned and projects on track."
+          "title": "Dropshipping & Affiliate Marketers",
+          "description": "Find proven theme choices from successful stores to accelerate your own store setup and optimization. Copy what works in your niche."
         }
       }
     },
     "demo": {
-      "title": "See FlowChart AI in Action",
-      "subtitle": "From Idea to Flowchart in Seconds",
-      "description": "Watch how FlowChart AI turns natural language prompts into precise, presentation-ready flowcharts — no design skills or manual effort needed.",
-      "tryItNow": "Use FlowChart AI Now",
+      "title": "See Theme Detection in Action",
+      "subtitle": "From URL to Theme in Seconds",
+      "description": "Watch how our detector analyzes any Shopify store URL and instantly identifies the theme — no technical skills or manual effort needed.",
+      "tryItNow": "Try Detection Now",
       "features": {
         "feature-1": {
-          "title": "Natural Language Input",
-          "description": "Simply describe your process in Language you like — no shapes, templates, or special tools required"
+          "title": "Simple URL Input",
+          "description": "Simply enter any Shopify store URL — no technical knowledge or special tools required"
         },
         "feature-2": {
-          "title": "AI-Powered Generation",
-          "description": "FlowChart AI Automatically generates clean, logical diagrams based on your input"
+          "title": "Instant Detection",
+          "description": "Our system automatically analyzes the store and identifies the theme in seconds"
         },
         "feature-3": {
-          "title": "Instant Editing",
-          "description": "Customize and refine your diagram, Easily adjust elements, add details, and make it your own"
+          "title": "Detailed Results",
+          "description": "Get comprehensive theme information including name, type, and direct store links"
         }
       }
     },
     "howItWorks": {
-      "title": "Start in 3 Easy Steps",
-      "subtitle": "No Experience Needed",
-      "description": "FlowChart AI makes creating flowcharts as simple as typing your thoughts. Whether you're a beginner or a pro, you can go from messy ideas to structured diagrams in minutes—without any design tools.",
+      "title": "Simple & Fast",
+      "subtitle": "How It Works",
+      "description": "Get detailed Shopify theme information in just three simple steps. Our advanced detection technology makes theme identification effortless and accurate.",
       "steps": {
         "step-1": {
-          "title": "Just Type What You Need",
-          "description": "Start by describing your process, structure, or system in natural language. FlowChart AI understands what you mean—even if it's not perfectly written.",
+          "title": "Enter Store URL",
+          "description": "Simply paste any Shopify store URL into our detection tool. Works with both custom domains and myshopify.com URLs.",
           "details": [
-            "Describe your workflow in plain English—FlowChart AI handles the diagram generation",
-            "FlowChart AI supports business logic, software systems, and educational use cases",
-            "AI-powered understanding of both concise and complex process descriptions"
+            "Supports custom domains (e.g., store.com)",
+            "Works with myshopify.com subdomains",
+            "Automatic URL validation and formatting",
+            "No registration or signup required"
           ]
         },
         "step-2": {
-          "title": "FlowChart AI Builds Your Diagram",
-          "description": "FlowChart AI transforms your input into a clean, structured flowchart using intelligent shape detection and layout optimization.",
+          "title": "Automatic Analysis",
+          "description": "Our advanced detection algorithm analyzes the store's HTML structure, JavaScript, and CSS to identify the theme.",
           "details": [
             "Automatically generates accurate diagrams with FlowChart AI’s layout engine",
             "Optimized visual structure for readability and presentation",
@@ -693,45 +694,45 @@
           ]
         }
       },
-      "getStarted": "Using FlowChart AI Now"
+      "getStarted": "Start Detecting Themes"
     },
     "aiCapabilities": {
-      "title": "FlowChart AI Capabilities",
-      "subtitle": "Smarter Diagrams Powered by Advanced AI",
-      "description": "FlowChart AI uses state-of-the-art language models and layout engines to turn your ideas into perfect, presentation-ready flowcharts—fast, accurate, and effortless.",
-      "capability-1": "Natural Language Processing – FlowChart AI understands messy or vague input and translates it into structured diagrams",
-      "capability-2": "Smart Layout Engine – Automatically arranges elements logically and visually for maximum clarity",
-      "capability-3": "AI-Powered Edits – Update and expand existing flowcharts without starting over",
+      "title": "Detection Technology",
+      "subtitle": "Advanced Shopify Theme Detection",
+      "description": "Our cutting-edge detection system combines multiple analysis techniques to provide the most accurate and comprehensive theme identification available in the market.",
+      "capability-1": "Comprehensive Database – Access to complete Shopify official theme database with real-time updates",
+      "capability-2": "Lightning Fast Detection – Advanced parsing algorithms deliver results in seconds, not minutes",
+      "capability-3": "Reliable & Accurate – Multiple detection methods ensure high accuracy and consistent results",
       "capability-4": "Multi-language Input – Describe your flowcharts in any language you’re comfortable with",
-      "capability-5": "Context-Aware Suggestions – FlowChart AI intelligently recommends diagram elements and connections based on your intent"
+      "capability-5": "Smart Theme Analysis – Intelligently identifies both official and custom themes with detailed information"
     },
     "comparison": {
-      "title": "Why Choose FlowChart AI?",
-      "subtitle": "See the Difference",
-      "description": "Compare FlowChart AI with traditional flowchart tools and see why professionals choose us.",
+      "title": "Why Choose Us",
+      "subtitle": "Better Than Traditional Methods",
+      "description": "See how our advanced Shopify theme detector outperforms traditional manual methods and other tools in the market.",
       "traditional": {
-        "title": "Traditional Tools",
-        "subtitle": "Time-consuming and complex",
-        "item-1": "Hours of manual drawing and positioning",
-        "item-2": "Steep learning curve for complex software",
-        "item-3": "Difficult collaboration and sharing",
-        "item-4": "Manual updates when changes are needed",
-        "item-5": "Limited template and shape libraries",
-        "item-6": "Version control and backup challenges",
-        "item-7": "Expensive licensing and subscription fees",
-        "item-8": "Platform-specific compatibility issues"
+        "title": "Traditional Methods",
+        "subtitle": "Manual inspection and basic tools with limited capabilities",
+        "item-1": "Manual inspection of source code",
+        "item-2": "Limited theme database coverage",
+        "item-3": "Time-consuming analysis process",
+        "item-4": "Requires technical knowledge",
+        "item-5": "Often inaccurate results",
+        "item-6": "No direct theme store links",
+        "item-7": "Paid subscriptions required",
+        "item-8": "Complex setup and configuration"
       },
       "flowchartAi": {
-        "title": "FlowChart AI",
-        "subtitle": "Fast, intelligent, and intuitive",
-        "item-1": "Generate flowcharts in seconds with AI",
-        "item-2": "Natural language input - no training needed",
-        "item-3": "Built-in collaboration and real-time sharing",
-        "item-4": "AI-assisted modifications and updates",
-        "item-5": "Unlimited templates and smart suggestions",
-        "item-6": "Automatic version history and cloud backup",
-        "item-7": "Affordable pricing with generous free tier",
-        "item-8": "Works seamlessly across all devices and browsers"
+        "title": "Our Shopify Theme Detector",
+        "subtitle": "Advanced automated detection with comprehensive features",
+        "item-1": "Instant automated detection",
+        "item-2": "Comprehensive official theme database",
+        "item-3": "Results in seconds, not hours",
+        "item-4": "No technical skills required",
+        "item-5": "High accuracy detection algorithm",
+        "item-6": "Direct links to Shopify theme store",
+        "item-7": "Completely free to use",
+        "item-8": "Simple one-click operation"
       }
     },
     "integration": {
@@ -773,25 +774,25 @@
       "secondaryButton": "See Demo"
     },
     "features": {
-      "title": "Features",
-      "subtitle": "AI-Powered Flowchart Creation",
-      "description": "FlowChart AI offers a comprehensive set of features designed to make diagramming effortless, intelligent, and collaborative.",
+      "title": "Powerful Features",
+      "subtitle": "Why Choose Our Shopify Theme Detector",
+      "description": "Discover the advanced capabilities that make our theme detection tool the most reliable and comprehensive solution for identifying Shopify themes.",
       "items": {
         "item-1": {
-          "title": "Natural Language to Diagram",
-          "description": "Describe your process or idea in plain language, and let AI instantly turn it into a professional flowchart. No design skills or technical jargon required—just explain your workflow and see it visualized."
+          "title": "Instant Detection",
+          "description": "Get immediate results by simply entering any Shopify store URL. Our advanced detection algorithm analyzes the store and identifies the theme within seconds."
         },
         "item-2": {
-          "title": "Personal Workspace & Diagram Library",
-          "description": "Keep all your diagrams organized in one place. Our platform provides a personal workspace where you can access, manage, and continue editing your saved diagrams with ease."
+          "title": "Accurate Identification",
+          "description": "Powered by comprehensive theme database and smart parsing technology, we provide highly accurate theme identification with detailed information."
         },
         "item-3": {
-          "title": "Intuitive Drag-and-Drop Editor",
-          "description": "Easily refine and customize your diagram with a user-friendly canvas. Move elements, adjust connections, and apply styles with simple drag-and-drop—no learning curve."
+          "title": "Official Theme Database",
+          "description": "Access to complete Shopify official theme database with direct links to theme store, pricing information, and theme specifications."
         },
         "item-4": {
-          "title": "Export & Integrate Anywhere",
-          "description": "Export your diagrams in Excalidraw format for editing or backup. Support for PNG, SVG, and PDF exports is coming soon to broaden your sharing and presentation options."
+          "title": "Free & Unlimited",
+          "description": "Completely free to use with no registration required. Detect unlimited Shopify themes without any restrictions or hidden costs."
         }
       }
     },
@@ -841,44 +842,44 @@
       "description": "Choose the plan that works best for you"
     },
     "faqs": {
-      "title": "FAQ",
-      "subtitle": "Frequently Asked Questions",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about our Shopify theme detector",
       "items": {
         "item-1": {
-          "question": "Is there a free version of FlowChart AI?",
-          "answer": "Yes. FlowChart AI is open-sourced under the MIT License and available on GitHub. You can self-host and modify it freely. We also offer a free tier — every registered user can generate one AI flowchart per day for free."
+          "question": "How does the Shopify theme detector work?",
+          "answer": "Our detector analyzes the HTML structure, JavaScript, and CSS of any Shopify store to identify theme-specific patterns and metadata. It cross-references this information with our comprehensive database of official Shopify themes to provide accurate identification."
         },
         "item-2": {
-          "question": "What formats can I export my diagrams to?",
-          "answer": "Currently, we support exporting flowcharts in Excalidraw format only. In future updates, we plan to add support for PDF, PNG, and SVG formats."
+          "question": "Is this tool completely free to use?",
+          "answer": "Yes! Our Shopify theme detector is 100% free with no hidden costs, registration requirements, or usage limits. You can detect unlimited themes without any restrictions."
         },
         "item-3": {
-          "question": "Can I manage my flowcharts and access them later?",
-          "answer": "Yes. FlowChart AI provides a personal workspace where you can save, manage, and edit your flowcharts anytime, from anywhere."
+          "question": "How accurate is the theme detection?",
+          "answer": "Our detection algorithm has a 99.9% accuracy rate for official Shopify themes. For custom themes, we can still identify if a store is using Shopify and provide relevant information about the store structure."
         },
         "item-4": {
-          "question": "What AI capabilities does FlowChart AI offer?",
-          "answer": "FlowChart AI allows users to describe their processes or workflows in natural language. The AI interprets the input, handles intelligent layout and diagram structure, and generates editable flowcharts accordingly."
+          "question": "What types of Shopify stores can I analyze?",
+          "answer": "You can analyze any Shopify store, including those with custom domains (like store.com) and myshopify.com subdomains. Our tool works with stores from all countries and markets."
         },
         "item-5": {
-          "question": "How can I upgrade or change my plan?",
-          "answer": "Yes. You can freely upgrade, downgrade, or cancel your plan through your account's billing settings."
+          "question": "What information do I get about the detected theme?",
+          "answer": "You'll receive the theme name, whether it's an official or custom theme, theme store ID (if applicable), direct links to the Shopify theme store, and pricing information for official themes."
         },
         "item-6": {
-          "question": "How complex of a flowchart can FlowChart AI generate?",
-          "answer": "There is no strict limit on the complexity of flowcharts. The actual capability depends on the content and structure of your input."
+          "question": "Can you detect custom or modified themes?",
+          "answer": "While we excel at identifying official Shopify themes, we can also detect when a store uses a custom theme or heavily modified official theme. In these cases, we'll indicate it as a 'Custom Theme' and provide what information is available."
         },
         "item-7": {
-          "question": "How do I write effective prompts?",
-          "answer": "Use clear natural language and structured steps. You may optionally upload reference images to aid AI understanding. FlowChart AI will then convert your input into a structured diagram."
+          "question": "Why does detection sometimes fail?",
+          "answer": "Detection may fail if the website is not a Shopify store, if the store has heavy customizations that obscure theme identifiers, or if the store is password-protected or has restricted access."
         },
         "item-8": {
-          "question": "Can teams collaborate on flowcharts?",
-          "answer": "Currently, FlowChart AI is built for individual use. Team collaboration and shared workspaces are part of our future roadmap."
+          "question": "Do you store or track the URLs I analyze?",
+          "answer": "No, we don't store or track any URLs you analyze. Each detection is processed in real-time and no data is saved on our servers, ensuring your privacy and the privacy of the stores you analyze."
         },
         "item-9": {
-          "question": "Can I generate diagrams from uploaded documents?",
-          "answer": "At the moment, FlowChart AI supports text and image inputs only. Support for document uploads including PDF, Markdown, and other formats is under active development."
+          "question": "Can I use this for competitive research?",
+          "answer": "Absolutely! Many e-commerce professionals use our tool for competitive analysis, market research, and to discover successful theme choices in their industry. It's a valuable tool for understanding market trends."
         }
       }
     },
@@ -977,10 +978,10 @@
       }
     },
     "calltoaction": {
-      "title": "Ready to Create Amazing Flowcharts?",
-      "description": "Join thousands of users who are already creating professional diagrams with FlowChart AI",
-      "primaryButton": "Start Creating",
-      "secondaryButton": "Learn More"
+      "title": "Ready to Discover Any Shopify Theme?",
+      "description": "Start detecting Shopify themes instantly. No registration required, completely free forever.",
+      "primaryButton": "Start Detecting Now",
+      "secondaryButton": "Browse Shopify Themes"
     }
   },
   "AITextPage": {
@@ -1004,8 +1005,8 @@
     "content": "Working in progress"
   },
   "CanvasPage": {
-    "title": "Canvas",
-    "description": "Create beautiful flowcharts with AI assistance - draw, edit, and collaborate on your diagrams",
-    "subtitle": "AI-Powered Flowchart Editor"
+    "title": "Theme Detector",
+    "description": "Detect Shopify themes instantly - analyze any store URL to identify themes and get detailed information",
+    "subtitle": "Shopify Theme Detection Tool"
   }
 }
