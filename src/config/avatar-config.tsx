@@ -22,21 +22,7 @@ import { useTranslations } from 'next-intl';
 export function getAvatarLinks(): MenuItem[] {
   const t = useTranslations('Marketing.avatar');
 
-  return [
-    {
-      title: t('dashboard'),
-      href: Routes.Dashboard,
-      icon: <LayoutDashboardIcon className="size-4 shrink-0" />,
-    },
-    {
-      title: t('billing'),
-      href: Routes.SettingsBilling,
-      icon: <CreditCardIcon className="size-4 shrink-0" />,
-    },
-    {
-      title: t('settings'),
-      href: Routes.SettingsProfile,
-      icon: <Settings2Icon className="size-4 shrink-0" />,
-    },
-  ];
+  // Auth and dashboard functionality disabled for Shopify Theme Detector MVP
+  // Return empty array since these features are not available
+  return [];
 }

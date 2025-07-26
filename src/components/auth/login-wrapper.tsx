@@ -36,8 +36,8 @@ export const LoginWrapper = ({
   const handleLogin = () => {
     // append callbackUrl as a query parameter if provided
     const loginPath = callbackUrl
-      ? `${Routes.Login}?callbackUrl=${encodeURIComponent(callbackUrl)}`
-      : `${Routes.Login}`;
+      ? `${Routes.Root}?callbackUrl=${encodeURIComponent(callbackUrl)}`
+      : `${Routes.Root}`;
     console.log('login wrapper, loginPath', loginPath);
     router.push(loginPath);
   };

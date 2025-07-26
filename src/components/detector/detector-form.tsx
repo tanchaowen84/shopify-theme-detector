@@ -97,7 +97,7 @@ export function DetectorForm({ onResult, className }: DetectorFormProps) {
 
         onResult(data);
 
-        if (data.isShopify) {
+        if (data.success) {
           toast.success('Theme detected successfully!');
         } else {
           toast.error(data.error || 'Not a Shopify store');

@@ -137,7 +137,7 @@ export default function BillingCard() {
           </CardContent>
           <CardFooter className="mt-2 px-6 py-4 flex justify-end items-center bg-muted rounded-none">
             <Button variant="default" className="cursor-pointer" asChild>
-              <LocaleLink href={Routes.Pricing}>{t('upgradePlan')}</LocaleLink>
+              <LocaleLink href={Routes.Root}>{t('upgradePlan')}</LocaleLink>
             </Button>
           </CardFooter>
         </Card>

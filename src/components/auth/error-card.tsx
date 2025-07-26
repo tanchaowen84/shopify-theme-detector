@@ -9,7 +9,7 @@ export const ErrorCard = () => {
   return (
     <AuthCard
       headerLabel={t('title')}
-      bottomButtonHref={`${Routes.Login}`}
+      bottomButtonHref={`${Routes.Root}`}
       bottomButtonLabel={t('backToLogin')}
       className="border-none"
     >

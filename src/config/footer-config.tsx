@@ -53,7 +53,7 @@ export function getFooterLinks(): NestedMenuItem[] {
           ? [
               {
                 title: t('resources.items.docs'),
-                href: Routes.Docs,
+                href: Routes.Root,
                 external: false,
               },
             ]
@@ -86,7 +86,7 @@ export function getFooterLinks(): NestedMenuItem[] {
       items: [
         {
           title: t('legal.items.cookiePolicy'),
-          href: Routes.CookiePolicy,
+          href: Routes.Root,
           external: false,
         },
         {

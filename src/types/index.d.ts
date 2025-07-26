@@ -73,6 +73,11 @@ export interface FeaturesConfig {
   enableAIPages?: boolean;            // Whether to enable the AI pages
   enableMagicUIPage?: boolean;        // Whether to enable the MagicUI showcase page
   enableBlocksPages?: boolean;        // Whether to enable the blocks pages
+  enableAuth?: boolean;               // Whether to enable authentication system
+  enablePricing?: boolean;            // Whether to enable pricing page
+  enableBlog?: boolean;               // Whether to enable blog functionality
+  enableDashboard?: boolean;          // Whether to enable dashboard
+  enablePayment?: boolean;            // Whether to enable payment system
 }
 
 /**

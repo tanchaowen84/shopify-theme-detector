@@ -85,7 +85,7 @@ export const ResetPasswordForm = () => {
         onSuccess: (ctx) => {
           // console.log("resetPassword, success:", ctx.data);
           // setSuccess("Password reset successfully");
-          router.push(`${Routes.Login}`);
+          router.push(`${Routes.Root}`);
         },
         onError: (ctx) => {
           console.error('resetPassword, error:', ctx.error);
@@ -99,7 +99,7 @@ export const ResetPasswordForm = () => {
     <AuthCard
       headerLabel={t('title')}
       bottomButtonLabel={t('backToLogin')}
-      bottomButtonHref={`${Routes.Login}`}
+      bottomButtonHref={`${Routes.Root}`}
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

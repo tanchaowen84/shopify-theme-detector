@@ -123,7 +123,7 @@ export const RegisterForm = ({
     <AuthCard
       headerLabel={t('createAccount')}
       bottomButtonLabel={t('signInHint')}
-      bottomButtonHref={`${Routes.Login}`}
+      bottomButtonHref={`${Routes.Root}`}
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

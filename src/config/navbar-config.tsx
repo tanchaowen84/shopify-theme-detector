@@ -70,7 +70,7 @@ export function getNavbarLinks(): NestedMenuItem[] {
   if (websiteConfig.features.enableDocsPage) {
     links.push({
       title: t('docs.title'),
-      href: Routes.Docs,
+      href: Routes.Root,
       external: false,
     });
   }

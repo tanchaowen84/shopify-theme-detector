@@ -113,7 +113,7 @@ export const LoginForm = ({
     <AuthCard
       headerLabel={t('welcomeBack')}
       bottomButtonLabel={t('signUpHint')}
-      bottomButtonHref={`${Routes.Register}`}
+      bottomButtonHref={`${Routes.Root}`}
       className={cn('', className)}
     >
       <Form {...form}>
@@ -151,7 +151,7 @@ export const LoginForm = ({
                       className="px-0 font-normal text-muted-foreground"
                     >
                       <LocaleLink
-                        href={`${Routes.ForgotPassword}`}
+                        href={`${Routes.Root}`}
                         className="text-xs hover:underline hover:underline-offset-4 hover:text-primary"
                       >
                         {t('forgotPassword')}

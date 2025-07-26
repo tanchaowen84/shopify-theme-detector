@@ -56,7 +56,7 @@ export const ForgotPasswordForm = ({ className }: { className?: string }) => {
     await authClient.forgetPassword(
       {
         email: values.email,
-        redirectTo: `${Routes.ResetPassword}`,
+        redirectTo: `${Routes.Root}`,
       },
       {
         onRequest: (ctx) => {
@@ -85,7 +85,7 @@ export const ForgotPasswordForm = ({ className }: { className?: string }) => {
     <AuthCard
       headerLabel={t('title')}
       bottomButtonLabel={t('backToLogin')}
-      bottomButtonHref={`${Routes.Login}`}
+      bottomButtonHref={`${Routes.Root}`}
       className={cn('', className)}
     >
       <Form {...form}>

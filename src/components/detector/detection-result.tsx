@@ -15,7 +15,7 @@ export function DetectionResult({ result, onTryAgain, className }: DetectionResu
   return (
     <div className={cn("mx-auto max-w-4xl", className)}>
       <div className="bg-background relative overflow-hidden rounded-2xl border p-6 shadow-lg">
-        {result.isShopify ? (
+        {result.success ? (
           <div className="space-y-4">
             {/* Success Header */}
             <div className="flex items-center gap-3">
@@ -32,7 +32,7 @@ export function DetectionResult({ result, onTryAgain, className }: DetectionResu
                   Theme Name
                 </p>
                 <p className="text-lg font-semibold text-foreground">
-                  {result.themeName}
+                  {result.theme?.name}
                 </p>
               </div>
               
@@ -43,24 +43,24 @@ export function DetectionResult({ result, onTryAgain, className }: DetectionResu
                 <div className="flex items-center gap-2">
                   <span className={cn(
                     "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
-                    result.isOfficialTheme 
-                      ? "bg-[#008060]/10 text-[#008060]" 
+                    result.theme?.type === 'official'
+                      ? "bg-[#008060]/10 text-[#008060]"
                       : "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
                   )}>
-                    {result.isOfficialTheme ? 'Official Theme' : 'Custom Theme'}
+                    {result.theme?.type === 'official' ? 'Official Theme' : 'Custom Theme'}
                   </span>
                 </div>
               </div>
             </div>
 
             {/* Additional Information */}
-            {result.themeStoreId && (
+            {result.theme?.theme_store_id && (
               <div className="space-y-2">
                 <p className="text-sm font-medium text-muted-foreground">
                   Theme Store ID
                 </p>
                 <p className="text-sm text-foreground font-mono">
-                  {result.themeStoreId}
+                  {result.theme?.theme_store_id}
                 </p>
               </div>
             )}
