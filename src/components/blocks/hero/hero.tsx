@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { Search, ChevronRight, AlertCircle } from 'lucide-react';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState, useRef, useEffect } from 'react';
 import { toast } from 'sonner';
 import type { ThemeDetectionResult } from '@/app/api/detect/route';
 
@@ -16,6 +16,27 @@ export default function HeroSection() {
   const [isLoading, setIsLoading] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [result, setResult] = useState<ThemeDetectionResult | null>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  // Auto scroll to result when detection completes
+  useEffect(() => {
+    if (result && resultRef.current) {
+      // Small delay to ensure the result is rendered
+      setTimeout(() => {
+        const element = resultRef.current;
+        if (element) {
+          // Calculate position with some offset for better visibility
+          const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+          const offset = 80; // Add some space from top
+
+          window.scrollTo({
+            top: elementTop - offset,
+            behavior: 'smooth'
+          });
+        }
+      }, 150);
+    }
+  }, [result]);
 
   // 使用useCallback稳定函数引用
   const handleInputChange = useCallback(
@@ -195,7 +216,7 @@ export default function HeroSection() {
 
             {/* Detection Result */}
             {result && (
-              <div className="mt-8 sm:mt-12">
+              <div ref={resultRef} className="mt-8 sm:mt-12">
                 <div className="mx-auto max-w-4xl">
                   <div className="bg-background relative overflow-hidden rounded-2xl border p-6 shadow-lg">
                     {result.success && result.theme ? (
