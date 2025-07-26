@@ -254,29 +254,29 @@
     }
   },
   "BlogPage": {
-    "title": "Shopify Theme Detection Blog",
-    "description": "Latest insights, tips, and updates about Shopify theme detection and e-commerce trends",
-    "subtitle": "Shopify theme insights and detection tips",
+    "title": "Blog",
+    "description": "Latest news and updates from our team",
+    "subtitle": "Latest news and updates from our team",
     "author": "Author",
     "categories": "Categories",
     "tableOfContents": "Table of Contents",
     "readTime": "{minutes} min read",
     "all": "All",
-    "noPostsFound": "No theme detection posts found",
-    "allPosts": "All Theme Posts",
-    "morePosts": "More Theme Insights"
+    "noPostsFound": "No posts found",
+    "allPosts": "All Posts",
+    "morePosts": "More Posts"
   },
   "DocsPage": {
     "toc": "Table of Contents",
-    "search": "Search theme detection docs",
+    "search": "Search docs",
     "lastUpdate": "Last updated on",
     "searchNoResult": "No results",
     "previousPage": "Previous",
     "nextPage": "Next",
     "chooseLanguage": "Select language",
-    "title": "Shopify Theme Detector Docs",
-    "homepage": "Theme Detector Home",
-    "blog": "Theme Detection Blog"
+    "title": "MkSaaS Docs",
+    "homepage": "Homepage",
+    "blog": "Blog"
   },
   "Marketing": {
     "navbar": {
@@ -287,7 +287,7 @@
         "title": "Theme Detector Pricing"
       },
       "blog": {
-        "title": "Theme Insights"
+        "title": "Blog"
       },
       "docs": {
         "title": "Detection Guide"
@@ -356,9 +356,9 @@
       "resources": {
         "title": "Detection Resources",
         "items": {
-          "blog": "Theme Insights",
-          "docs": "Detection Guide",
-          "changelog": "Detector Updates"
+          "blog": "Blog",
+          "docs": "Documentation",
+          "changelog": "Changelog"
         }
       },
       "company": {
@@ -597,13 +597,13 @@
   },
   "HomePage": {
     "title": "Shopify Theme Detector",
-    "description": "Instantly identify any Shopify store's theme - free, fast, and accurate theme detection tool",
+    "description": "Instantly identify any Shopify store's theme with our free Shopify theme detector - fast, accurate, and comprehensive Shopify theme detection tool",
     "hero": {
       "title": "Shopify Theme Detector",
-      "description": "Instantly identify any Shopify store's theme. Enter a URL and discover the theme name, type, and get direct links to official themes in the Shopify store.",
+      "description": "Instantly identify any Shopify store's theme with our powerful Shopify theme detector. Enter a URL and discover the theme name, type, and get direct links to official themes in the Shopify store.",
       "introduction": "The Ultimate Shopify Theme Detector",
-      "primary": "Start Detecting Themes",
-      "secondary": "See Theme Detection Demo"
+      "primary": "Start Shopify Theme Detection",
+      "secondary": "See Shopify Theme Detector Demo"
     },
     "logocloud": {
       "title": "Trusted by e-commerce professionals worldwide for Shopify theme detection"
@@ -611,7 +611,7 @@
     "useCases": {
       "title": "Shopify Theme Detection Use Cases",
       "subtitle": "Who Benefits from Our Shopify Theme Detector",
-      "description": "Whether you're building your first Shopify store or managing multiple e-commerce projects, our theme detector provides valuable insights for every stage of your journey.",
+      "description": "Whether you're building your first Shopify store or managing multiple e-commerce projects, our Shopify theme detector provides valuable insights for every stage of your journey.",
       "tryNow": "Start Detecting Shopify Themes",
       "items": {
         "item-1": {
@@ -643,7 +643,7 @@
     "demo": {
       "title": "See Shopify Theme Detection in Action",
       "subtitle": "From Shopify Store URL to Theme in Seconds",
-      "description": "Watch how our Shopify theme detector analyzes any store URL and instantly identifies the theme — no technical skills or manual effort needed.",
+      "description": "Watch how our advanced Shopify theme detector analyzes any Shopify store URL and instantly identifies the theme — no technical skills or manual effort needed with our Shopify theme detector.",
       "tryItNow": "Try Shopify Theme Detection Now",
       "features": {
         "feature-1": {
@@ -663,21 +663,21 @@
     "howItWorks": {
       "title": "Simple & Fast Shopify Theme Detection",
       "subtitle": "How Our Theme Detector Works",
-      "description": "Get detailed Shopify theme information in just three simple steps. Our advanced theme detection technology makes Shopify theme identification effortless and accurate.",
+      "description": "Get detailed Shopify theme information in just three simple steps. Our advanced Shopify theme detector technology makes Shopify theme identification effortless and accurate.",
       "steps": {
         "step-1": {
           "title": "Enter Shopify Store URL",
-          "description": "Simply paste any Shopify store URL into our theme detection tool. Works with both custom domains and myshopify.com URLs.",
+          "description": "Simply paste any Shopify store URL into our Shopify theme detector tool. Works with both custom domains and myshopify.com URLs.",
           "details": [
             "Supports custom Shopify domains (e.g., store.com)",
             "Works with myshopify.com subdomains",
             "Automatic Shopify URL validation and formatting",
-            "No registration required for theme detection"
+            "No registration required for Shopify theme detector"
           ]
         },
         "step-2": {
           "title": "Advanced Shopify Theme Analysis",
-          "description": "Our advanced Shopify theme detection algorithm analyzes the store's HTML structure, JavaScript, and CSS to identify the exact theme.",
+          "description": "Our advanced Shopify theme detector algorithm analyzes the store's HTML structure, JavaScript, and CSS to identify the exact theme.",
           "details": [
             "Automatically generates accurate diagrams with FlowChart AI’s layout engine",
             "Optimized visual structure for readability and presentation",
@@ -685,7 +685,7 @@
           ]
         },
         "step-3": {
-          "title": "Edit, Manage & Save",
+          "title": "Get Complete Theme Information",
           "description": "Make adjustments using FlowChart AI’s intuitive editor. Save diagrams to your personal workspace, manage your flowcharts, and return to refine or export when needed.",
           "details": [
             "Edit using FlowChart AI’s drag-and-drop canvas—fast and intuitive",
@@ -700,11 +700,11 @@
       "title": "Shopify Theme Detection Technology",
       "subtitle": "Advanced Shopify Theme Detection Capabilities",
       "description": "Our cutting-edge Shopify theme detection system combines multiple analysis techniques to provide the most accurate and comprehensive theme identification available in the market.",
-      "capability-1": "Comprehensive Database – Access to complete Shopify official theme database with real-time updates",
-      "capability-2": "Lightning Fast Detection – Advanced parsing algorithms deliver results in seconds, not minutes",
-      "capability-3": "Reliable & Accurate – Multiple detection methods ensure high accuracy and consistent results",
-      "capability-4": "Multi-language Input – Describe your flowcharts in any language you’re comfortable with",
-      "capability-5": "Smart Theme Analysis – Intelligently identifies both official and custom themes with detailed information"
+      "capability-1": "Complete Shopify Theme Database – Access to comprehensive official Shopify theme database with real-time updates for accurate Shopify theme detector results",
+      "capability-2": "Lightning Fast Shopify Theme Detection – Advanced parsing algorithms deliver Shopify theme detector results in seconds",
+      "capability-3": "Reliable & Accurate Shopify Theme Detection – Multiple Shopify theme detector methods ensure high accuracy and consistent results",
+      "capability-4": "Universal Shopify Store Support – Describe your flowcharts in any language you’re comfortable with",
+      "capability-5": "Smart Shopify Theme Analysis – Our Shopify theme detector intelligently identifies both official and custom Shopify themes with detailed information"
     },
     "comparison": {
       "title": "Why Choose Us",
@@ -979,7 +979,7 @@
     },
     "calltoaction": {
       "title": "Ready to Discover Any Shopify Theme?",
-      "description": "Start detecting Shopify themes instantly with our free theme detector. No registration required, completely free forever.",
+      "description": "Start detecting Shopify themes instantly with our free Shopify theme detector. No registration required, completely free Shopify theme detector forever.",
       "primaryButton": "Start Shopify Theme Detection",
       "secondaryButton": "Browse Official Shopify Themes"
     }
