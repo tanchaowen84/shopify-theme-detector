@@ -96,10 +96,10 @@ export default function HeroSection() {
 
         setResult(data);
 
-        if (data.isShopify) {
+        if (data.success) {
           toast.success('Theme detected successfully!');
         } else {
-          toast.error(data.error || 'Not a Shopify store');
+          toast.error(data.error || 'Detection failed');
         }
       } catch (error) {
         console.error('Error detecting theme:', error);
@@ -172,55 +172,128 @@ export default function HeroSection() {
               <div className="mt-8 sm:mt-12">
                 <div className="mx-auto max-w-4xl">
                   <div className="bg-background relative overflow-hidden rounded-2xl border p-6 shadow-lg">
-                    {result.isShopify ? (
-                      <div className="space-y-4">
+                    {result.success && result.theme ? (
+                      <div className="space-y-6">
+                        {/* Header */}
                         <div className="flex items-center gap-3">
                           <CheckCircle className="h-6 w-6 text-[#008060]" />
                           <h3 className="text-xl font-semibold text-foreground">
-                            Shopify Store Detected
+                            Shopify Theme Detected
                           </h3>
                         </div>
 
-                        <div className="grid gap-4 sm:grid-cols-2">
-                          <div className="space-y-2">
-                            <p className="text-sm font-medium text-muted-foreground">
-                              Theme Name
-                            </p>
-                            <p className="text-lg font-semibold text-foreground">
-                              {result.themeName}
-                            </p>
-                          </div>
-
-                          <div className="space-y-2">
-                            <p className="text-sm font-medium text-muted-foreground">
-                              Theme Type
-                            </p>
-                            <div className="flex items-center gap-2">
-                              <span className={cn(
-                                "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
-                                result.isOfficialTheme
-                                  ? "bg-[#008060]/10 text-[#008060]"
-                                  : "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
-                              )}>
-                                {result.isOfficialTheme ? 'Official Theme' : 'Custom Theme'}
-                              </span>
+                        {/* A. Basic Theme Information */}
+                        <div className="space-y-4">
+                          <h4 className="text-lg font-medium text-foreground">Basic Theme Information</h4>
+                          <div className="grid gap-4 sm:grid-cols-2">
+                            <div className="space-y-2">
+                              <p className="text-sm font-medium text-muted-foreground">
+                                Theme Name
+                              </p>
+                              <p className="text-lg font-semibold text-foreground">
+                                {result.theme.name || 'Unknown Theme'}
+                              </p>
                             </div>
+
+                            {result.theme.schema_name && (
+                              <div className="space-y-2">
+                                <p className="text-sm font-medium text-muted-foreground">
+                                  Schema Name (Base Template)
+                                </p>
+                                <p className="text-lg font-semibold text-foreground">
+                                  {result.theme.schema_name}
+                                </p>
+                              </div>
+                            )}
+
+                            {result.theme.theme_store_id && (
+                              <div className="space-y-2">
+                                <p className="text-sm font-medium text-muted-foreground">
+                                  Theme Store ID
+                                </p>
+                                <p className="text-lg font-semibold text-foreground">
+                                  {result.theme.theme_store_id}
+                                </p>
+                              </div>
+                            )}
+
+                            {result.theme.id && (
+                              <div className="space-y-2">
+                                <p className="text-sm font-medium text-muted-foreground">
+                                  Theme Instance ID
+                                </p>
+                                <p className="text-lg font-semibold text-foreground">
+                                  {result.theme.id}
+                                </p>
+                              </div>
+                            )}
                           </div>
                         </div>
 
-                        {result.themeStoreUrl && (
-                          <div className="pt-4 border-t">
-                            <a
-                              href={result.themeStoreUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-[#008060] hover:text-[#004C3F] transition-colors"
-                            >
-                              <ExternalLink className="h-4 w-4" />
-                              View in Shopify Theme Store
-                            </a>
+                        {/* B. Theme Type Explanation */}
+                        <div className="space-y-4">
+                          <h4 className="text-lg font-medium text-foreground">Theme Type</h4>
+                          <div className="flex items-center gap-2">
+                            <span className={cn(
+                              "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium",
+                              result.theme.type === 'official'
+                                ? "bg-[#008060]/10 text-[#008060]"
+                                : "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
+                            )}>
+                              {result.theme.type === 'official' ? 'Official Theme' : 'Custom Theme'}
+                            </span>
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            {result.theme.type === 'official'
+                              ? 'This theme is available in the Shopify Theme Store and can be purchased or downloaded.'
+                              : result.theme.theme_store_id === null
+                                ? 'This theme is not published in the Shopify Theme Store and may be privately customized.'
+                                : 'This appears to be a customized version of an official theme.'
+                            }
+                          </p>
+                        </div>
+
+                        {/* C. Recommendation */}
+                        {result.recommendation && (
+                          <div className="space-y-4">
+                            <h4 className="text-lg font-medium text-foreground">Recommendation</h4>
+                            <div className="rounded-lg bg-muted/50 p-4">
+                              <p className="text-sm text-muted-foreground">
+                                {result.recommendation}
+                              </p>
+                            </div>
                           </div>
                         )}
+
+                        {/* D. Further Actions */}
+                        <div className="space-y-4">
+                          <h4 className="text-lg font-medium text-foreground">Actions</h4>
+                          <div className="flex flex-wrap gap-3">
+                            {result.themeStoreUrl && (
+                              <Button
+                                variant="default"
+                                size="sm"
+                                className="gap-2 bg-[#008060] hover:bg-[#008060]/90"
+                                onClick={() => window.open(result.themeStoreUrl, '_blank')}
+                              >
+                                <ExternalLink className="h-4 w-4" />
+                                View in Shopify Theme Store
+                              </Button>
+                            )}
+
+                            {result.theme?.schema_name && result.theme.type === 'custom' && (
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                className="gap-2"
+                                onClick={() => window.open(`https://themes.shopify.com/search?q=${encodeURIComponent(result.theme?.schema_name || '')}`, '_blank')}
+                              >
+                                <Search className="h-4 w-4" />
+                                Search "{result.theme.schema_name}" in Theme Store
+                              </Button>
+                            )}
+                          </div>
+                        </div>
 
                         <div className="pt-4 border-t">
                           <Button

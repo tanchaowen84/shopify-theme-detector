@@ -2,12 +2,16 @@ import { getThemeInfo, isOfficialTheme } from '@/lib/shopify-detector/theme-mapp
 import { NextRequest, NextResponse } from 'next/server';
 
 export interface ThemeDetectionResult {
-  isShopify: boolean;
-  themeName: string | null;
-  themeStoreId: number | null;
-  isOfficialTheme: boolean;
+  success: boolean;
+  theme: {
+    name: string | null;
+    schema_name: string | null;
+    theme_store_id: number | null;
+    id: string | null;
+    type: 'official' | 'custom';
+  } | null;
+  recommendation?: string;
   themeStoreUrl?: string;
-  customTheme?: boolean;
   error?: string;
   storeUrl?: string;
 }
@@ -66,45 +70,56 @@ function isShopifyStore(html: string): boolean {
 }
 
 /**
- * Extract theme information from HTML
+ * Extract theme information from HTML based on Shopify.theme object
  */
 function extractThemeInfo(html: string): {
-  themeName: string | null;
-  themeStoreId: number | null;
+  name: string | null;
+  schema_name: string | null;
+  theme_store_id: number | null;
+  id: string | null;
 } {
-  let themeName: string | null = null;
-  let themeStoreId: number | null = null;
+  let name: string | null = null;
+  let schema_name: string | null = null;
+  let theme_store_id: number | null = null;
+  let id: string | null = null;
 
   try {
-    // Method 1: Look for Shopify.theme object
-    const themeRegex = /Shopify\.theme\s*=\s*({[^}]+})/i;
+    // Primary method: Look for complete Shopify.theme object
+    const themeRegex = /Shopify\.theme\s*=\s*({[^}]*})/i;
     const themeMatch = html.match(themeRegex);
-    
+
     if (themeMatch) {
       try {
         const themeObj = JSON.parse(themeMatch[1]);
+
+        // Extract all required fields from Shopify.theme
         if (themeObj.name) {
-          themeName = themeObj.name;
+          name = themeObj.name;
+        }
+        if (themeObj.schema_name) {
+          schema_name = themeObj.schema_name;
         }
         if (themeObj.theme_store_id) {
-          themeStoreId = parseInt(themeObj.theme_store_id);
+          theme_store_id = parseInt(themeObj.theme_store_id);
+        }
+        if (themeObj.id) {
+          id = themeObj.id.toString();
         }
       } catch (e) {
-        // Continue to other methods
+        console.error('Error parsing Shopify.theme object:', e);
       }
     }
 
-    // Method 2: Look for theme_store_id pattern
-    if (!themeStoreId) {
+    // Fallback methods if Shopify.theme object is incomplete or missing
+    if (!theme_store_id) {
       const storeIdRegex = /theme_store_id['":\s]*(\d+)/i;
       const storeIdMatch = html.match(storeIdRegex);
       if (storeIdMatch) {
-        themeStoreId = parseInt(storeIdMatch[1]);
+        theme_store_id = parseInt(storeIdMatch[1]);
       }
     }
 
-    // Method 3: Look for theme name in meta tags or comments
-    if (!themeName) {
+    if (!name) {
       const namePatterns = [
         /<meta[^>]*name=['"]theme['"][^>]*content=['"]([^'"]+)['"]/i,
         /<!--[^>]*theme[:\s]*([^-\s]+)/i,
@@ -114,7 +129,7 @@ function extractThemeInfo(html: string): {
       for (const pattern of namePatterns) {
         const match = html.match(pattern);
         if (match && match[1]) {
-          themeName = match[1].trim();
+          name = match[1].trim();
           break;
         }
       }
@@ -124,7 +139,7 @@ function extractThemeInfo(html: string): {
     console.error('Error extracting theme info:', error);
   }
 
-  return { themeName, themeStoreId };
+  return { name, schema_name, theme_store_id, id };
 }
 
 /**
@@ -147,10 +162,8 @@ async function analyzeShopifyStore(url: string): Promise<ThemeDetectionResult> {
 
     if (!response.ok) {
       return {
-        isShopify: false,
-        themeName: null,
-        themeStoreId: null,
-        isOfficialTheme: false,
+        success: false,
+        theme: null,
         error: `Failed to fetch website: ${response.status} ${response.statusText}`,
       };
     }
@@ -160,27 +173,38 @@ async function analyzeShopifyStore(url: string): Promise<ThemeDetectionResult> {
     // Check if it's a Shopify store
     if (!isShopifyStore(html)) {
       return {
-        isShopify: false,
-        themeName: null,
-        themeStoreId: null,
-        isOfficialTheme: false,
+        success: false,
+        theme: null,
         error: 'This website is not a Shopify store',
       };
     }
 
     // Extract theme information
-    const { themeName, themeStoreId } = extractThemeInfo(html);
+    const { name, schema_name, theme_store_id, id } = extractThemeInfo(html);
+
+    // Check if we found any theme information
+    if (!name && !schema_name && !theme_store_id) {
+      return {
+        success: false,
+        theme: null,
+        error: 'No theme information detected',
+      };
+    }
 
     // Determine if it's an official theme
-    const isOfficial = themeStoreId ? isOfficialTheme(themeStoreId) : false;
-    const themeInfo = themeStoreId ? getThemeInfo(themeStoreId) : null;
+    const isOfficial = theme_store_id ? isOfficialTheme(theme_store_id) : false;
+    const themeInfo = theme_store_id ? getThemeInfo(theme_store_id) : null;
 
+    // Build the result according to the new structure
     const result: ThemeDetectionResult = {
-      isShopify: true,
-      themeName: themeInfo?.name || themeName || 'Custom Theme',
-      themeStoreId,
-      isOfficialTheme: isOfficial,
-      customTheme: !isOfficial,
+      success: true,
+      theme: {
+        name: themeInfo?.name || name || 'Unknown Theme',
+        schema_name: schema_name,
+        theme_store_id: theme_store_id,
+        id: id,
+        type: isOfficial ? 'official' : 'custom',
+      },
       storeUrl: url,
     };
 
@@ -189,15 +213,22 @@ async function analyzeShopifyStore(url: string): Promise<ThemeDetectionResult> {
       result.themeStoreUrl = themeInfo.storeUrl;
     }
 
+    // Add recommendation based on the detection result
+    if (isOfficial) {
+      result.recommendation = `This is an official Shopify theme available in the theme store.`;
+    } else if (schema_name) {
+      result.recommendation = `Based on schema_name "${schema_name}", this is a custom theme built on ${schema_name}. For official version, search Shopify theme store by schema_name.`;
+    } else {
+      result.recommendation = `This appears to be a custom theme. Check the theme name or contact the store owner for more details.`;
+    }
+
     return result;
 
   } catch (error) {
     console.error('Error analyzing Shopify store:', error);
     return {
-      isShopify: false,
-      themeName: null,
-      themeStoreId: null,
-      isOfficialTheme: false,
+      success: false,
+      theme: null,
       error: error instanceof Error ? error.message : 'Failed to analyze the website',
     };
   }
