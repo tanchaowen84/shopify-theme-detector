@@ -4,7 +4,7 @@ import { Ripple } from '@/components/magicui/ripple';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { Search, ExternalLink, CheckCircle, AlertCircle } from 'lucide-react';
+import { Search, ChevronRight, AlertCircle } from 'lucide-react';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 import type { ThemeDetectionResult } from '@/app/api/detect/route';
@@ -163,6 +163,32 @@ export default function HeroSection() {
                       </Button>
                     </div>
                   </form>
+
+                  {/* Example URLs */}
+                  <div className="text-center space-y-3 max-w-4xl">
+                    <p className="text-sm text-muted-foreground">Examples:</p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {[
+                        'store.sho.com',
+                        'shopstereogum.com',
+                        'shop.in-n-out.com',
+                        'shop.singletracks.com',
+                        'shop.spacex.com'
+                      ].map((example) => (
+                        <button
+                          key={example}
+                          onClick={() => setInput(`https://${example}`)}
+                          className="px-3 py-1.5 text-sm bg-muted hover:bg-muted/80 rounded-full transition-colors border"
+                          disabled={isLoading}
+                        >
+                          {example}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      * Using this tool will open up an offer from a relevant vendor
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -174,126 +200,144 @@ export default function HeroSection() {
                   <div className="bg-background relative overflow-hidden rounded-2xl border p-6 shadow-lg">
                     {result.success && result.theme ? (
                       <div className="space-y-6">
-                        {/* Header */}
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-6 w-6 text-[#008060]" />
-                          <h3 className="text-xl font-semibold text-foreground">
-                            Shopify Theme Detected
-                          </h3>
-                        </div>
-
-                        {/* A. Basic Theme Information */}
-                        <div className="space-y-4">
-                          <h4 className="text-lg font-medium text-foreground">Basic Theme Information</h4>
-                          <div className="grid gap-4 sm:grid-cols-2">
-                            <div className="space-y-2">
-                              <p className="text-sm font-medium text-muted-foreground">
-                                Theme Name
-                              </p>
-                              <p className="text-lg font-semibold text-foreground">
-                                {result.theme.name || 'Unknown Theme'}
-                              </p>
-                            </div>
-
-                            {result.theme.schema_name && (
-                              <div className="space-y-2">
-                                <p className="text-sm font-medium text-muted-foreground">
-                                  Schema Name (Base Template)
-                                </p>
-                                <p className="text-lg font-semibold text-foreground">
-                                  {result.theme.schema_name}
-                                </p>
-                              </div>
-                            )}
-
-                            {result.theme.theme_store_id && (
-                              <div className="space-y-2">
-                                <p className="text-sm font-medium text-muted-foreground">
-                                  Theme Store ID
-                                </p>
-                                <p className="text-lg font-semibold text-foreground">
-                                  {result.theme.theme_store_id}
-                                </p>
-                              </div>
-                            )}
-
-                            {result.theme.id && (
-                              <div className="space-y-2">
-                                <p className="text-sm font-medium text-muted-foreground">
-                                  Theme Instance ID
-                                </p>
-                                <p className="text-lg font-semibold text-foreground">
-                                  {result.theme.id}
-                                </p>
-                              </div>
-                            )}
+                        {/* Main Result - Simplified like competitor */}
+                        <div className="text-center space-y-6">
+                          {/* Store URL display */}
+                          <div className="text-lg text-muted-foreground">
+                            {new URL(result.storeUrl || '').hostname} is built using
                           </div>
-                        </div>
 
-                        {/* B. Theme Type Explanation */}
-                        <div className="space-y-4">
-                          <h4 className="text-lg font-medium text-foreground">Theme Type</h4>
-                          <div className="flex items-center gap-2">
-                            <span className={cn(
-                              "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium",
-                              result.theme.type === 'official'
-                                ? "bg-[#008060]/10 text-[#008060]"
-                                : "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
-                            )}>
-                              {result.theme.type === 'official' ? 'Official Theme' : 'Custom Theme'}
-                            </span>
-                          </div>
-                          <p className="text-sm text-muted-foreground">
-                            {result.theme.type === 'official'
-                              ? 'This theme is available in the Shopify Theme Store and can be purchased or downloaded.'
-                              : result.theme.theme_store_id === null
-                                ? 'This theme is not published in the Shopify Theme Store and may be privately customized.'
-                                : 'This appears to be a customized version of an official theme.'
-                            }
-                          </p>
-                        </div>
-
-                        {/* C. Recommendation */}
-                        {result.recommendation && (
+                          {/* Schema Name - Most prominent display */}
                           <div className="space-y-4">
-                            <h4 className="text-lg font-medium text-foreground">Recommendation</h4>
-                            <div className="rounded-lg bg-muted/50 p-4">
-                              <p className="text-sm text-muted-foreground">
-                                {result.recommendation}
-                              </p>
+                            {result.theme.schema_name ? (
+                              <h2 className="text-4xl md:text-5xl font-bold text-foreground underline decoration-[#008060] decoration-2 underline-offset-8">
+                                {result.theme.schema_name}
+                              </h2>
+                            ) : (
+                              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                                {result.theme.name || 'Custom Theme'}
+                              </h2>
+                            )}
+
+                            {/* Theme type badge */}
+                            <div className="flex justify-center">
+                              <span className={cn(
+                                "inline-flex items-center rounded-full px-4 py-2 text-sm font-medium",
+                                result.theme.type === 'official'
+                                  ? "bg-[#008060]/10 text-[#008060]"
+                                  : "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
+                              )}>
+                                {result.theme.type === 'official' ? 'Official Theme' : 'Custom Theme'}
+                              </span>
                             </div>
                           </div>
-                        )}
 
-                        {/* D. Further Actions */}
-                        <div className="space-y-4">
-                          <h4 className="text-lg font-medium text-foreground">Actions</h4>
-                          <div className="flex flex-wrap gap-3">
-                            {result.themeStoreUrl && (
+                          {/* Primary Action Button */}
+                          <div className="space-y-3">
+                            {result.themeStoreUrl ? (
                               <Button
-                                variant="default"
-                                size="sm"
-                                className="gap-2 bg-[#008060] hover:bg-[#008060]/90"
+                                size="lg"
+                                className="w-full sm:w-auto bg-[#008060] hover:bg-[#008060]/90 text-white px-8 py-3 text-lg font-semibold"
                                 onClick={() => window.open(result.themeStoreUrl, '_blank')}
                               >
-                                <ExternalLink className="h-4 w-4" />
-                                View in Shopify Theme Store
+                                Get This Theme
+                              </Button>
+                            ) : result.theme.schema_name ? (
+                              <Button
+                                size="lg"
+                                className="w-full sm:w-auto bg-[#008060] hover:bg-[#008060]/90 text-white px-8 py-3 text-lg font-semibold"
+                                onClick={() => window.open(`https://themes.shopify.com/search?q=${encodeURIComponent(result.theme?.schema_name || '')}`, '_blank')}
+                              >
+                                Find Similar Themes
+                              </Button>
+                            ) : (
+                              <Button
+                                size="lg"
+                                variant="outline"
+                                className="w-full sm:w-auto px-8 py-3 text-lg font-semibold"
+                                onClick={() => window.open('https://themes.shopify.com/', '_blank')}
+                              >
+                                Browse Shopify Themes
                               </Button>
                             )}
 
-                            {result.theme?.schema_name && result.theme.type === 'custom' && (
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="gap-2"
-                                onClick={() => window.open(`https://themes.shopify.com/search?q=${encodeURIComponent(result.theme?.schema_name || '')}`, '_blank')}
-                              >
-                                <Search className="h-4 w-4" />
-                                Search "{result.theme.schema_name}" in Theme Store
-                              </Button>
+                            {/* Secondary note */}
+                            {result.theme.type === 'official' && (
+                              <p className="text-sm text-muted-foreground">
+                                * Click the button to view this theme in Shopify Theme Store
+                              </p>
                             )}
                           </div>
                         </div>
+
+                        {/* More Information - Collapsible */}
+                        <details className="group border rounded-lg">
+                          <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/50 transition-colors">
+                            <span className="font-medium text-foreground">More Information</span>
+                            <ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90" />
+                          </summary>
+
+                          <div className="p-4 pt-0 space-y-4 border-t">
+                            {/* Detailed Information */}
+                            <div className="grid gap-4 sm:grid-cols-2">
+                              <div className="space-y-2">
+                                <p className="text-sm font-medium text-muted-foreground">
+                                  Theme Name
+                                </p>
+                                <p className="text-sm text-foreground">
+                                  {result.theme.name || 'Unknown Theme'}
+                                </p>
+                              </div>
+
+                              {result.theme.schema_name && (
+                                <div className="space-y-2">
+                                  <p className="text-sm font-medium text-muted-foreground">
+                                    Schema Name
+                                  </p>
+                                  <p className="text-sm text-foreground">
+                                    {result.theme.schema_name}
+                                  </p>
+                                </div>
+                              )}
+
+                              {result.theme.theme_store_id && (
+                                <div className="space-y-2">
+                                  <p className="text-sm font-medium text-muted-foreground">
+                                    Theme Store ID
+                                  </p>
+                                  <p className="text-sm text-foreground">
+                                    {result.theme.theme_store_id}
+                                  </p>
+                                </div>
+                              )}
+
+                              {result.theme.id && (
+                                <div className="space-y-2">
+                                  <p className="text-sm font-medium text-muted-foreground">
+                                    Theme Instance ID
+                                  </p>
+                                  <p className="text-sm text-foreground">
+                                    {result.theme.id}
+                                  </p>
+                                </div>
+                              )}
+                            </div>
+
+                            {/* Recommendation */}
+                            {result.recommendation && (
+                              <div className="space-y-2">
+                                <p className="text-sm font-medium text-muted-foreground">
+                                  Analysis
+                                </p>
+                                <div className="rounded-lg bg-muted/50 p-3">
+                                  <p className="text-sm text-muted-foreground">
+                                    {result.recommendation}
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </details>
 
                         <div className="pt-4 border-t">
                           <Button
