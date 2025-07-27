@@ -1,26 +1,15 @@
-// Service Worker for caching iframe content
-const CACHE_NAME = 'cnblocks-iframe-cache-v1'
+// Service Worker for caching Shopify Theme Detector content
+const CACHE_NAME = 'shopify-theme-detector-cache-v1'
 
-// Add iframe URLs to this list to prioritize caching
+// Add URLs to this list to prioritize caching
 const URLS_TO_CACHE = [
     // Default assets that should be cached
     '/favicon.ico',
-    // Images used in iframes
-    '/payments.png',
-    '/payments-light.png',
-    '/origin-cal.png',
-    '/origin-cal-dark.png',
-    '/exercice.png',
-    '/exercice-dark.png',
-    '/charts-light.png',
-    '/charts.png',
-    '/music-light.png',
-    '/music.png',
-    '/mail-back-light.png',
-    '/mail-upper.png',
-    '/mail-back.png',
-    '/card.png',
-    '/dark-card.webp',
+    '/logo.png',
+    '/og.png',
+    '/apple-touch-icon.png',
+    '/android-chrome-192x192.png',
+    '/android-chrome-512x512.png',
 ]
 
 // Install event - cache resources

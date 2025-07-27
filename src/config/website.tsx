@@ -20,7 +20,7 @@ export const websiteConfig: WebsiteConfig = {
     images: {
       ogImage: '/og.png',
       logoLight: '/logo.png',
-      logoDark: '/logo-dark.png',
+      logoDark: '/logo.png', // Using same logo for both light and dark themes
     },
     social: {
       github: 'https://github.com/MkSaaSHQ',
