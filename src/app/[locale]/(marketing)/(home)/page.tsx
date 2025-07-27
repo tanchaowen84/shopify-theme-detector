@@ -44,7 +44,7 @@ export default async function HomePage() {
 
         <AiCapabilitiesSection />
 
-        <ComparisonSection />
+        {/* <ComparisonSection /> */}
 
         <FaqSection />
 

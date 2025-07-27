@@ -661,36 +661,38 @@
       }
     },
     "howItWorks": {
-      "title": "Simple & Fast Shopify Theme Detection",
-      "subtitle": "How Our Theme Detector Works",
-      "description": "Get detailed Shopify theme information in just three simple steps. Our advanced Shopify theme detector technology makes Shopify theme identification effortless and accurate.",
+      "title": "Simple & Accurate Shopify Theme Detection",
+      "subtitle": "How Our Shopify Theme Detector Works",
+      "description": "Follow three simple steps to detect Shopify themes instantly. Our advanced Shopify Theme Detector reveals theme names, customization status, and more—perfect for competitive research, design inspiration, or Shopify audits.",
       "steps": {
         "step-1": {
-          "title": "Enter Shopify Store URL",
-          "description": "Simply paste any Shopify store URL into our Shopify theme detector tool. Works with both custom domains and myshopify.com URLs.",
+          "title": "Paste Shopify Store URL",
+          "description": "Enter any Shopify store URL into our Shopify Theme Detector. Whether it uses a custom domain or a myshopify.com subdomain, our tool ensures seamless and accurate Shopify theme detection.",
           "details": [
-            "Supports custom Shopify domains (e.g., store.com)",
-            "Works with myshopify.com subdomains",
-            "Automatic Shopify URL validation and formatting",
-            "No registration required for Shopify theme detector"
+            "Works with both myshopify.com and custom domains",
+            "Instantly validates Shopify store URLs",
+            "No registration needed—completely free to use",
+            "Analyze any Shopify store theme with one click"
           ]
         },
         "step-2": {
-          "title": "Advanced Shopify Theme Analysis",
-          "description": "Our advanced Shopify theme detector algorithm analyzes the store's HTML structure, JavaScript, and CSS to identify the exact theme.",
+          "title": "Advanced Theme Analysis",
+          "description": "Our Shopify Theme Detector scans the website’s HTML, JavaScript, and CSS to uncover detailed theme data. Whether it’s an official, premium, or customized theme, our detection engine identifies it precisely.",
           "details": [
-            "Analyzes Shopify-specific theme identifiers and metadata with FlowChart AI’s layout engine",
-            "Cross-references with comprehensive official theme database",
-            "Detects both official and custom Shopify themes accurately"
+            "Detects standard, premium, and custom Shopify themes",
+            "Recognizes modified and rebranded theme versions",
+            "Compatible with all Shopify storefront layouts",
+            "Code-level theme detection for maximum accuracy"
           ]
         },
         "step-3": {
-          "title": "Get Complete Theme Information",
-          "description": "Receive detailed Shopify theme results using our FlowChart AI’s intuitive editor. Save diagrams to your personal workspace, manage your flowcharts, and return to refine or export when needed.",
+          "title": "View Full Theme Report",
+          "description": "Within seconds, our Shopify Theme Detector displays a complete report including theme name, customization level, and a link to the official Shopify Theme Store if available.",
           "details": [
-            "Complete theme identification with FlowChart AI’s drag-and-drop canvas—fast and intuitive",
-            "Direct links to Shopify theme store for official themes",
-            "Recommendations for similar themes and alternatives"
+            "Displays Shopify theme name and internal theme ID",
+            "Flags whether the theme is original or customized",
+            "Provides direct link to the theme’s official listing",
+            "Ideal for Shopify theme audits and competitor analysis"
           ]
         }
       },
@@ -698,13 +700,13 @@
     },
     "aiCapabilities": {
       "title": "Shopify Theme Detection Technology",
-      "subtitle": "Advanced Shopify Theme Detection Capabilities",
-      "description": "Our cutting-edge Shopify theme detection system combines multiple analysis techniques to provide the most accurate and comprehensive theme identification available in the market.",
-      "capability-1": "Complete Shopify Theme Database – Access to comprehensive official Shopify theme database with real-time updates for accurate Shopify theme detector results",
-      "capability-2": "Lightning Fast Shopify Theme Detection – Advanced parsing algorithms deliver Shopify theme detector results in seconds",
-      "capability-3": "Reliable & Accurate Shopify Theme Detection – Multiple Shopify theme detector methods ensure high accuracy and consistent results",
-      "capability-4": "Universal Shopify Store Support – Our Shopify theme detector works with any Shopify store you’re comfortable with",
-      "capability-5": "Smart Shopify Theme Analysis – Our Shopify theme detector intelligently identifies both official and custom Shopify themes with detailed information"
+      "subtitle": "Accurate Shopify Theme Detector Based on Source Code Analysis",
+      "description": "Our Shopify Theme Detector works by scanning a store’s HTML source code and extracting structured data from the Shopify.theme object. By analyzing the Shopify.theme schema, our tool provides instant and accurate insights about the theme name, ID, version, and whether it's official or custom-built.",
+      "capability-1": "Real-Time Theme Detection – Instantly extract Shopify theme details by analyzing the Shopify.theme object in a store’s HTML source code.",
+      "capability-2": "No Login or API Required – Our Shopify Theme Detector works directly in the browser without requiring Shopify API credentials or store backend access.",
+      "capability-3": "Official and Custom Theme Support – Detect both Shopify Theme Store templates and custom-developed themes with full metadata visibility.",
+      "capability-4": "Works on All Shopify Domains – Compatible with both custom domains and *.myshopify.com stores using standard Shopify architecture.",
+      "capability-5": "Lightweight and Developer-Friendly – Designed for speed and simplicity, our Shopify Theme Detector is ideal for marketers, designers, and developers researching store setups."
     },
     "comparison": {
       "title": "Why Choose Us",
@@ -774,25 +776,25 @@
       "secondaryButton": "See Demo"
     },
     "features": {
-      "title": "Powerful Features",
+      "title": "What Makes Shopify Theme Detector Stand Out",
       "subtitle": "Why Choose Our Shopify Theme Detector",
-      "description": "Discover the advanced capabilities that make our theme detection tool the most reliable and comprehensive solution for identifying Shopify themes.",
+      "description": "Explore the powerful capabilities that make Shopify Theme Detector the most trusted and accurate tool for identifying themes used on Shopify stores.",
       "items": {
         "item-1": {
-          "title": "Instant Detection",
-          "description": "Get immediate results by simply entering any Shopify store URL. Our advanced detection algorithm analyzes the store and identifies the theme within seconds."
+          "title": "Instant Shopify Theme Detection",
+          "description": "Get immediate results by entering any Shopify store URL. Shopify Theme Detector analyzes the store in real-time and reveals the exact theme being used, whether official or custom."
         },
         "item-2": {
-          "title": "Accurate Identification",
-          "description": "Powered by comprehensive theme database and smart parsing technology, we provide highly accurate theme identification with detailed information."
+          "title": "Highly Accurate Theme Identification",
+          "description": "Shopify Theme Detector uses Shopify-specific metadata, code structure, and theme signatures to accurately detect even customized or modified themes across any Shopify store."
         },
         "item-3": {
-          "title": "Official Theme Database",
-          "description": "Access to complete Shopify official theme database with direct links to theme store, pricing information, and theme specifications."
+          "title": "Official Theme Links Provided",
+          "description": "If an official Shopify theme is detected, Shopify Theme Detector gives you a direct link to its Shopify Theme Store page for quick access to demos, details, and pricing."
         },
         "item-4": {
-          "title": "Free & Unlimited",
-          "description": "Completely free to use with no registration required. Detect unlimited Shopify themes without any restrictions or hidden costs."
+          "title": "Free to Use, Unlimited Detection",
+          "description": "Shopify Theme Detector is completely free and does not require registration. Detect as many Shopify themes as you like—no limits, no hidden costs."
         }
       }
     },
@@ -854,8 +856,8 @@
           "answer": "Yes! Our Shopify theme detector is 100% free with no hidden costs, registration requirements, or usage limits. You can detect unlimited themes without any restrictions."
         },
         "item-3": {
-          "question": "How accurate is the theme detection?",
-          "answer": "Our detection algorithm has a 99.9% accuracy rate for official Shopify themes. For custom themes, we can still identify if a store is using Shopify and provide relevant information about the store structure."
+          "question": "How accurate is the Shopify Theme Detector?",
+          "answer": "Our Shopify Theme Detector is designed to deliver reliable and consistent results by analyzing the Shopify.theme object directly from the store’s HTML. While results may vary depending on whether a store uses an official, custom, or modified theme, the detector performs especially well with themes built using standard Shopify architecture. For custom setups, we still provide clear insight into the Shopify structure and theme usage."
         },
         "item-4": {
           "question": "What types of Shopify stores can I analyze?",
