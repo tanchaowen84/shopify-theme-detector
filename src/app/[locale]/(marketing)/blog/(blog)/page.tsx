@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: BlogPageProps) {
     title: `${pt('title')} | ${t('title')}`,
     description: pt('description'),
     canonicalUrl: getUrlWithLocale(canonicalPath, locale),
-    robots: 'noindex, nofollow',
+    noIndex: true,
   });
 }
 
