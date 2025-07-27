@@ -14,21 +14,26 @@ type Href = Parameters<typeof getLocalePathname>[0]['href'];
  */
 function getEnabledStaticRoutes(): string[] {
   // Simplified routes for Shopify Theme Detector
-  const baseRoutes = [
-    '/',
-    '/blog', // Enabled for SEO purposes
-    '/about',
-    '/contact',
-    '/privacy',
-    '/terms',
-  ];
+  const baseRoutes = ['/', '/privacy', '/terms', '/cookie'];
 
   // 条件性添加页面路由
   const conditionalRoutes: string[] = [];
 
+  if (websiteConfig.features.enableBlog) {
+    conditionalRoutes.push('/blog');
+  }
+
   if (websiteConfig.features.enableDocsPage) {
     conditionalRoutes.push('/docs');
   }
+
+  // About and Contact pages are removed for Shopify Theme Detector
+  // if (websiteConfig.features.enableAboutPage) {
+  //   conditionalRoutes.push('/about');
+  // }
+  // if (websiteConfig.features.enableContactPage) {
+  //   conditionalRoutes.push('/contact');
+  // }
 
   // 条件性添加AI页面路由
   if (websiteConfig.features.enableAIPages) {
@@ -68,86 +73,94 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   // add categories
-  sitemapList.push(
-    ...allCategories.flatMap((category: { slug: string }) =>
-      routing.locales.map((locale) => ({
-        url: getUrl(`/blog/category/${category.slug}`, locale),
-        lastModified: new Date(),
-        priority: 0.8,
-        changeFrequency: 'weekly' as const,
-      }))
-    )
-  );
+  if (websiteConfig.features.enableBlog) {
+    sitemapList.push(
+      ...allCategories.flatMap((category: { slug: string }) =>
+        routing.locales.map((locale) => ({
+          url: getUrl(`/blog/category/${category.slug}`, locale),
+          lastModified: new Date(),
+          priority: 0.8,
+          changeFrequency: 'weekly' as const,
+        }))
+      )
+    );
+  }
 
   // add paginated blog list pages
-  routing.locales.forEach((locale) => {
-    const posts = allPosts.filter(
-      (post) => post.locale === locale && post.published
-    );
-    const totalPages = Math.max(
-      1,
-      Math.ceil(posts.length / websiteConfig.blog.paginationSize)
-    );
-    // /blog/page/[page] (from 2)
-    for (let page = 2; page <= totalPages; page++) {
-      sitemapList.push({
-        url: getUrl(`/blog/page/${page}`, locale),
-        lastModified: new Date(),
-        priority: 0.8,
-        changeFrequency: 'weekly' as const,
-      });
-    }
-  });
-
-  // add paginated category pages
-  routing.locales.forEach((locale) => {
-    const localeCategories = allCategories.filter(
-      (category) => category.locale === locale
-    );
-    localeCategories.forEach((category) => {
-      // posts in this category and locale
-      const postsInCategory = allPosts.filter(
-        (post) =>
-          post.locale === locale &&
-          post.published &&
-          post.categories.some((cat) => cat && cat.slug === category.slug)
+  if (websiteConfig.features.enableBlog) {
+    routing.locales.forEach((locale) => {
+      const posts = allPosts.filter(
+        (post) => post.locale === locale && post.published
       );
       const totalPages = Math.max(
         1,
-        Math.ceil(postsInCategory.length / websiteConfig.blog.paginationSize)
+        Math.ceil(posts.length / websiteConfig.blog.paginationSize)
       );
-      // /blog/category/[slug] (first page)
-      sitemapList.push({
-        url: getUrl(`/blog/category/${category.slug}`, locale),
-        lastModified: new Date(),
-        priority: 0.8,
-        changeFrequency: 'weekly' as const,
-      });
-      // /blog/category/[slug]/page/[page] (from 2)
+      // /blog/page/[page] (from 2)
       for (let page = 2; page <= totalPages; page++) {
         sitemapList.push({
-          url: getUrl(`/blog/category/${category.slug}/page/${page}`, locale),
+          url: getUrl(`/blog/page/${page}`, locale),
           lastModified: new Date(),
           priority: 0.8,
           changeFrequency: 'weekly' as const,
         });
       }
     });
-  });
+  }
 
-  // add posts (single post pages)
-  sitemapList.push(
-    ...allPosts.flatMap((post: { slugAsParams: string; locale: string }) =>
-      routing.locales
-        .filter((locale) => post.locale === locale)
-        .map((locale) => ({
-          url: getUrl(`/blog/${post.slugAsParams}`, locale),
+  // add paginated category pages
+  if (websiteConfig.features.enableBlog) {
+    routing.locales.forEach((locale) => {
+      const localeCategories = allCategories.filter(
+        (category) => category.locale === locale
+      );
+      localeCategories.forEach((category) => {
+        // posts in this category and locale
+        const postsInCategory = allPosts.filter(
+          (post) =>
+            post.locale === locale &&
+            post.published &&
+            post.categories.some((cat) => cat && cat.slug === category.slug)
+        );
+        const totalPages = Math.max(
+          1,
+          Math.ceil(postsInCategory.length / websiteConfig.blog.paginationSize)
+        );
+        // /blog/category/[slug] (first page)
+        sitemapList.push({
+          url: getUrl(`/blog/category/${category.slug}`, locale),
           lastModified: new Date(),
           priority: 0.8,
           changeFrequency: 'weekly' as const,
-        }))
-    )
-  );
+        });
+        // /blog/category/[slug]/page/[page] (from 2)
+        for (let page = 2; page <= totalPages; page++) {
+          sitemapList.push({
+            url: getUrl(`/blog/category/${category.slug}/page/${page}`, locale),
+            lastModified: new Date(),
+            priority: 0.8,
+            changeFrequency: 'weekly' as const,
+          });
+        }
+      });
+    });
+  }
+
+  // add posts (single post pages)
+  if (websiteConfig.features.enableBlog) {
+    sitemapList.push(
+      ...allPosts.flatMap((post: { slugAsParams: string; locale: string }) =>
+        routing.locales
+          .filter((locale) => post.locale === locale)
+          .map((locale) => ({
+            url: getUrl(`/blog/${post.slugAsParams}`, locale),
+            lastModified: new Date(),
+            priority: 0.8,
+            changeFrequency: 'weekly' as const,
+          }))
+      )
+    );
+  }
 
   // 条件性添加docs页面
   if (websiteConfig.features.enableDocsPage) {

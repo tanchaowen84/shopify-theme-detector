@@ -72,7 +72,7 @@ export function getFooterLinks(): NestedMenuItem[] {
       items: [
         {
           title: t('legal.items.cookiePolicy'),
-          href: Routes.Root,
+          href: Routes.CookiePolicy,
           external: false,
         },
         {

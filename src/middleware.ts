@@ -12,10 +12,11 @@ import {
 // Define disabled routes for Shopify Theme Detector
 const DISABLED_ROUTES = [
   '/pricing',
-  // '/blog', // Blog enabled for SEO purposes
+  // '/blog', // Blog enabled for future content
   '/docs',
   '/changelog',
-  '/cookie',
+  '/about',
+  '/contact',
   '/auth/login',
   '/auth/register',
   '/auth/error',

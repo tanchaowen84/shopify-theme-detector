@@ -16,7 +16,7 @@ export enum Routes {
   // Waitlist = '/waitlist', // Disabled for Shopify Theme Detector
   // Changelog = '/changelog', // Disabled for Shopify Theme Detector
   Roadmap = 'https://github.com/your-repo/shopify-theme-detector', // Updated for project
-  // CookiePolicy = '/cookie', // Disabled for Shopify Theme Detector
+  CookiePolicy = '/cookie',
   PrivacyPolicy = '/privacy',
   TermsOfService = '/terms',
 

@@ -43,7 +43,7 @@ export const websiteConfig: WebsiteConfig = {
     enableBlocksPages: false,
     enableAuth: false,
     enablePricing: false,
-    enableBlog: false,
+    enableBlog: true,
     enableDashboard: false,
     enablePayment: false,
   },
