@@ -10,6 +10,7 @@ import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 /**
  * https://next-intl.dev/docs/environments/actions-metadata-route-handlers#metadata-api
@@ -20,10 +21,11 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata | undefined> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
 
   return constructMetadata({
-    title: 'Shopify Theme Detector - Instantly Identify Any Shopify Store Theme',
-    description: 'Free Shopify theme detector tool. Enter any Shopify store URL to instantly identify the theme name, type, and get direct links to official themes in the Shopify store.',
+    title: t('title'),
+    description: t('description'),
     canonicalUrl: getUrlWithLocale('', locale),
   });
 }

@@ -1,36 +1,39 @@
 import { HeaderSection } from '@/components/layout/header-section';
 import { X, Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function ComparisonSection() {
+  const t = useTranslations('HomePage.comparison');
+
   const traditionalTools = [
-    'Manual inspection of source code',
-    'Limited theme database coverage',
-    'Time-consuming analysis process',
-    'Requires technical knowledge',
-    'Often inaccurate results',
-    'No direct theme store links',
-    'Paid subscriptions required',
-    'Complex setup and configuration',
+    t('traditional.item-1'),
+    t('traditional.item-2'),
+    t('traditional.item-3'),
+    t('traditional.item-4'),
+    t('traditional.item-5'),
+    t('traditional.item-6'),
+    t('traditional.item-7'),
+    t('traditional.item-8'),
   ];
 
   const ourTool = [
-    'Instant automated detection',
-    'Comprehensive official theme database',
-    'Results in seconds, not hours',
-    'No technical skills required',
-    'High accuracy detection algorithm',
-    'Direct links to Shopify theme store',
-    'Completely free to use',
-    'Simple one-click operation',
+    t('shopifyThemeDetector.item-1'),
+    t('shopifyThemeDetector.item-2'),
+    t('shopifyThemeDetector.item-3'),
+    t('shopifyThemeDetector.item-4'),
+    t('shopifyThemeDetector.item-5'),
+    t('shopifyThemeDetector.item-6'),
+    t('shopifyThemeDetector.item-7'),
+    t('shopifyThemeDetector.item-8'),
   ];
 
   return (
     <section id="comparison" className="px-4 py-16">
       <div className="mx-auto max-w-6xl space-y-8 lg:space-y-16">
         <HeaderSection
-          title="Why Choose Us"
-          subtitle="Better Than Traditional Methods"
-          description="See how our advanced Shopify theme detector outperforms traditional manual methods and other tools in the market."
+          title={t('title')}
+          subtitle={t('subtitle')}
+          description={t('description')}
           subtitleAs="h2"
           descriptionAs="p"
         />
@@ -40,10 +43,10 @@ export default function ComparisonSection() {
           <div className="lg:pr-0">
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-muted-foreground">
-                Traditional Methods
+                {t('traditional.title')}
               </h3>
               <p className="mt-4 text-muted-foreground">
-                Manual inspection and basic tools with limited capabilities
+                {t('traditional.subtitle')}
               </p>
             </div>
 
@@ -65,10 +68,10 @@ export default function ComparisonSection() {
           <div className="lg:pl-0">
             <div className="mb-8">
               <h3 className="text-2xl font-semibold" style={{ color: '#008060' }}>
-                Our Shopify Theme Detector
+                {t('shopifyThemeDetector.title')}
               </h3>
               <p className="mt-4 text-muted-foreground">
-                Advanced automated detection with comprehensive features
+                {t('shopifyThemeDetector.subtitle')}
               </p>
             </div>
 

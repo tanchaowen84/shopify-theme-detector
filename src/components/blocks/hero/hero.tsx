@@ -7,9 +7,11 @@ import { cn } from '@/lib/utils';
 import { Search, ChevronRight, AlertCircle } from 'lucide-react';
 import { useCallback, useMemo, useState, useRef, useEffect } from 'react';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 import type { ThemeDetectionResult } from '@/app/api/detect/route';
 
 export default function HeroSection() {
+  const t = useTranslations('HomePage.hero');
 
   // State for the input and detection result
   const [input, setInput] = useState('');
@@ -153,12 +155,12 @@ export default function HeroSection() {
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 {/* title */}
                 <h1 className="mt-8 text-balance text-5xl font-bricolage-grotesque lg:mt-16 xl:text-[5rem] text-[#008060]">
-                  Shopify Theme Detector
+                  {t('title')}
                 </h1>
 
                 {/* description */}
                 <p className="mx-auto mt-8 max-w-4xl text-balance text-lg text-muted-foreground">
-                  Instantly identify any Shopify store's theme. Enter a URL and discover the theme name, type, and get direct links to official themes in the Shopify store.
+                  {t('description')}
                 </p>
 
                 {/* input form */}

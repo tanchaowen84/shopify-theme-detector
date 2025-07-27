@@ -1,39 +1,42 @@
 import { HeaderSection } from '@/components/layout/header-section';
 import { Card } from '@/components/ui/card';
 import { Store, Users, Code, TrendingUp, Search, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import type * as React from 'react';
 
 export default function UseCasesSection() {
+  const t = useTranslations('HomePage.useCases');
+
   const useCases = [
     {
       icon: Store,
-      title: 'E-commerce Entrepreneurs',
-      description: 'Discover successful competitors\' themes to replicate winning designs and boost your store\'s conversion rates.',
+      title: t('items.item-1.title'),
+      description: t('items.item-1.description'),
     },
     {
       icon: Users,
-      title: 'Design & Marketing Teams',
-      description: 'Quickly identify if a website uses Shopify and which theme powers it for competitive analysis and client research.',
+      title: t('items.item-2.title'),
+      description: t('items.item-2.description'),
     },
     {
       icon: Code,
-      title: 'Theme & Plugin Developers',
-      description: 'Track popular theme adoption trends across different industries to guide your development roadmap.',
+      title: t('items.item-3.title'),
+      description: t('items.item-3.description'),
     },
     {
       icon: TrendingUp,
-      title: 'Market Researchers',
-      description: 'Analyze e-commerce trends by identifying which themes are most popular in specific niches or markets.',
+      title: t('items.item-4.title'),
+      description: t('items.item-4.description'),
     },
     {
       icon: Search,
-      title: 'SEO & Conversion Specialists',
-      description: 'Research high-performing stores to understand which themes contribute to better user experience and conversions.',
+      title: t('items.item-5.title'),
+      description: t('items.item-5.description'),
     },
     {
       icon: Zap,
-      title: 'Dropshipping & Affiliate Marketers',
-      description: 'Find proven theme choices from successful stores to accelerate your own store setup and optimization.',
+      title: t('items.item-6.title'),
+      description: t('items.item-6.description'),
     },
   ];
 
@@ -41,9 +44,9 @@ export default function UseCasesSection() {
     <section id="use-cases" className="px-4 py-16">
       <div className="mx-auto max-w-5xl">
         <HeaderSection
-          title="Perfect for Every E-commerce Professional"
-          subtitle="Who Benefits from Shopify Theme Detection"
-          description="Whether you're building your first store or managing multiple e-commerce projects, our theme detector provides valuable insights for every stage of your journey."
+          title={t('title')}
+          subtitle={t('subtitle')}
+          description={t('description')}
           subtitleAs="h2"
           descriptionAs="p"
         />

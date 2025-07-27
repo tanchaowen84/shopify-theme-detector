@@ -3,44 +3,45 @@
 import { HeaderSection } from '@/components/layout/header-section';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Link, Search, CheckCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import type * as React from 'react';
 
 export default function HowItWorksSection() {
+  const t = useTranslations('HomePage.howItWorks');
+
   const steps = [
     {
       number: 1,
       icon: Link,
-      title: 'Enter Store URL',
-      description: 'Simply paste any Shopify store URL into our detection tool. Works with both custom domains and myshopify.com URLs.',
+      title: t('steps.step-1.title'),
+      description: t('steps.step-1.description'),
       details: [
-        'Supports custom domains (e.g., store.com)',
-        'Works with myshopify.com subdomains',
-        'Automatic URL validation and formatting',
-        'No registration or signup required',
+        t('steps.step-1.details.0'),
+        t('steps.step-1.details.1'),
+        t('steps.step-1.details.2'),
+        t('steps.step-1.details.3'),
       ],
     },
     {
       number: 2,
       icon: Search,
-      title: 'Automatic Analysis',
-      description: 'Our advanced detection algorithm analyzes the store\'s HTML structure, JavaScript, and CSS to identify the theme.',
+      title: t('steps.step-2.title'),
+      description: t('steps.step-2.description'),
       details: [
-        'Scans for Shopify theme identifiers',
-        'Analyzes theme store IDs and metadata',
-        'Checks official theme database',
-        'Processes results in real-time',
+        t('steps.step-2.details.0'),
+        t('steps.step-2.details.1'),
+        t('steps.step-2.details.2'),
       ],
     },
     {
       number: 3,
       icon: CheckCircle,
-      title: 'Get Detailed Results',
-      description: 'Receive comprehensive theme information including name, type, official store links, and additional details.',
+      title: t('steps.step-3.title'),
+      description: t('steps.step-3.description'),
       details: [
-        'Theme name and version information',
-        'Official vs custom theme identification',
-        'Direct links to Shopify theme store',
-        'Theme pricing and availability',
+        t('steps.step-3.details.0'),
+        t('steps.step-3.details.1'),
+        t('steps.step-3.details.2'),
       ],
     },
   ];
@@ -49,9 +50,9 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="px-4 py-16">
       <div className="mx-auto max-w-6xl space-y-8 lg:space-y-20">
         <HeaderSection
-          title="Simple & Fast"
-          subtitle="How It Works"
-          description="Get detailed Shopify theme information in just three simple steps. Our advanced detection technology makes theme identification effortless and accurate."
+          title={t('title')}
+          subtitle={t('subtitle')}
+          description={t('description')}
           subtitleAs="h2"
           descriptionAs="p"
         />
@@ -125,7 +126,7 @@ export default function HowItWorksSection() {
               }
             }}
           >
-            Start Detecting Themes
+{t('getStarted')}
             <ChevronRight className="!size-4" />
           </Button>
         </div>

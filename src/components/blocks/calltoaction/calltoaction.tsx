@@ -2,8 +2,11 @@
 
 import { Button } from '@/components/ui/button';
 import { Search, ExternalLink } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function CallToActionSection() {
+  const t = useTranslations('HomePage.calltoaction');
+
   const scrollToHero = () => {
     const heroSection = document.getElementById('hero');
     if (heroSection) {
@@ -16,10 +19,10 @@ export default function CallToActionSection() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl" style={{ color: '#008060' }}>
-            Ready to Discover Any Shopify Theme?
+            {t('title')}
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Start detecting Shopify themes instantly. No registration required, completely free forever.
+            {t('description')}
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
@@ -30,7 +33,7 @@ export default function CallToActionSection() {
               onClick={scrollToHero}
             >
               <Search className="w-5 h-5" />
-              <span>Start Detecting Now</span>
+              <span>{t('primaryButton')}</span>
             </Button>
 
             <Button
@@ -45,7 +48,7 @@ export default function CallToActionSection() {
                 rel="noopener noreferrer"
               >
                 <ExternalLink className="w-5 h-5" />
-                <span>Browse Shopify Themes</span>
+                <span>{t('secondaryButton')}</span>
               </a>
             </Button>
           </div>

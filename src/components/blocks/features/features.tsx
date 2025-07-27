@@ -17,12 +17,14 @@ import {
 import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 /**
  * https://nsui.irung.me/features
  * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-12.json
  */
 export default function FeaturesSection() {
+  const t = useTranslations('HomePage.features');
   type ImageKey = 'item-1' | 'item-2' | 'item-3' | 'item-4';
   const [activeItem, setActiveItem] = useState<ImageKey>('item-1');
 
@@ -81,10 +83,10 @@ export default function FeaturesSection() {
       <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]" />
       <div className="mx-auto max-w-6xl space-y-8 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
         <HeaderSection
-          title="Powerful Features"
-          subtitle="Why Choose Our Shopify Theme Detector"
+          title={t('title')}
+          subtitle={t('subtitle')}
           subtitleAs="h2"
-          description="Discover the advanced capabilities that make our theme detection tool the most reliable and comprehensive solution for identifying Shopify themes."
+          description={t('description')}
           descriptionAs="p"
         />
 

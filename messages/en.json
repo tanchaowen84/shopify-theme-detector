@@ -615,28 +615,28 @@
       "tryNow": "Start Detecting Shopify Themes",
       "items": {
         "item-1": {
-          "title": "E-commerce Entrepreneurs",
-          "description": "Use our Shopify theme detector to discover successful competitors' themes and replicate winning designs. Analyze market leaders to understand which Shopify themes drive the highest conversion rates."
+          "title": "Dropshipping & E‑commerce Entrepreneurs",
+          "description": "Using Shopify Theme Detector, easily uncover competitor Shopify themes in seconds. Replicate proven designs, layout flows, and high-converting UI patterns—accelerate your store setup and conversions by modeling what works."
         },
         "item-2": {
           "title": "Design & Marketing Teams",
-          "description": "Quickly identify if a website uses Shopify and which theme powers it using our advanced theme detector. Perfect for competitive analysis and client research without manual investigation."
+          "description": "Shopify Theme Detector helps teams instantly identify if a website is built on Shopify, what theme it uses, and whether it’s official or custom. Cut minutes off your research workflow and deliver faster, more accurate proposals."
         },
         "item-3": {
-          "title": "Shopify Theme & Plugin Developers",
-          "description": "Track popular Shopify theme adoption trends across different industries with our detector. Understand market demand and competition to guide your theme development roadmap."
+          "title": "Theme & Plugin Developers",
+          "description": "With Shopify Theme Detector, developers can track trending Shopify themes across industries and niches. Use insights to guide feature roadmaps, app compatibility, pricing strategy, and content positioning in the Shopify ecosystem."
         },
         "item-4": {
-          "title": "E-commerce Market Researchers",
-          "description": "Analyze Shopify theme trends by identifying which themes are most popular in specific niches. Our theme detector helps gather competitive intelligence efficiently across markets."
+          "title": "Market Researchers",
+          "description": "Leverage Shopify Theme Detector to analyze theme adoption trends in e‑commerce verticals. Discover which Shopify themes lead in specific niches and gather competitive intelligence at scale."
         },
         "item-5": {
           "title": "SEO & Conversion Specialists",
-          "description": "Research high-performing Shopify stores to understand which themes contribute to better user experience and conversions. Use our theme detector to optimize your strategy based on proven winners."
+          "description": "SEO and conversion pros use Shopify Theme Detector to audit top-performing Shopify stores, analyze theme layouts, speed metrics, and UX design. Optimize your own store strategy using real data-driven benchmarks."
         },
         "item-6": {
-          "title": "Dropshipping & Affiliate Marketers",
-          "description": "Find proven Shopify theme choices from successful stores using our detector to accelerate your own store setup and optimization. Copy what works in your niche with confidence."
+          "title": "Brand Builders & Strategy Consultants",
+          "description": "Consultants can reference Shopify Theme Detector insights to understand how leading Shopify brands structure their site layouts, navigation, and branding. Inform client strategy with reliable theme usage data."
         }
       }
     },
@@ -679,18 +679,18 @@
           "title": "Advanced Shopify Theme Analysis",
           "description": "Our advanced Shopify theme detector algorithm analyzes the store's HTML structure, JavaScript, and CSS to identify the exact theme.",
           "details": [
-            "Automatically generates accurate diagrams with FlowChart AI’s layout engine",
-            "Optimized visual structure for readability and presentation",
-            "No need to manually draw—FlowChart AI does it all for you"
+            "Analyzes Shopify-specific theme identifiers and metadata with FlowChart AI’s layout engine",
+            "Cross-references with comprehensive official theme database",
+            "Detects both official and custom Shopify themes accurately"
           ]
         },
         "step-3": {
           "title": "Get Complete Theme Information",
-          "description": "Make adjustments using FlowChart AI’s intuitive editor. Save diagrams to your personal workspace, manage your flowcharts, and return to refine or export when needed.",
+          "description": "Receive detailed Shopify theme results using our FlowChart AI’s intuitive editor. Save diagrams to your personal workspace, manage your flowcharts, and return to refine or export when needed.",
           "details": [
-            "Edit using FlowChart AI’s drag-and-drop canvas—fast and intuitive",
-            "Organize all your diagrams in a personal FlowChart AI workspace",
-            "Export in Excalidraw format; PNG, SVG, and PDF exports coming soon"
+            "Complete theme identification with FlowChart AI’s drag-and-drop canvas—fast and intuitive",
+            "Direct links to Shopify theme store for official themes",
+            "Recommendations for similar themes and alternatives"
           ]
         }
       },
@@ -703,7 +703,7 @@
       "capability-1": "Complete Shopify Theme Database – Access to comprehensive official Shopify theme database with real-time updates for accurate Shopify theme detector results",
       "capability-2": "Lightning Fast Shopify Theme Detection – Advanced parsing algorithms deliver Shopify theme detector results in seconds",
       "capability-3": "Reliable & Accurate Shopify Theme Detection – Multiple Shopify theme detector methods ensure high accuracy and consistent results",
-      "capability-4": "Universal Shopify Store Support – Describe your flowcharts in any language you’re comfortable with",
+      "capability-4": "Universal Shopify Store Support – Our Shopify theme detector works with any Shopify store you’re comfortable with",
       "capability-5": "Smart Shopify Theme Analysis – Our Shopify theme detector intelligently identifies both official and custom Shopify themes with detailed information"
     },
     "comparison": {
@@ -722,7 +722,7 @@
         "item-7": "Paid subscriptions required",
         "item-8": "Complex setup and configuration"
       },
-      "flowchartAi": {
+      "shopifyThemeDetector": {
         "title": "Our Shopify Theme Detector",
         "subtitle": "Advanced automated detection with comprehensive features",
         "item-1": "Instant automated detection",
@@ -1004,7 +1004,7 @@
     "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly",
     "content": "Working in progress"
   },
-  "CanvasPage": {
+  "DetectorPage": {
     "title": "Shopify Theme Detector",
     "description": "Detect Shopify themes instantly - analyze any Shopify store URL to identify themes and get detailed theme information",
     "subtitle": "Free Shopify Theme Detection Tool"
