@@ -1,7 +1,12 @@
 import { HeaderSection } from '@/components/layout/header-section';
-import { BrainIcon, LanguagesIcon, RefreshCwIcon, ZapIcon } from 'lucide-react';
+import {
+  BrainIcon,
+  LanguagesIcon,
+  RefreshCwIcon,
+  Search,
+  ZapIcon,
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 
 export default function AiCapabilitiesSection() {
   const t = useTranslations('HomePage.aiCapabilities');
@@ -46,14 +51,22 @@ export default function AiCapabilitiesSection() {
 
           <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
             <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
-              <div className="h-full w-full rounded-[15px] bg-gradient-to-br from-muted/50 to-background overflow-hidden flex items-center justify-center">
-                <Image
-                  src="https://cdn.flowchartai.org/static/blocks/ai_capabilities.png"
-                  className="h-full w-full object-cover object-center"
-                  alt="AI Capabilities - Intelligent Flowchart Generation"
-                  width={800}
-                  height={600}
-                />
+              <div className="h-full w-full rounded-[15px] bg-gradient-to-br from-[#008060]/5 to-[#004C3F]/5 overflow-hidden flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#008060]/10 flex items-center justify-center">
+                    <Search className="w-8 h-8" style={{ color: '#008060' }} />
+                  </div>
+                  <h3
+                    className="text-xl font-semibold mb-3"
+                    style={{ color: '#008060' }}
+                  >
+                    Theme Detection
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    Analyze Shopify stores instantly to identify themes and get
+                    detailed information
+                  </p>
+                </div>
               </div>
             </div>
           </div>

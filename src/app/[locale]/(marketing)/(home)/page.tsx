@@ -34,20 +34,31 @@ export default async function HomePage() {
   return (
     <>
       <div className="flex flex-col">
+        {/* Section 1: Hero - White background (default) */}
         <HeroSection />
 
-        <UseCasesSection />
+        {/* Section 2: Use Cases - Shopify Green background */}
+        <div className="bg-gradient-to-br from-[#008060]/5 to-[#004C3F]/5">
+          <UseCasesSection />
+        </div>
 
+        {/* Section 3: Features - White background (default) */}
         <FeaturesSection />
 
-        <HowItWorksSection />
+        {/* Section 4: How It Works - Shopify Green background */}
+        <div className="bg-gradient-to-br from-[#008060]/5 to-[#004C3F]/5">
+          <HowItWorksSection />
+        </div>
 
+        {/* Section 5: AI Capabilities - White background (default) */}
         <AiCapabilitiesSection />
 
         {/* <ComparisonSection /> */}
 
+        {/* Section 6: FAQ - White background (default) */}
         <FaqSection />
 
+        {/* Section 7: Call to Action - Shopify Green background (keep as special CTA) */}
         <CallToActionSection />
       </div>
     </>

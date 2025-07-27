@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Search, ExternalLink } from 'lucide-react';
+import { ExternalLink, Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function CallToActionSection() {
@@ -15,10 +15,16 @@ export default function CallToActionSection() {
   };
 
   return (
-    <section id="call-to-action" className="px-4 py-24 bg-gradient-to-br from-[#008060]/5 to-[#004C3F]/5">
+    <section
+      id="call-to-action"
+      className="px-4 py-24 bg-gradient-to-br from-[#008060]/5 to-[#004C3F]/5"
+    >
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <h2 className="text-balance text-4xl font-semibold lg:text-5xl" style={{ color: '#008060' }}>
+          <h2
+            className="text-balance text-4xl font-semibold lg:text-5xl"
+            style={{ color: '#008060' }}
+          >
             {t('title')}
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
@@ -54,7 +60,9 @@ export default function CallToActionSection() {
           </div>
 
           <div className="mt-8 text-sm text-muted-foreground">
-            <p>✓ 100% Free Forever  ✓ No Registration Required  ✓ Instant Results</p>
+            <p>
+              ✓ 100% Free Forever ✓ No Registration Required ✓ Instant Results
+            </p>
           </div>
         </div>
       </div>

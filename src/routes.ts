@@ -12,8 +12,7 @@ export enum Routes {
   // Pricing = '/pricing', // Disabled for Shopify Theme Detector
   Blog = '/blog', // Enabled for SEO purposes
   // Docs = '/docs', // Disabled for Shopify Theme Detector
-  About = '/about',
-  Contact = '/contact',
+
   // Waitlist = '/waitlist', // Disabled for Shopify Theme Detector
   // Changelog = '/changelog', // Disabled for Shopify Theme Detector
   Roadmap = 'https://github.com/your-repo/shopify-theme-detector', // Updated for project

@@ -8,16 +8,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import {
-  Search,
-  Zap,
-  Shield,
-  ExternalLink,
-} from 'lucide-react';
+import { ExternalLink, Search, Shield, Zap } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
-import Image from 'next/image';
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 /**
  * https://nsui.irung.me/features
@@ -28,53 +22,34 @@ export default function FeaturesSection() {
   type ImageKey = 'item-1' | 'item-2' | 'item-3' | 'item-4';
   const [activeItem, setActiveItem] = useState<ImageKey>('item-1');
 
-  const images = {
-    'item-1': {
-      image: '/images/features/instant-detection.png',
-      darkImage: '/images/features/instant-detection-dark.png',
-      alt: 'Instant Theme Detection',
-    },
-    'item-2': {
-      image: '/images/features/accurate-results.png',
-      darkImage: '/images/features/accurate-results-dark.png',
-      alt: 'Accurate Theme Identification',
-    },
-    'item-3': {
-      image: '/images/features/official-themes.png',
-      darkImage: '/images/features/official-themes-dark.png',
-      alt: 'Official Theme Database',
-    },
-    'item-4': {
-      image: '/images/features/free-unlimited.png',
-      darkImage: '/images/features/free-unlimited-dark.png',
-      alt: 'Free Unlimited Usage',
-    },
-  };
-
   const features = [
     {
       id: 'item-1',
       icon: Search,
       title: 'Instant Detection',
-      description: 'Get immediate results by simply entering any Shopify store URL. Our advanced detection algorithm analyzes the store and identifies the theme within seconds.',
+      description:
+        'Get immediate results by simply entering any Shopify store URL. Our advanced detection algorithm analyzes the store and identifies the theme within seconds.',
     },
     {
       id: 'item-2',
       icon: Zap,
       title: 'Accurate Identification',
-      description: 'Powered by comprehensive theme database and smart parsing technology, we provide highly accurate theme identification with detailed information.',
+      description:
+        'Powered by comprehensive theme database and smart parsing technology, we provide highly accurate theme identification with detailed information.',
     },
     {
       id: 'item-3',
       icon: Shield,
       title: 'Official Theme Database',
-      description: 'Access to complete Shopify official theme database with direct links to theme store, pricing information, and theme specifications.',
+      description:
+        'Access to complete Shopify official theme database with direct links to theme store, pricing information, and theme specifications.',
     },
     {
       id: 'item-4',
       icon: ExternalLink,
       title: 'Free & Unlimited',
-      description: 'Completely free to use with no registration required. Detect unlimited Shopify themes without any restrictions or hidden costs.',
+      description:
+        'Completely free to use with no registration required. Detect unlimited Shopify themes without any restrictions or hidden costs.',
     },
   ];
 
@@ -93,11 +68,16 @@ export default function FeaturesSection() {
         <div className="grid gap-12 sm:px-12 lg:grid-cols-12 lg:gap-24 lg:px-0">
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div className="lg:pr-0 text-left">
-              <h3 className="text-3xl font-semibold lg:text-4xl leading-normal py-1" style={{ color: '#008060' }}>
+              <h3
+                className="text-3xl font-semibold lg:text-4xl leading-normal py-1"
+                style={{ color: '#008060' }}
+              >
                 Advanced Detection Technology
               </h3>
               <p className="mt-4 text-muted-foreground">
-                Our cutting-edge detection system combines multiple analysis techniques to provide the most accurate and comprehensive theme identification available.
+                Our cutting-edge detection system combines multiple analysis
+                techniques to provide the most accurate and comprehensive theme
+                identification available.
               </p>
             </div>
             <Accordion
@@ -112,7 +92,10 @@ export default function FeaturesSection() {
                   <AccordionItem key={feature.id} value={feature.id}>
                     <AccordionTrigger>
                       <div className="flex items-center gap-2 text-base">
-                        <IconComponent className="size-4" style={{ color: '#008060' }} />
+                        <IconComponent
+                          className="size-4"
+                          style={{ color: '#008060' }}
+                        />
                         {feature.title}
                       </div>
                     </AccordionTrigger>
@@ -139,19 +122,29 @@ export default function FeaturesSection() {
                   <div className="text-center p-8">
                     <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#008060]/10 flex items-center justify-center">
                       {(() => {
-                        const feature = features.find(f => f.id === activeItem);
+                        const feature = features.find(
+                          (f) => f.id === activeItem
+                        );
                         if (feature) {
                           const IconComponent = feature.icon;
-                          return <IconComponent className="w-12 h-12" style={{ color: '#008060' }} />;
+                          return (
+                            <IconComponent
+                              className="w-12 h-12"
+                              style={{ color: '#008060' }}
+                            />
+                          );
                         }
                         return null;
                       })()}
                     </div>
-                    <h4 className="text-xl font-semibold mb-2" style={{ color: '#008060' }}>
-                      {features.find(f => f.id === activeItem)?.title}
+                    <h4
+                      className="text-xl font-semibold mb-2"
+                      style={{ color: '#008060' }}
+                    >
+                      {features.find((f) => f.id === activeItem)?.title}
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      {features.find(f => f.id === activeItem)?.description}
+                      {features.find((f) => f.id === activeItem)?.description}
                     </p>
                   </div>
                 </motion.div>

@@ -1,14 +1,14 @@
 'use client';
 
+import type { ThemeDetectionResult } from '@/app/api/detect/route';
 import { Ripple } from '@/components/magicui/ripple';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { Search, ChevronRight, AlertCircle } from 'lucide-react';
-import { useCallback, useMemo, useState, useRef, useEffect } from 'react';
-import { toast } from 'sonner';
+import { AlertCircle, ChevronRight, Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import type { ThemeDetectionResult } from '@/app/api/detect/route';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { toast } from 'sonner';
 
 export default function HeroSection() {
   const t = useTranslations('HomePage.hero');
@@ -28,12 +28,13 @@ export default function HeroSection() {
         const element = resultRef.current;
         if (element) {
           // Calculate position with some offset for better visibility
-          const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+          const elementTop =
+            element.getBoundingClientRect().top + window.pageYOffset;
           const offset = 80; // Add some space from top
 
           window.scrollTo({
             top: elementTop - offset,
-            behavior: 'smooth'
+            behavior: 'smooth',
           });
         }
       }, 150);
@@ -63,7 +64,8 @@ export default function HeroSection() {
       'w-full h-16 text-lg px-6 pr-16 rounded-2xl border-2',
       'transition-all duration-300 ease-in-out',
       // Shopify 配色聚焦状态
-      isFocused && 'border-[#008060] shadow-lg shadow-[#008060]/20 scale-[1.02]',
+      isFocused &&
+        'border-[#008060] shadow-lg shadow-[#008060]/20 scale-[1.02]',
       !isFocused && 'border-border hover:border-[#008060]/50',
       // 加载状态
       isLoading && 'opacity-50 cursor-not-allowed'
@@ -126,7 +128,9 @@ export default function HeroSection() {
         }
       } catch (error) {
         console.error('Error detecting theme:', error);
-        toast.error(error instanceof Error ? error.message : 'Failed to detect theme');
+        toast.error(
+          error instanceof Error ? error.message : 'Failed to detect theme'
+        );
       } finally {
         setIsLoading(false);
       }
@@ -196,7 +200,7 @@ export default function HeroSection() {
                         'shop.stereogum.com',
                         'shop.in-n-out.com',
                         'shop.singletracks.com',
-                        'shop.spacex.com'
+                        'shop.spacex.com',
                       ].map((example) => (
                         <button
                           key={example}
@@ -208,8 +212,8 @@ export default function HeroSection() {
                         </button>
                       ))}
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      * Using this tool will open up an offer from a relevant vendor
+                    <p className="text-xs text-muted-foreground display-none hidden">
+                      12123123123
                     </p>
                   </div>
                 </div>
@@ -227,7 +231,8 @@ export default function HeroSection() {
                         <div className="text-center space-y-6">
                           {/* Store URL display */}
                           <div className="text-lg text-muted-foreground">
-                            {new URL(result.storeUrl || '').hostname} is built using
+                            {new URL(result.storeUrl || '').hostname} is built
+                            using
                           </div>
 
                           {/* Schema Name - Most prominent display */}
@@ -244,13 +249,17 @@ export default function HeroSection() {
 
                             {/* Theme type badge */}
                             <div className="flex justify-center">
-                              <span className={cn(
-                                "inline-flex items-center rounded-full px-4 py-2 text-sm font-medium",
-                                result.theme.type === 'official'
-                                  ? "bg-[#008060]/10 text-[#008060]"
-                                  : "bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400"
-                              )}>
-                                {result.theme.type === 'official' ? 'Official Theme' : 'Custom Theme'}
+                              <span
+                                className={cn(
+                                  'inline-flex items-center rounded-full px-4 py-2 text-sm font-medium',
+                                  result.theme.type === 'official'
+                                    ? 'bg-[#008060]/10 text-[#008060]'
+                                    : 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400'
+                                )}
+                              >
+                                {result.theme.type === 'official'
+                                  ? 'Official Theme'
+                                  : 'Custom Theme'}
                               </span>
                             </div>
                           </div>
@@ -261,7 +270,9 @@ export default function HeroSection() {
                               <Button
                                 size="lg"
                                 className="w-full sm:w-auto bg-[#008060] hover:bg-[#008060]/90 text-white px-8 py-3 text-lg font-semibold"
-                                onClick={() => window.open(result.themeStoreUrl, '_blank')}
+                                onClick={() =>
+                                  window.open(result.themeStoreUrl, '_blank')
+                                }
                               >
                                 Get This Theme
                               </Button>
@@ -269,7 +280,12 @@ export default function HeroSection() {
                               <Button
                                 size="lg"
                                 className="w-full sm:w-auto bg-[#008060] hover:bg-[#008060]/90 text-white px-8 py-3 text-lg font-semibold"
-                                onClick={() => window.open(`https://themes.shopify.com/search?q=${encodeURIComponent(result.theme?.schema_name || '')}`, '_blank')}
+                                onClick={() =>
+                                  window.open(
+                                    `https://themes.shopify.com/search?q=${encodeURIComponent(result.theme?.schema_name || '')}`,
+                                    '_blank'
+                                  )
+                                }
                               >
                                 Find Similar Themes
                               </Button>
@@ -278,7 +294,12 @@ export default function HeroSection() {
                                 size="lg"
                                 variant="outline"
                                 className="w-full sm:w-auto px-8 py-3 text-lg font-semibold"
-                                onClick={() => window.open('https://themes.shopify.com/', '_blank')}
+                                onClick={() =>
+                                  window.open(
+                                    'https://themes.shopify.com/',
+                                    '_blank'
+                                  )
+                                }
                               >
                                 Browse Shopify Themes
                               </Button>
@@ -287,7 +308,8 @@ export default function HeroSection() {
                             {/* Secondary note */}
                             {result.theme.type === 'official' && (
                               <p className="text-sm text-muted-foreground">
-                                * Click the button to view this theme in Shopify Theme Store
+                                * Click the button to view this theme in Shopify
+                                Theme Store
                               </p>
                             )}
                           </div>
@@ -296,7 +318,9 @@ export default function HeroSection() {
                         {/* More Information - Collapsible */}
                         <details className="group border rounded-lg">
                           <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/50 transition-colors">
-                            <span className="font-medium text-foreground">More Information</span>
+                            <span className="font-medium text-foreground">
+                              More Information
+                            </span>
                             <ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90" />
                           </summary>
 
@@ -385,7 +409,8 @@ export default function HeroSection() {
                         </div>
 
                         <p className="text-muted-foreground">
-                          {result.error || 'This website does not appear to be a Shopify store.'}
+                          {result.error ||
+                            'This website does not appear to be a Shopify store.'}
                         </p>
 
                         <Button

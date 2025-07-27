@@ -66,21 +66,7 @@ export function getFooterLinks(): NestedMenuItem[] {
         // },
       ],
     },
-    {
-      title: t('company.title'),
-      items: [
-        {
-          title: t('company.items.about'),
-          href: Routes.About,
-          external: false,
-        },
-        {
-          title: t('company.items.contact'),
-          href: Routes.Contact,
-          external: false,
-        },
-      ],
-    },
+
     {
       title: t('legal.title'),
       items: [
