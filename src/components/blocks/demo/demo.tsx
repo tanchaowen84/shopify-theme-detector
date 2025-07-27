@@ -2,6 +2,7 @@ import { HeaderSection } from '@/components/layout/header-section';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import { Button } from '@/components/ui/button';
 import { LocaleLink } from '@/i18n/navigation';
+import { Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function DemoSection() {
