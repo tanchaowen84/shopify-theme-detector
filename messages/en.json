@@ -289,6 +289,9 @@
       "blog": {
         "title": "Blog"
       },
+      "tools": {
+        "title": "Tools"
+      },
       "docs": {
         "title": "Detection Guide"
       },
@@ -351,6 +354,13 @@
           "features": "Detection Features",
           "pricing": "Detector Pricing",
           "faq": "Theme Detection FAQ"
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "items": {
+          "themeDetector": "Shopify Theme Detector",
+          "appDetector": "Shopify App Detector"
         }
       },
       "resources": {

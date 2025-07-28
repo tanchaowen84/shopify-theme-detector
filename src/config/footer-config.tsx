@@ -41,6 +41,21 @@ export function getFooterLinks(): NestedMenuItem[] {
       ],
     },
     {
+      title: t('tools.title'),
+      items: [
+        {
+          title: t('tools.items.themeDetector'),
+          href: Routes.Root,
+          external: false,
+        },
+        {
+          title: t('tools.items.appDetector'),
+          href: Routes.ShopifyAppDetector,
+          external: false,
+        },
+      ],
+    },
+    {
       title: t('resources.title'),
       items: [
         // Blog enabled for SEO purposes

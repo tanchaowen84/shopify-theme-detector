@@ -53,6 +53,11 @@ export function getNavbarLinks(): NestedMenuItem[] {
       href: Routes.Features,
       external: false,
     },
+    {
+      title: t('tools.title'),
+      href: Routes.Tools,
+      external: false,
+    },
     // Pricing disabled for Shopify Theme Detector, Blog enabled for SEO
     // {
     //   title: t('pricing.title'),

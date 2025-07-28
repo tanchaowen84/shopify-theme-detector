@@ -3,10 +3,10 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { Search, Loader2 } from 'lucide-react';
+import type { AppDetectionResult } from '@/types/app-detection';
+import { Loader2, Search } from 'lucide-react';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'sonner';
-import type { AppDetectionResult } from '@/types/app-detection';
 
 interface AppDetectorFormProps {
   onResult: (result: AppDetectionResult) => void;
@@ -41,7 +41,8 @@ export function AppDetectorForm({ onResult, className }: AppDetectorFormProps) {
       'w-full h-16 text-lg px-6 pr-16 rounded-2xl border-2',
       'transition-all duration-300 ease-in-out',
       // Shopify 配色聚焦状态
-      isFocused && 'border-[#008060] shadow-lg shadow-[#008060]/20 scale-[1.02]',
+      isFocused &&
+        'border-[#008060] shadow-lg shadow-[#008060]/20 scale-[1.02]',
       !isFocused && 'border-border hover:border-[#008060]/50',
       // 加载状态
       isLoading && 'opacity-50 cursor-not-allowed'
@@ -104,7 +105,9 @@ export function AppDetectorForm({ onResult, className }: AppDetectorFormProps) {
         }
       } catch (error) {
         console.error('Error detecting apps:', error);
-        toast.error(error instanceof Error ? error.message : 'Failed to detect apps');
+        toast.error(
+          error instanceof Error ? error.message : 'Failed to detect apps'
+        );
       } finally {
         setIsLoading(false);
       }
@@ -113,7 +116,7 @@ export function AppDetectorForm({ onResult, className }: AppDetectorFormProps) {
   );
 
   return (
-    <div className={cn("w-full max-w-4xl", className)}>
+    <div className={cn('w-full max-w-4xl', className)}>
       <form onSubmit={handleSubmit} className="w-full">
         <div className="relative group">
           <Input
@@ -139,29 +142,33 @@ export function AppDetectorForm({ onResult, className }: AppDetectorFormProps) {
           </Button>
         </div>
       </form>
-      
-      {/* Helper text */}
-      <div className="mt-4 text-center">
+
+      {/* Helper text and Examples */}
+      <div className="mt-6 text-center space-y-3">
         <p className="text-sm text-muted-foreground">
           Enter any Shopify store URL to detect installed apps
         </p>
-        <div className="mt-2 flex flex-wrap justify-center gap-2 text-xs text-muted-foreground">
-          <span>Examples:</span>
-          <button
-            type="button"
-            onClick={() => setInput('shop.shopify.com')}
-            className="text-[#008060] hover:text-[#004C3F] underline"
-          >
-            shop.shopify.com
-          </button>
-          <span>•</span>
-          <button
-            type="button"
-            onClick={() => setInput('example.myshopify.com')}
-            className="text-[#008060] hover:text-[#004C3F] underline"
-          >
-            example.myshopify.com
-          </button>
+        <div className="space-y-2">
+          <p className="text-sm text-muted-foreground">Examples:</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {[
+              'store.sho.com',
+              'shop.stereogum.com',
+              'shop.in-n-out.com',
+              'shop.singletracks.com',
+              'shop.spacex.com',
+            ].map((example) => (
+              <button
+                key={example}
+                type="button"
+                onClick={() => setInput(`https://${example}`)}
+                className="px-3 py-1.5 text-sm bg-muted hover:bg-muted/80 rounded-full transition-colors border"
+                disabled={isLoading}
+              >
+                {example}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
