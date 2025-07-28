@@ -106,7 +106,6 @@ async function fetchHtmlContent(url: string): Promise<string | null> {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; ShopifyAppDetector/1.0)',
       },
-      timeout: 10000,
     });
 
     if (!response.ok) {
