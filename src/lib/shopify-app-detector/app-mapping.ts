@@ -11,7 +11,8 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     category: 'Email Marketing',
     description:
       'Grow smarter with automation and personalization for email marketing, sms, and more.',
-    website: 'https://www.klaviyo.com',
+    website: 'https://apps.shopify.com/klaviyo-email-marketing',
+    iconUrl: 'https://logo.clearbit.com/klaviyo.com',
     detectionPatterns: {
       appBlocks: ['klaviyo', 'Klaviyo'],
       scriptDomains: ['static.klaviyo.com', 'a.klaviyo.com'],
@@ -25,7 +26,8 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     name: 'Loox',
     category: 'Reviews & Ratings',
     description: 'Photo reviews and user-generated content',
-    website: 'https://loox.app',
+    website: 'https://apps.shopify.com/loox',
+    iconUrl: 'https://logo.clearbit.com/loox.app',
     detectionPatterns: {
       appBlocks: ['loox', 'Loox'],
       scriptDomains: ['loox.io', 'cdn.loox.app'],
@@ -39,7 +41,8 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     name: 'Yotpo',
     category: 'Reviews & Ratings',
     description: 'Reviews, ratings, and user-generated content',
-    website: 'https://www.yotpo.com',
+    website: 'https://apps.shopify.com/yotpo-social-reviews',
+    iconUrl: 'https://logo.clearbit.com/yotpo.com',
     detectionPatterns: {
       appBlocks: ['yotpo', 'Yotpo'],
       scriptDomains: ['staticw2.yotpo.com', 'cdn-widgetsrepository.yotpo.com'],
@@ -53,7 +56,8 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     name: 'Judge.me',
     category: 'Reviews & Ratings',
     description: 'Product reviews and ratings',
-    website: 'https://judge.me',
+    website: 'https://apps.shopify.com/judgeme',
+    iconUrl: 'https://logo.clearbit.com/judge.me',
     detectionPatterns: {
       appBlocks: ['judge.me', 'judgeme'],
       scriptDomains: ['cdn.judge.me', 'cache.judge.me'],
@@ -82,6 +86,7 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     category: 'Analytics',
     description: 'Web analytics and tracking',
     website: 'https://analytics.google.com',
+    iconUrl: 'https://logo.clearbit.com/google.com',
     detectionPatterns: {
       appBlocks: ['google analytics', 'gtag'],
       scriptDomains: ['googletagmanager.com', 'google-analytics.com'],
@@ -96,6 +101,7 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     category: 'Analytics',
     description: 'Facebook advertising and tracking pixel',
     website: 'https://business.facebook.com',
+    iconUrl: 'https://logo.clearbit.com/facebook.com',
     detectionPatterns: {
       appBlocks: ['facebook pixel', 'fbq'],
       scriptDomains: ['connect.facebook.net'],
@@ -152,7 +158,8 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     category: 'Analytics',
     description:
       'Heatmaps and Recordings can help increase sales by knowing where & why visitors click.',
-    website: 'https://www.crazyegg.com',
+    website: 'https://apps.shopify.com/crazy-egg',
+    iconUrl: 'https://logo.clearbit.com/crazyegg.com',
     detectionPatterns: {
       appBlocks: ['crazy-egg', 'crazyegg'],
       scriptDomains: ['script.crazyegg.com'],
@@ -167,7 +174,8 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     category: 'Conversion Optimization',
     description:
       'Increase average order value with smart upsell and cross-sell recommendations.',
-    website: 'https://apps.shopify.com/wiser-upsell-cross-sell',
+    website: 'https://apps.shopify.com/recommended-products-wiser',
+    iconUrl: 'https://logo.clearbit.com/wiser.com',
     detectionPatterns: {
       appBlocks: ['wiser-upsell-cross-sell', 'wiser', 'upsell'],
       scriptDomains: [],
@@ -181,7 +189,8 @@ export const SHOPIFY_APPS: Record<string, ShopifyApp> = {
     name: 'LangShop',
     category: 'Localization',
     description: 'Translate your store into multiple languages and currencies.',
-    website: 'https://langshop.app',
+    website: 'https://apps.shopify.com/langshop',
+    iconUrl: 'https://logo.clearbit.com/langshop.app',
     detectionPatterns: {
       appBlocks: ['langshop', 'translation'],
       scriptDomains: [],

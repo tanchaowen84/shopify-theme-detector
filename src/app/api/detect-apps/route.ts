@@ -210,6 +210,7 @@ function detectApps(html: string): DetectedApp[] {
         category: 'Other',
         description: `Shopify app: ${displayName}`,
         website: `https://apps.shopify.com/${foundAppName}`,
+        iconUrl: `https://logo.clearbit.com/${foundAppName.replace(/-/g, '')}.com`,
         detectionPatterns: {
           appBlocks: [foundAppName],
           scriptDomains: [],

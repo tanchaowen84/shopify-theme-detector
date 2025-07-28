@@ -59,26 +59,63 @@ export function AppDetectionResultSimple({
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  {/* App Icon/Logo placeholder */}
-                  <div className="w-16 h-16 rounded-lg bg-[#008060]/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">
-                      {detectedApp.app.category === 'Email Marketing'
-                        ? '📧'
-                        : detectedApp.app.category === 'Reviews & Ratings'
-                          ? '⭐'
-                          : detectedApp.app.category === 'Analytics'
-                            ? '📊'
-                            : detectedApp.app.category === 'Customer Support'
-                              ? '💬'
-                              : detectedApp.app.category ===
-                                  'Conversion Optimization'
-                                ? '🎯'
-                                : detectedApp.app.category === 'Localization'
-                                  ? '🌐'
-                                  : detectedApp.app.category === 'Other'
-                                    ? '📱'
-                                    : '🔧'}
-                    </span>
+                  {/* App Icon/Logo */}
+                  <div className="w-16 h-16 rounded-lg bg-[#008060]/10 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    {detectedApp.app.iconUrl ? (
+                      <img
+                        src={detectedApp.app.iconUrl}
+                        alt={`${detectedApp.app.name} icon`}
+                        className="w-12 h-12 object-contain rounded-md"
+                        onError={(e) => {
+                          // Fallback to emoji if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<span class="text-2xl">${
+                              detectedApp.app.category === 'Email Marketing'
+                                ? '📧'
+                                : detectedApp.app.category ===
+                                    'Reviews & Ratings'
+                                  ? '⭐'
+                                  : detectedApp.app.category === 'Analytics'
+                                    ? '📊'
+                                    : detectedApp.app.category ===
+                                        'Customer Support'
+                                      ? '💬'
+                                      : detectedApp.app.category ===
+                                          'Conversion Optimization'
+                                        ? '🎯'
+                                        : detectedApp.app.category ===
+                                            'Localization'
+                                          ? '🌐'
+                                          : detectedApp.app.category === 'Other'
+                                            ? '📱'
+                                            : '🔧'
+                            }</span>`;
+                          }
+                        }}
+                      />
+                    ) : (
+                      <span className="text-2xl">
+                        {detectedApp.app.category === 'Email Marketing'
+                          ? '📧'
+                          : detectedApp.app.category === 'Reviews & Ratings'
+                            ? '⭐'
+                            : detectedApp.app.category === 'Analytics'
+                              ? '📊'
+                              : detectedApp.app.category === 'Customer Support'
+                                ? '💬'
+                                : detectedApp.app.category ===
+                                    'Conversion Optimization'
+                                  ? '🎯'
+                                  : detectedApp.app.category === 'Localization'
+                                    ? '🌐'
+                                    : detectedApp.app.category === 'Other'
+                                      ? '📱'
+                                      : '🔧'}
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex-1 min-w-0">

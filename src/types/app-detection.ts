@@ -4,11 +4,12 @@ export interface ShopifyApp {
   category: string;
   description: string;
   website: string;
+  iconUrl?: string; // App icon URL
   detectionPatterns: {
-    appBlocks: string[];      // App block comments
-    scriptDomains: string[];  // Script domains
-    cssClasses: string[];     // CSS classes
-    htmlElements: string[];   // HTML elements
+    appBlocks: string[]; // App block comments
+    scriptDomains: string[]; // Script domains
+    cssClasses: string[]; // CSS classes
+    htmlElements: string[]; // HTML elements
   };
 }
 
