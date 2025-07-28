@@ -13,6 +13,10 @@ export enum Routes {
   Blog = '/blog', // Enabled for SEO purposes
   // Docs = '/docs', // Disabled for Shopify Theme Detector
 
+  // Tools pages
+  Tools = '/tools',
+  ShopifyAppDetector = '/tools/shopify-app-detector',
+
   // Waitlist = '/waitlist', // Disabled for Shopify Theme Detector
   // Changelog = '/changelog', // Disabled for Shopify Theme Detector
   Roadmap = 'https://github.com/your-repo/shopify-theme-detector', // Updated for project

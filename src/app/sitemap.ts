@@ -27,6 +27,9 @@ function getEnabledStaticRoutes(): string[] {
     conditionalRoutes.push('/docs');
   }
 
+  // Add tools pages (exclude /tools main page as it's noindex)
+  conditionalRoutes.push('/tools/shopify-app-detector');
+
   // About and Contact pages are removed for Shopify Theme Detector
   // if (websiteConfig.features.enableAboutPage) {
   //   conditionalRoutes.push('/about');
