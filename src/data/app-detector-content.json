@@ -1,0 +1,160 @@
+{
+  "hero": {
+    "title": "Shopify App Detector",
+    "subtitle": "Discover Apps Installed on Any Shopify Store",
+    "description": "Analyze any Shopify store to detect installed apps, understand competitor strategies, and discover new tools for your own store. Free, fast, and comprehensive app detection tool."
+  },
+  "whatIsIt": {
+    "title": "What is Shopify App Detector?",
+    "description": "Our Shopify App Detector is a powerful free tool that analyzes any Shopify store to identify the apps and extensions they have installed. By examining app blocks, scripts, and other technical indicators, our Shopify App Detector provides comprehensive insights into the technology stack behind successful Shopify stores.",
+    "keyPoints": [
+      "Detect Shopify apps installed on any store",
+      "Analyze competitor Shopify app strategies",
+      "Discover new Shopify apps for your own store",
+      "Free and unlimited Shopify app detection",
+      "Instant Shopify app analysis with detailed information"
+    ]
+  },
+  "howItWorks": {
+    "title": "How Does Our Shopify App Detector Work?",
+    "description": "Our advanced Shopify App Detector algorithm analyzes multiple data points to identify installed Shopify apps with high accuracy.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Enter Shopify Store URL",
+        "description": "Simply paste any Shopify store URL into our Shopify App Detector tool"
+      },
+      {
+        "step": 2,
+        "title": "Deep Shopify App Analysis",
+        "description": "Our Shopify App Detector analyzes app blocks, JavaScript files, CSS patterns, and HTML structures"
+      },
+      {
+        "step": 3,
+        "title": "Shopify App Identification",
+        "description": "Advanced algorithms match detected patterns with our comprehensive Shopify app database"
+      },
+      {
+        "step": 4,
+        "title": "Detailed Shopify App Results",
+        "description": "Get a complete list of detected Shopify apps with descriptions and links to app stores"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Who Uses Our Shopify App Detector?",
+    "description": "Our Shopify App Detector serves various professionals in the e-commerce ecosystem",
+    "cases": [
+      {
+        "title": "E-commerce Store Owners",
+        "description": "Use our Shopify App Detector to discover apps used by successful competitors and improve your own store functionality and performance",
+        "benefits": [
+          "Find proven Shopify app solutions",
+          "Optimize store performance with detected apps",
+          "Stay competitive through app analysis"
+        ]
+      },
+      {
+        "title": "Shopify Developers",
+        "description": "Use our Shopify App Detector to analyze client requirements and recommend appropriate apps based on competitor analysis",
+        "benefits": [
+          "Better Shopify app recommendations for clients",
+          "Technical research using app detection",
+          "Market analysis through app discovery"
+        ]
+      },
+      {
+        "title": "Digital Marketing Agencies",
+        "description": "Research competitor strategies and identify opportunities for client improvements",
+        "benefits": [
+          "Competitive analysis",
+          "Strategy development",
+          "Client reporting"
+        ]
+      },
+      {
+        "title": "App Developers",
+        "description": "Research market adoption of apps and identify gaps in the Shopify app ecosystem",
+        "benefits": [
+          "Market research",
+          "Competitive intelligence",
+          "Product development insights"
+        ]
+      }
+    ]
+  },
+  "features": {
+    "title": "Key Features of Our Shopify App Detector",
+    "description": "Everything you need for comprehensive Shopify app detection and analysis",
+    "list": [
+      {
+        "title": "Comprehensive Shopify App Detection",
+        "description": "Our Shopify App Detector identifies a wide range of apps including themes, payment gateways, marketing tools, and more",
+        "icon": "search"
+      },
+      {
+        "title": "Instant Shopify App Analysis",
+        "description": "Get detailed Shopify app detection results in seconds, no waiting or processing delays",
+        "icon": "zap"
+      },
+      {
+        "title": "Free & Unlimited Shopify App Detection",
+        "description": "Use our Shopify App Detector as many times as you want, completely free with no restrictions",
+        "icon": "infinity"
+      },
+      {
+        "title": "Detailed Shopify App Information",
+        "description": "Get Shopify app names, descriptions, categories, and direct links to Shopify App Store",
+        "icon": "info"
+      },
+      {
+        "title": "User-Friendly Shopify App Detector Interface",
+        "description": "Simple, clean interface that makes Shopify app detection accessible to everyone",
+        "icon": "user"
+      },
+      {
+        "title": "Regular Shopify App Database Updates",
+        "description": "Our Shopify App Detector algorithms are constantly updated to identify new apps and patterns",
+        "icon": "refresh"
+      }
+    ]
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions About Our Shopify App Detector",
+    "description": "Common questions about our Shopify App Detector and app detection process",
+    "questions": [
+      {
+        "question": "How accurate is the Shopify App Detector?",
+        "answer": "Our Shopify App Detector is highly accurate, identifying most installed apps through multiple detection methods. However, some apps may not be detectable if they don't leave visible traces in the store's code or if they're custom-built solutions."
+      },
+      {
+        "question": "Is the Shopify App Detector free to use?",
+        "answer": "Yes, our Shopify App Detector is completely free to use with no limitations on the number of stores you can analyze."
+      },
+      {
+        "question": "Can I detect apps on any Shopify store?",
+        "answer": "Yes, you can analyze any public Shopify store. Simply enter the store's URL and our Shopify App Detector will identify the installed apps."
+      },
+      {
+        "question": "What types of Shopify apps can be detected?",
+        "answer": "Our Shopify App Detector can identify various types of apps including marketing tools, analytics, customer service, payment gateways, shipping solutions, and many others that leave detectable traces in the store's code."
+      },
+      {
+        "question": "How often is the Shopify app database updated?",
+        "answer": "Our Shopify App Detector database is regularly updated to include new apps and improve detection accuracy. We continuously monitor the Shopify App Store for new releases."
+      },
+      {
+        "question": "Can I see which Shopify apps my competitors are using?",
+        "answer": "Yes, that's one of the main use cases for our Shopify App Detector. You can analyze competitor stores to understand their app strategy and discover tools that might benefit your own store."
+      },
+      {
+        "question": "Does the tool work on mobile devices?",
+        "answer": "Yes, our Shopify App Detector is fully responsive and works perfectly on mobile devices, tablets, and desktop computers."
+      },
+      {
+        "question": "Is my search data stored or tracked?",
+        "answer": "We respect your privacy. Store URLs you analyze are not stored permanently, and we don't track your usage patterns for marketing purposes."
+      }
+    ]
+  }
+}
