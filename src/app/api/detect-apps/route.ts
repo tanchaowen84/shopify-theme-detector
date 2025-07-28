@@ -139,7 +139,7 @@ function isShopifyStore(html: string): boolean {
 /**
  * Detect apps from HTML content using BEGIN app block comments
  */
-function detectApps(html: string): DetectedApp[] {
+function detectAppsByAppBlocks(html: string): DetectedApp[] {
   const apps = getAllApps();
   const detectedApps: DetectedApp[] = [];
 
@@ -228,14 +228,161 @@ function detectApps(html: string): DetectedApp[] {
     }
   }
 
-  // Remove duplicates and sort by weight (database apps first), then by name
-  const uniqueApps = detectedApps.filter(
-    (app, index, self) =>
-      index === self.findIndex((a) => a.app.id === app.app.id)
-  );
+  return detectedApps;
+}
 
+/**
+ * Detect apps from HTML content using enhanced script domain matching
+ * Checks both script src URLs and script tag content for domain patterns
+ * Uses contains matching for better detection coverage
+ */
+function detectAppsByScriptDomains(html: string): DetectedApp[] {
+  const apps = getAllApps();
+  const detectedApps: DetectedApp[] = [];
+
+  // Extract all script src URLs
+  const scriptSrcRegex = /<script[^>]+src=["']([^"']+)["'][^>]*>/gi;
+  const scriptSrcMatches = html.matchAll(scriptSrcRegex);
+
+  // Extract all script tag content (including inline scripts)
+  const scriptContentRegex = /<script[^>]*>([\s\S]*?)<\/script>/gi;
+  const scriptContentMatches = html.matchAll(scriptContentRegex);
+
+  const foundDomains = new Set<string>();
+  const allScriptUrls = new Set<string>();
+  const allScriptContent = new Set<string>();
+
+  // Process script src URLs
+  for (const match of scriptSrcMatches) {
+    try {
+      const scriptUrl = match[1];
+      const url = new URL(scriptUrl);
+      foundDomains.add(url.hostname);
+      allScriptUrls.add(scriptUrl.toLowerCase());
+    } catch {
+      // Skip invalid URLs, but still add the raw URL for pattern matching
+      allScriptUrls.add(match[1].toLowerCase());
+    }
+  }
+
+  // Process script tag content
+  for (const match of scriptContentMatches) {
+    const scriptContent = match[1];
+    if (scriptContent?.trim()) {
+      allScriptContent.add(scriptContent.toLowerCase());
+    }
+  }
+
+  console.log('Found script domains:', Array.from(foundDomains));
+
+  // Match domain patterns with app database
+  for (const app of apps) {
+    if (app.detectionPatterns.scriptDomains.length === 0) continue;
+
+    let appDetected = false;
+
+    for (const domainPattern of app.detectionPatterns.scriptDomains) {
+      if (appDetected) break;
+
+      const lowerDomainPattern = domainPattern.toLowerCase();
+
+      // Check script src URLs for domain pattern
+      for (const scriptUrl of allScriptUrls) {
+        if (scriptUrl.includes(lowerDomainPattern)) {
+          console.log(
+            `Script URL domain match: "${domainPattern}" found in script URL for app ${app.name}`
+          );
+
+          detectedApps.push({
+            app,
+            confidence: 'high',
+            detectedSignals: [`Script URL domain: ${domainPattern}`],
+            weight: 90,
+          });
+          appDetected = true;
+          break;
+        }
+      }
+
+      // Check script tag content for domain pattern
+      if (!appDetected) {
+        for (const scriptContent of allScriptContent) {
+          if (scriptContent.includes(lowerDomainPattern)) {
+            console.log(
+              `Script content domain match: "${domainPattern}" found in script content for app ${app.name}`
+            );
+
+            detectedApps.push({
+              app,
+              confidence: 'high',
+              detectedSignals: [`Script content domain: ${domainPattern}`],
+              weight: 85, // Slightly lower weight for content matches
+            });
+            appDetected = true;
+            break;
+          }
+        }
+      }
+
+      // Check extracted domain names for pattern
+      if (!appDetected) {
+        for (const domain of foundDomains) {
+          if (domain.toLowerCase().includes(lowerDomainPattern)) {
+            console.log(
+              `Script domain match: "${domainPattern}" found in domain ${domain} for app ${app.name}`
+            );
+
+            detectedApps.push({
+              app,
+              confidence: 'high',
+              detectedSignals: [`Script domain: ${domain}`],
+              weight: 90,
+            });
+            appDetected = true;
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  return detectedApps;
+}
+
+/**
+ * Main detection function that combines multiple detection methods
+ */
+function detectApps(html: string): DetectedApp[] {
+  // Detect apps using app blocks
+  const appBlockApps = detectAppsByAppBlocks(html);
+
+  // Detect apps using script domains
+  const scriptDomainApps = detectAppsByScriptDomains(html);
+
+  // Combine results and remove duplicates
+  const allDetectedApps = [...appBlockApps, ...scriptDomainApps];
+
+  // Remove duplicates based on app ID, keeping the one with higher weight
+  const uniqueApps = allDetectedApps.reduce((acc, current) => {
+    const existing = acc.find((app) => app.app.id === current.app.id);
+    if (!existing) {
+      acc.push(current);
+    } else if (current.weight > existing.weight) {
+      // Replace with higher weight detection
+      const index = acc.indexOf(existing);
+      acc[index] = current;
+    } else if (current.weight === existing.weight) {
+      // Merge detection signals if same weight
+      existing.detectedSignals = [
+        ...existing.detectedSignals,
+        ...current.detectedSignals,
+      ];
+    }
+    return acc;
+  }, [] as DetectedApp[]);
+
+  // Sort by weight (higher weight first), then by name
   return uniqueApps.sort((a, b) => {
-    // Sort by weight first (higher weight first), then by name
     if (a.weight !== b.weight) {
       return b.weight - a.weight;
     }
