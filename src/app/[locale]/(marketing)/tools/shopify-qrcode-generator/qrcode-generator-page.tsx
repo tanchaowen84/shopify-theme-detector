@@ -32,6 +32,22 @@ export function QRCodeGeneratorPage() {
       fgColor: '#000000',
       bgColor: '#ffffff',
     },
+    {
+      id: '2',
+      url: '',
+      label: 'QR Code 2',
+      size: 256,
+      fgColor: '#000000',
+      bgColor: '#ffffff',
+    },
+    {
+      id: '3',
+      url: '',
+      label: 'QR Code 3',
+      size: 256,
+      fgColor: '#000000',
+      bgColor: '#ffffff',
+    },
   ]);
 
   const addQRCode = useCallback(() => {
@@ -377,41 +393,6 @@ export function QRCodeGeneratorPage() {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Quick Examples */}
-        <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-          <h3 className="font-semibold text-gray-900 mb-4">Quick Examples</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-            <div>
-              <strong>Homepage:</strong>
-              <br />
-              <code className="text-xs bg-white px-2 py-1 rounded">
-                https://store.myshopify.com
-              </code>
-            </div>
-            <div>
-              <strong>Product Page:</strong>
-              <br />
-              <code className="text-xs bg-white px-2 py-1 rounded">
-                https://store.myshopify.com/products/product-name
-              </code>
-            </div>
-            <div>
-              <strong>Collection:</strong>
-              <br />
-              <code className="text-xs bg-white px-2 py-1 rounded">
-                https://store.myshopify.com/collections/collection-name
-              </code>
-            </div>
-            <div>
-              <strong>Checkout:</strong>
-              <br />
-              <code className="text-xs bg-white px-2 py-1 rounded">
-                https://store.myshopify.com/cart
-              </code>
-            </div>
-          </div>
         </div>
       </div>
     </div>
