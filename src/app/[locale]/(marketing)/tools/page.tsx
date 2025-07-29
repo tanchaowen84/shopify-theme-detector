@@ -29,6 +29,17 @@ export default function ToolsPage() {
         },
       ],
     },
+    {
+      title: 'Marketing Tools',
+      tools: [
+        {
+          title: 'Shopify QR Code Generator',
+          description:
+            'Generate custom QR codes for your Shopify store pages, products, and checkout links',
+          href: '/tools/shopify-qrcode-generator',
+        },
+      ],
+    },
   ];
 
   return (
