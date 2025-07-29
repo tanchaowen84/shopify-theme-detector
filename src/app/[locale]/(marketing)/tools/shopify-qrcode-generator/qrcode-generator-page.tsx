@@ -14,6 +14,37 @@ import { QRCodeCanvas } from 'qrcode.react';
 import { useCallback, useState } from 'react';
 import { toast } from 'sonner';
 
+interface Subsection {
+  title: string;
+  content: string;
+}
+
+interface Section {
+  title: string;
+  content: string;
+  subsections?: Subsection[];
+}
+
+interface SEOContent {
+  title: string;
+  description: string;
+  sections: {
+    whatIsIt: Section;
+    howItWorks: Section;
+    useCases: Section;
+    features: Section;
+    faq: {
+      title: string;
+      items: Array<{
+        question: string;
+        answer: string;
+      }>;
+    };
+  };
+}
+
+const typedSeoContent: SEOContent = seoContent;
+
 interface QRCodeItem {
   id: string;
   url: string;
@@ -401,12 +432,12 @@ export function QRCodeGeneratorPage() {
           {/* What is it */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {seoContent.sections.whatIsIt.title}
+              {typedSeoContent.sections.whatIsIt.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              {seoContent.sections.whatIsIt.content}
+              {typedSeoContent.sections.whatIsIt.content}
             </p>
-            {seoContent.sections.whatIsIt.subsections?.map(
+            {typedSeoContent.sections.whatIsIt.subsections?.map(
               (subsection, index) => (
                 <div key={index} className="mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -423,12 +454,12 @@ export function QRCodeGeneratorPage() {
           {/* How it works */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {seoContent.sections.howItWorks.title}
+              {typedSeoContent.sections.howItWorks.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              {seoContent.sections.howItWorks.content}
+              {typedSeoContent.sections.howItWorks.content}
             </p>
-            {seoContent.sections.howItWorks.subsections?.map(
+            {typedSeoContent.sections.howItWorks.subsections?.map(
               (subsection, index) => (
                 <div key={index} className="mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -445,12 +476,12 @@ export function QRCodeGeneratorPage() {
           {/* Use cases */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {seoContent.sections.useCases.title}
+              {typedSeoContent.sections.useCases.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              {seoContent.sections.useCases.content}
+              {typedSeoContent.sections.useCases.content}
             </p>
-            {seoContent.sections.useCases.subsections?.map(
+            {typedSeoContent.sections.useCases.subsections?.map(
               (subsection, index) => (
                 <div key={index} className="mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -467,12 +498,12 @@ export function QRCodeGeneratorPage() {
           {/* Features */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {seoContent.sections.features.title}
+              {typedSeoContent.sections.features.title}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              {seoContent.sections.features.content}
+              {typedSeoContent.sections.features.content}
             </p>
-            {seoContent.sections.features.subsections?.map(
+            {typedSeoContent.sections.features.subsections?.map(
               (subsection, index) => (
                 <div key={index} className="mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -489,10 +520,10 @@ export function QRCodeGeneratorPage() {
           {/* FAQ */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {seoContent.sections.faq.title}
+              {typedSeoContent.sections.faq.title}
             </h2>
             <div className="space-y-6">
-              {seoContent.sections.faq.items.map((item, index) => (
+              {typedSeoContent.sections.faq.items.map((item, index) => (
                 <div key={index} className="border-l-4 border-[#008060] pl-4">
                   <h3 className="font-semibold text-gray-900 mb-2">
                     {item.question}
