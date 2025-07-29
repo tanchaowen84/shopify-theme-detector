@@ -1,4 +1,4 @@
-const seoContent = require('@/data/seo/shopify-qrcode-generator.json');
+const seoContent = require('@/data/tools/shopify-qrcode-generator.json');
 import { getBaseUrl } from '@/lib/urls/urls';
 import type { Metadata } from 'next';
 import { QRCodeGeneratorPage } from './qrcode-generator-page';

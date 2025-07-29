@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import appDetectorContent from '@/data/app-detector-content.json';
+import appDetectorContent from '@/data/tools/app-detector-content.json';
 import {
   ArrowRight,
   CheckCircle,

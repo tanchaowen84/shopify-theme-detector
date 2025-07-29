@@ -21,12 +21,20 @@
       "content": "Using our Shopify QR code generator is straightforward and efficient. Simply enter your Shopify store URL or specific page link into the generator, and the tool instantly creates a scannable QR code. The Shopify QR code generator offers real-time preview functionality, allowing you to see your QR code as you customize it. You can adjust the size from 128px to 512px, modify foreground and background colors to match your brand, and add custom labels for organization. The generator includes quick-fill buttons for common Shopify page types like homepage, products, cart, and collections, making it faster to create multiple QR codes. Once satisfied with your design, download your QR codes in PNG format for print materials or SVG format for scalable digital use.",
       "subsections": [
         {
-          "title": "Step-by-Step QR Code Generation Process",
-          "content": "Start by entering your Shopify URL, customize the appearance with size and color options, preview your QR code in real-time, and download in your preferred format."
+          "title": "Enter Your Shopify Store URL",
+          "content": "Begin by inputting your Shopify store URL or specific page link into the generator field. You can use the quick-fill buttons for common page types like homepage, products, cart, and collections to speed up the process."
         },
         {
-          "title": "Customization Options Available",
-          "content": "Our Shopify QR code generator offers extensive customization including size adjustment (128px-512px), custom foreground and background colors, and personalized labels for organization."
+          "title": "Customize QR Code Appearance",
+          "content": "Adjust the QR code size from 128px to 512px using the slider control. Modify the foreground and background colors to match your brand identity, and add a custom label for easy identification and organization."
+        },
+        {
+          "title": "Preview Your QR Code in Real-Time",
+          "content": "Watch your QR code update instantly as you make changes. The real-time preview ensures you see exactly how your QR code will appear before downloading, allowing you to make adjustments as needed."
+        },
+        {
+          "title": "Download in Your Preferred Format",
+          "content": "Choose between PNG format for high-quality print materials or SVG format for scalable digital applications. Use the batch download feature to save all your QR codes at once if you've created multiple codes."
         }
       ]
     },

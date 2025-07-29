@@ -9,7 +9,7 @@ import {
   UseCasesSection,
   WhatIsItSection,
 } from '@/components/app-detector/seo-content';
-import appDetectorContent from '@/data/app-detector-content.json';
+import appDetectorContent from '@/data/tools/app-detector-content.json';
 import type { AppDetectionResult as AppDetectionResultType } from '@/types/app-detection';
 import { useState } from 'react';
 

@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Slider } from '@/components/ui/slider';
-const seoContent = require('@/data/seo/shopify-qrcode-generator.json');
+const seoContent = require('@/data/tools/shopify-qrcode-generator.json');
 import { cn } from '@/lib/utils';
 import { Download, Plus, Trash2 } from 'lucide-react';
 import QRCodeLib from 'qrcode';
