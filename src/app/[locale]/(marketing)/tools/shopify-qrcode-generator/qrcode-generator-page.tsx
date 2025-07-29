@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Slider } from '@/components/ui/slider';
+const seoContent = require('@/data/seo/shopify-qrcode-generator.json');
 import { cn } from '@/lib/utils';
 import { Download, Plus, Trash2 } from 'lucide-react';
 import QRCodeLib from 'qrcode';
@@ -393,6 +394,114 @@ export function QRCodeGeneratorPage() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-4xl mx-auto prose prose-gray">
+          {/* What is it */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              {seoContent.sections.whatIsIt.title}
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {seoContent.sections.whatIsIt.content}
+            </p>
+            {seoContent.sections.whatIsIt.subsections?.map(
+              (subsection, index) => (
+                <div key={index} className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    {subsection.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {subsection.content}
+                  </p>
+                </div>
+              )
+            )}
+          </section>
+
+          {/* How it works */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              {seoContent.sections.howItWorks.title}
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {seoContent.sections.howItWorks.content}
+            </p>
+            {seoContent.sections.howItWorks.subsections?.map(
+              (subsection, index) => (
+                <div key={index} className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    {subsection.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {subsection.content}
+                  </p>
+                </div>
+              )
+            )}
+          </section>
+
+          {/* Use cases */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              {seoContent.sections.useCases.title}
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {seoContent.sections.useCases.content}
+            </p>
+            {seoContent.sections.useCases.subsections?.map(
+              (subsection, index) => (
+                <div key={index} className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    {subsection.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {subsection.content}
+                  </p>
+                </div>
+              )
+            )}
+          </section>
+
+          {/* Features */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              {seoContent.sections.features.title}
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {seoContent.sections.features.content}
+            </p>
+            {seoContent.sections.features.subsections?.map(
+              (subsection, index) => (
+                <div key={index} className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    {subsection.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {subsection.content}
+                  </p>
+                </div>
+              )
+            )}
+          </section>
+
+          {/* FAQ */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              {seoContent.sections.faq.title}
+            </h2>
+            <div className="space-y-6">
+              {seoContent.sections.faq.items.map((item, index) => (
+                <div key={index} className="border-l-4 border-[#008060] pl-4">
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    {item.question}
+                  </h3>
+                  <p className="text-gray-700">{item.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </div>

@@ -1,23 +1,21 @@
+const seoContent = require('@/data/seo/shopify-qrcode-generator.json');
 import { getBaseUrl } from '@/lib/urls/urls';
 import type { Metadata } from 'next';
 import { QRCodeGeneratorPage } from './qrcode-generator-page';
 
 export const metadata: Metadata = {
-  title: 'Free Shopify QR Code Generator | Create Custom QR Codes',
-  description:
-    'Free Shopify QR code generator to create custom QR codes for your store pages, products, and checkout. Download as PNG or SVG.',
+  title: seoContent.title,
+  description: seoContent.description,
   openGraph: {
-    title: 'Free Shopify QR Code Generator | Create Custom QR Codes',
-    description:
-      'Free Shopify QR code generator to create custom QR codes for your store pages, products, and checkout. Download as PNG or SVG.',
+    title: seoContent.title,
+    description: seoContent.description,
     type: 'website',
     siteName: 'Shopify Theme Detector',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Shopify QR Code Generator | Create Custom QR Codes',
-    description:
-      'Free Shopify QR code generator to create custom QR codes for your store pages, products, and checkout. Download as PNG or SVG.',
+    title: seoContent.title,
+    description: seoContent.description,
   },
   alternates: {
     canonical: `${getBaseUrl()}/tools/shopify-qrcode-generator`,
